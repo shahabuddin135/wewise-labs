@@ -2,18 +2,39 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
+import Image from "next/image";
+import firebase from "../public/icons/firebase.png";
+import react from "../public/icons/react.png"
+import nodejs from "../public/icons/Nodejs.png"
+import sanity from "../public/icons/sanity.png"
+import ui from "../public/icons/ui-ux.png"
+import typescript from "../public/icons/typescript.png"
+import ps from "../public/icons/postgresql.png"
+import nextjs from "../public/icons/nextjs.png"
+import tailwind from "../public/icons/tailwind.png"
+import mongodb from "../public/icons/mongo.png"
+import sql from "../public/icons/sql.png"
+import express from "../public/icons/express.png"
+import python from "../public/icons/python.png"
+import clerk from "../public/icons/clerk.png"
 
 const technologies = [
-  { name: "React", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "Next.js", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "TypeScript", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "Node.js", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "Tailwind CSS", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "MongoDB", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "PostgreSQL", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "AWS", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "Docker", icon: "/placeholder.svg?height=60&width=60" },
-  { name: "GraphQL", icon: "/placeholder.svg?height=60&width=60" },
+  { name: "React", icon: react },
+  { name: "Next.js", icon: nextjs },
+  { name: "TypeScript",  icon: typescript },
+  { name: "Node.js",  icon: nodejs },
+  { name: "Tailwind CSS",  icon: tailwind },
+  { name: "MongoDB", icon: mongodb },
+  { name: "PostgreSQL", icon: ps },
+  { name: "MySQL",  icon: sql },
+  { name: "UI/UX", icon: ui },
+  { name: "Prisma",  icon: react },
+  { name: "Sanity", icon: sanity },
+  { name: "Express", icon: express },
+  { name: "Clerk",  icon: clerk },
+  { name: "Firebase", icon: firebase },
+  { name: "Python",  icon: python },
+  { name: "Chatbot development", icon: react },
 ]
 
 export function Technologies() {
@@ -38,7 +59,7 @@ export function Technologies() {
 
         <motion.div
           ref={ref}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8"
+          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8"
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={{
@@ -61,7 +82,7 @@ export function Technologies() {
               className="flex flex-col items-center"
             >
               <div className="bg-white p-4 rounded-full shadow-sm mb-3">
-                <img src={tech.icon || "/placeholder.svg"} alt={tech.name} className="w-12 h-12 object-contain" />
+                <Image src={tech.icon} alt={tech.name} className="w-12 h-12 object-contain" />
               </div>
               <p className="text-sm font-medium">{tech.name}</p>
             </motion.div>
