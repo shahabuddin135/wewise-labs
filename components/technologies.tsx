@@ -3,38 +3,25 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image";
-import firebase from "../public/icons/firebase.png";
-import react from "../public/icons/react.png"
-import nodejs from "../public/icons/Nodejs.png"
-import sanity from "../public/icons/sanity.png"
-import ui from "../public/icons/ui-ux.png"
-import typescript from "../public/icons/typescript.png"
-import ps from "../public/icons/postgresql.png"
-import nextjs from "../public/icons/nextjs.png"
-import tailwind from "../public/icons/tailwind.png"
-import mongodb from "../public/icons/mongo.png"
-import sql from "../public/icons/sql.png"
-import express from "../public/icons/express.png"
-import python from "../public/icons/python.png"
-import clerk from "../public/icons/clerk.png"
 
 const technologies = [
-  { name: "React", icon: react },
-  { name: "Next.js", icon: nextjs },
-  { name: "TypeScript",  icon: typescript },
-  { name: "Node.js",  icon: nodejs },
-  { name: "Tailwind CSS",  icon: tailwind },
-  { name: "MongoDB", icon: mongodb },
-  { name: "PostgreSQL", icon: ps },
-  { name: "MySQL",  icon: sql },
-  { name: "UI/UX", icon: ui },
-  { name: "Prisma",  icon: react },
-  { name: "Sanity", icon: sanity },
-  { name: "Express", icon: express },
-  { name: "Clerk",  icon: clerk },
-  { name: "Firebase", icon: firebase },
-  { name: "Python",  icon: python },
-  { name: "Chatbot development", icon: react },
+  { name: "React", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
+  { name: "Next.js", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/nextjs_qyiojg.png" },
+  { name: "TypeScript",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749254/typescript_kunqzl.png" },
+  { name: "Node.js",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
+  { name: "Tailwind CSS",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
+  { name: "MongoDB", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
+  { name: "PostgreSQL", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
+  { name: "MySQL",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
+  { name: "UI/UX", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749254/ui-ux_lyyhie.png" },
+  { name: "Prisma",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
+  { name: "Sanity", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
+  { name: "Express", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
+  { name: "Clerk",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
+  { name: "Firebase", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
+  { name: "Python",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/python_d9dgyi.png" },
+  { name: "Chatbot development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
+  { name: "AI Agent development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
 ]
 
 export function Technologies() {
@@ -81,8 +68,8 @@ export function Technologies() {
               }}
               className="flex flex-col items-center"
             >
-              <div className="bg-white p-4 rounded-full shadow-sm mb-3">
-                <Image src={tech.icon} alt={tech.name} className="w-12 h-12 object-contain" />
+              <div className="bg-white p-4 rounded-full shadow-md mb-3 hover:transition-all">
+                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="w-12 h-12 object-contain" />
               </div>
               <p className="text-sm font-medium">{tech.name}</p>
             </motion.div>

@@ -2,8 +2,10 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { LuLinkedin,LuGithub  } from "react-icons/lu";
+import linkedIn from "../public/icons/linkedIn.png"
+import github from "../public/icons/github.png"
 import Link from "next/link"
+import Image from "next/image"
 
 const team = [
   {
@@ -76,20 +78,20 @@ export function Team() {
               key={index}
               variants={{
                 hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+                visible: { opacity: 1, y: 0, transition: { duration: 1} },
               }}
-              className="bg-white rounded-lg overflow-hidden shadow-sm"
+              className="bg-white rounded-lg overflow-hidden shadow-sm hover:border hover:border-black hover:shadow-black hover:shadow-md hover:transition hover:delay-50 hover:duration-300 "
             >
-              <div className="p-6">
+              <div className="p-6 ">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-gray-500 text-sm mb-3">{member.role}</p>
                 <p className="text-gray-600 mb-4">{member.bio}</p>
-                <div className="flex space-x-3">
-                  <Link href={member.linkedin} target="blank" className="text-gray-400 hover:text-black transition-colors">
-                    <LuLinkedin className="h-5 w-5" />
+                <div className="flex space-x-3 ">
+                  <Link href={member.linkedin} target="blank" className="text-gray-400">
+                    <Image src={linkedIn} alt="linked-in icon" className="h-5 w-5" />
                   </Link>
-                  <Link href={member.github} target="blank" className="text-gray-400 hover:text-black transition-colors">
-                    <LuGithub className="h-5 w-5" />
+                  <Link href={member.github} target="blank" className="text-gray-400">
+                  <Image src={github} alt="github-icon" className="h-6 w-6" />
                   </Link>
                 </div>
               </div>
