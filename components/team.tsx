@@ -2,32 +2,37 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import { LuLinkedin,LuGithub  } from "react-icons/lu";
+import Link from "next/link"
 
 const team = [
   {
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "10+ years of experience in web development and SaaS product management.",
+    name: "Darakhshan Imran",
+    role: "Founder & Full Stack Developer",
+    bio: "Leads the team and builds complete web solutions from front to back.",
+    linkedin:"https://www.linkedin.com/in/darakhshan-imran-5b9727297/",
+    github:"https://github.com/Darakhshan-Imran"
   },
   {
-    name: "Sarah Chen",
-    role: "Lead Developer",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "Full-stack developer specializing in React and Node.js applications.",
-  },
-  {
-    name: "Michael Rodriguez",
-    role: "UX/UI Designer",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "Creating intuitive and beautiful user experiences for web and mobile applications.",
-  },
-  {
-    name: "Priya Patel",
-    role: "Project Manager",
-    image: "/placeholder.svg?height=400&width=400",
+    name: "Shahabuddin",
+    role: "Co-founder & Project Manager",
     bio: "Ensuring projects are delivered on time and exceed client expectations.",
+    linkedin:"https://www.linkedin.com/in/shahab-uddin-368086300/",
+    github:"https://github.com/shahabuddin135"
+  },
+  {
+    name: "Abeera Umair",
+    role: "Co-founder & Frontend Developer",
+    bio: "Designs and develops user-friendly interfaces for web apps.",
+    linkedin:"https://www.linkedin.com/in/abeera-u-4377a8296/",
+    github:"https://github.com/AbeeraUmair"
+  },
+  {
+    name: "Saba Sarfaraz",
+    role: "Co-founder & Backend Developer",
+    bio: "Builds and maintains server-side logic and database systems.",
+    linkedin:"https://www.linkedin.com/in/saba-sarfaraz-5abbb4232/",
+    github:"https://github.com/sarfarazsaba11"
   },
 ]
 
@@ -47,7 +52,7 @@ export function Team() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Meet the talented individuals who make Wewise Labs a leader in web development and SaaS solutions.
+            Meet the talented individuals who make Wewise Labs a leader in Web development and SaaS solutions.
           </p>
         </motion.div>
 
@@ -75,27 +80,17 @@ export function Team() {
               }}
               className="bg-white rounded-lg overflow-hidden shadow-sm"
             >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                />
-              </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-gray-500 text-sm mb-3">{member.role}</p>
                 <p className="text-gray-600 mb-4">{member.bio}</p>
                 <div className="flex space-x-3">
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Github className="h-5 w-5" />
-                  </a>
+                  <Link href={member.linkedin} target="blank" className="text-gray-400 hover:text-black transition-colors">
+                    <LuLinkedin className="h-5 w-5" />
+                  </Link>
+                  <Link href={member.github} target="blank" className="text-gray-400 hover:text-black transition-colors">
+                    <LuGithub className="h-5 w-5" />
+                  </Link>
                 </div>
               </div>
             </motion.div>
