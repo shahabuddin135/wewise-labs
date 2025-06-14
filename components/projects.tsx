@@ -31,6 +31,7 @@ const projects = [
     imageUrl: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png",
     tags: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
     link: ""
+
   },
 ]
 
