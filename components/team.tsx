@@ -45,8 +45,8 @@ export function Team() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
+          <p className="font-subheading text-gray-600 max-w-2xl mx-auto">
             Meet the talented individuals who make Wewise Labs a leader in web development and SaaS solutions.
           </p>
         </motion.div>
@@ -83,7 +83,7 @@ export function Team() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                <h2 className="font-subheading font-semibold text-xl font-bold mb-1">{member.name}</h2>
                 <p className="text-gray-500 text-sm mb-3">{member.role}</p>
                 <p className="text-gray-600 mb-4">{member.bio}</p>
                 <div className="flex space-x-3">
