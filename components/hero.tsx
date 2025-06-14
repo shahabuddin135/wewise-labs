@@ -1,9 +1,11 @@
 "use client"
 
 import { useRef, useEffect, useState } from "react"
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion"
+import { motion, useScroll, useTransform, useMotionValue, useSpring, Variants } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { FlipText } from "@/components/magicui/flip-text";
+import Link from "next/link"
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -39,6 +41,7 @@ export function Hero() {
     offset: ["start start", "end start"],
   })
 
+  
   // Create transform values based on scroll progress
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.9])
@@ -73,9 +76,16 @@ export function Hero() {
     },
   }
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+    show: { 
+      opacity: 1, 
+      y: 0, 
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1] as const
+      } 
+    },
   }
 
   return (
@@ -107,17 +117,35 @@ export function Hero() {
           className="max-w-4xl mx-auto"
         >
           <motion.div variants={item} className="mb-2">
-            <div className="inline-block rounded-full bg-black text-white px-4 py-1.5 text-sm mb-8">
+            <h1 className="font-subheading inline-block rounded-full bg-black text-white px-4 py-1.5 text-sm mb-8">
               Web Development & SaaS Experts
-            </div>
+            </h1>
           </motion.div>
 
-          <motion.h1
+          
+          
+            
+          <div className=" text-6xl md:text-8xl font-heading font-bold tracking-tight leading-[1.1] mb-8 text-center">
+            <FlipText className="block mb-4 "
+            duration={0.75}
+           
+            >
+              Innovating The Future,
+            </FlipText>
+            <FlipText className="block"
+            duration={0.75}
+            
+            >
+               Wisely
+            </FlipText>
+            
+          </div>
+          {/* <motion.h1
             variants={item}
             className="text-6xl md:text-8xl font-bold tracking-tight leading-[1.1] mb-8 text-center"
           >
             Crafting Digital{" "}
-            <span className="relative inline-block">
+            <span className="relative">
               Experiences
               <motion.span
                 className="absolute -bottom-2 left-0 w-full h-2 bg-black"
@@ -126,26 +154,30 @@ export function Hero() {
                 transition={{ delay: 1, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               />
             </span>
-          </motion.h1>
+          </motion.h1> */}
 
-          <motion.p variants={item} className="text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto">
+          <motion.p variants={item} className="font-body text-xl text-gray-600 mb-12 text-center max-w-2xl mx-auto">
             Wewise Labs transforms ideas into exceptional SaaS applications and web experiences that drive business
             growth and user engagement.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="rounded-full bg-black text-white hover:bg-gray-800 px-8 py-6 text-base">
+          <Link href="#contact">
+            <Button size="lg" className="font-subheading tracking-wider rounded-full bg-black text-white hover:bg-gray-800 px-8 py-6 text-base">
               Start a Project
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
+          </Link>
 
+          <Link href="#services">
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full border-black hover:bg-gray-100 px-8 py-6 text-base"
+              className="font-body rounded-full border-black hover:bg-gray-100 px-8 py-6 text-base"
             >
               Our Services
             </Button>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
@@ -158,7 +190,7 @@ export function Hero() {
         transition={{ delay: 2, duration: 1 }}
       >
         <div className="flex flex-col items-center">
-          <span className="text-sm text-gray-500 mb-2">Scroll to explore</span>
+          <span className="font-body text-sm text-gray-500 mb-2">Scroll to explore</span>
           <motion.div
             className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center"
             initial={{ y: 0 }}

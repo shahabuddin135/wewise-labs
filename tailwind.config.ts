@@ -20,7 +20,10 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-space-grotesk)", "sans-serif"],
+        heading: ["var(--font-heading)", "sans-serif"],
+        subheading: ["var(--font-subheading)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
+       
       },
       colors: {
         border: "hsl(var(--border))",

@@ -1,12 +1,25 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Space_Grotesk } from "next/font/google"
+import {Archivo, Nunito_Sans, PT_Sans_Caption } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 
-const spaceGrotesk = Space_Grotesk({
+const ptSansCaption = PT_Sans_Caption({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-heading",
+  weight:["700"]
+})
+
+const archivo = Archivo({
+  subsets: ["latin", "latin-ext", "vietnamese"],
+  variable:"--font-subheading",
+  weight:["400", "500", "600"] 
+})
+
+const nunito = Nunito_Sans({
+  subsets:["latin"],
+  variable: "--font-body",
+  weight:["300"]
 })
 
 export const metadata: Metadata = {
@@ -22,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${spaceGrotesk.variable} font-sans bg-white text-black antialiased`}>
+      <body className={`${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
           {children}
         </ThemeProvider>
