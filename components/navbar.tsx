@@ -33,15 +33,17 @@ export function Navbar() {
   return (
     <motion.header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8",
-        scrolled ? "bg-white/80 backdrop-blur-md shadow-sm" : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8 ",
+        scrolled ? "bg-black/20 backdrop-blur-md shadow-sm" : "bg-transparent",
       )}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
+       {/* Add separate blur background layer */}
+  {/* <div className="fixed top-0 left-0 w-full h-[80px] bg-black/20 backdrop-blur-lg z-60"></div> */}
+      <nav className="max-w-7xl mx-auto flex items-center justify-between ">
+        <Link href="/" className="text-xl md:text-3xl font-bold tracking-tighter">
           Wewise Labs
         </Link>
 
@@ -51,20 +53,20 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-gray-600 transition-colors"
+              className="text-lg font-medium hover:text-gray-600 transition-colors"
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        <motion.button
+        {/* <motion.button
           className="hidden md:flex px-4 py-2 rounded-full bg-black text-white text-sm font-medium"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
           Get Started
-        </motion.button>
+        </motion.button> */}
 
         {/* Mobile Menu Button */}
         <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
@@ -76,7 +78,7 @@ export function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            className="md:hidden fixed inset-0 top-16 bg-white z-40 p-4"
+            className="md:hidden fixed inset-0 top-16 z-40 p-4 bg-black/30 backdrop-blur-2xl"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -87,18 +89,18 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-medium py-2 border-b border-gray-100"
+                  className="text-lg font-medium py-2 text-center border-b border-gray-100/50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <motion.button
+              {/* <motion.button
                 className="mt-4 px-4 py-2 rounded-full bg-black text-white text-sm font-medium"
                 whileTap={{ scale: 0.95 }}
               >
                 Get Started
-              </motion.button>
+              </motion.button> */}
             </div>
           </motion.div>
         )}
