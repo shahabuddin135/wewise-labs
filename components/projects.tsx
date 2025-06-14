@@ -28,7 +28,7 @@ const projects = [
     title: "Certificate Builder",
     category: "SaaS Application",
     description: "A fully customizable SaaS application. Generate unlimited certificates on a single click and make the task hassle free.",
-    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png",
+    imageUrl: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png",
     tags: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
     link: ""
   },
