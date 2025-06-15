@@ -3,38 +3,25 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Image from "next/image";
-import firebase from "../public/icons/firebase.png";
-import react from "../public/icons/react.png"
-import nodejs from "../public/icons/Nodejs.png"
-import sanity from "../public/icons/sanity.png"
-import ui from "../public/icons/ui-ux.png"
-import typescript from "../public/icons/typescript.png"
-import ps from "../public/icons/postgresql.png"
-import nextjs from "../public/icons/nextjs.png"
-import tailwind from "../public/icons/tailwind.png"
-import mongodb from "../public/icons/mongo.png"
-import sql from "../public/icons/sql.png"
-import express from "../public/icons/express.png"
-import python from "../public/icons/python.png"
-import clerk from "../public/icons/clerk.png"
 
 const technologies = [
-  { name: "React", icon: react },
-  { name: "Next.js", icon: nextjs },
-  { name: "TypeScript",  icon: typescript },
-  { name: "Node.js",  icon: nodejs },
-  { name: "Tailwind CSS",  icon: tailwind },
-  { name: "MongoDB", icon: mongodb },
-  { name: "PostgreSQL", icon: ps },
-  { name: "MySQL",  icon: sql },
-  { name: "UI/UX", icon: ui },
-  { name: "Prisma",  icon: react },
-  { name: "Sanity", icon: sanity },
-  { name: "Express", icon: express },
-  { name: "Clerk",  icon: clerk },
-  { name: "Firebase", icon: firebase },
-  { name: "Python",  icon: python },
-  { name: "Chatbot development", icon: react },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981782/next-js-icon_j2iy7t.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749980923/Bold_Monogram_in_Black_and_White_hpyth8.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981064/pngwing.com_7_lmiwyx.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981302/ChatGPT_Image_Jun_15_2025_02_54_20_PM_dcftdj.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
 ]
 
 export function Technologies() {
@@ -51,8 +38,8 @@ export function Technologies() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Tech Stack</h2>
-          <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Tech Stack</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
             We use cutting-edge technologies to build modern, scalable, and high-performance applications.
           </p>
         </motion.div>
@@ -81,10 +68,10 @@ export function Technologies() {
               }}
               className="flex flex-col items-center"
             >
-              <div className="bg-white p-4 rounded-full shadow-sm mb-3">
-                <Image src={tech.icon} alt={tech.name} className="w-12 h-12 object-contain" />
+              <div className="">
+                <Image src={tech.icon} alt="" width={50} height={50} className="w-12 h-12 object-contain" />
               </div>
-              <p className="text-sm font-medium">{tech.name}</p>
+              {/* <p className="text-sm font-medium">{tech.name}</p> */}
             </motion.div>
           ))}
         </motion.div>
