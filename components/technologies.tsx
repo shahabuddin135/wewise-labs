@@ -5,23 +5,25 @@ import { motion, useInView } from "framer-motion"
 import Image from "next/image";
 
 const technologies = [
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981782/next-js-icon_j2iy7t.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749980923/Bold_Monogram_in_Black_and_White_hpyth8.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981064/pngwing.com_7_lmiwyx.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981302/ChatGPT_Image_Jun_15_2025_02_54_20_PM_dcftdj.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
-  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
+
+  { name: "React", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
+  { name: "Next.js", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/nextjs_qyiojg.png" },
+  { name: "TypeScript",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749254/typescript_kunqzl.png" },
+  { name: "Node.js",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
+  { name: "Tailwind CSS",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
+  { name: "MongoDB", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
+  { name: "PostgreSQL", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
+  { name: "MySQL",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
+  { name: "UI/UX", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749254/ui-ux_lyyhie.png" },
+  { name: "Prisma",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
+  { name: "Sanity", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
+  { name: "Express", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
+  { name: "Clerk",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
+  { name: "Firebase", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
+  { name: "Python",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/python_d9dgyi.png" },
+  { name: "Chatbot development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
+  { name: "AI Agent development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
+
 ]
 
 export function Technologies() {
@@ -68,8 +70,9 @@ export function Technologies() {
               }}
               className="flex flex-col items-center"
             >
-              <div className="">
-                <Image src={tech.icon} alt="" width={50} height={50} className="w-12 h-12 object-contain" />
+
+              <div className="bg-white p-4 rounded-full shadow-md mb-3 hover:transition-all">
+                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="w-12 h-12 object-contain" />
               </div>
               {/* <p className="text-sm font-medium">{tech.name}</p> */}
             </motion.div>
