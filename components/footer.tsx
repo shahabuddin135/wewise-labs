@@ -8,16 +8,16 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Link href="/" className="text-xl font-bold tracking-tighter mb-4 block">
+            <Link href="/" className="font-subheading font-bold text-xl font-bold tracking-tighter mb-4 block">
               Wewise Labs
             </Link>
-            <p className="text-gray-600 max-w-xs">
+            <p className="font-subheading text-gray-600 max-w-xs">
               We build exceptional SaaS applications and provide professional web development services.
             </p>
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Services</h3>
+            <h3 className="font-subheading font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {["SaaS Development", "Web Applications", "Frontend", "Backend", "Consultation"].map((item) => (
                 <li key={item}>
@@ -30,7 +30,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-medium mb-4">Company</h3>
+            <h3 className="font-subheading font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               {["About", "Process", "Contact", "Blog", "Careers"].map((item) => (
                 <li key={item}>

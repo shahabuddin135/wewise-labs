@@ -41,7 +41,7 @@ export function Navbar() {
       transition={{ duration: 0.5 }}
     >
       <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link href="/" className="text-xl font-bold tracking-tighter">
+        <Link href="/" className="font-heading text-xl font-bold tracking-tighter">
           Wewise Labs
         </Link>
 
@@ -51,7 +51,7 @@ export function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium hover:text-gray-600 transition-colors"
+              className="font-subheading text-sm font-medium hover:text-gray-600 transition-colors"
             >
               {item.name}
             </Link>
@@ -87,7 +87,7 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-lg font-medium py-2 border-b border-gray-100"
+                  className="font-subheading text-lg font-medium py-2 border-b border-gray-100"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}

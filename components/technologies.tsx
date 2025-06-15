@@ -5,6 +5,7 @@ import { motion, useInView } from "framer-motion"
 import Image from "next/image";
 
 const technologies = [
+
   { name: "React", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
   { name: "Next.js", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/nextjs_qyiojg.png" },
   { name: "TypeScript",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749254/typescript_kunqzl.png" },
@@ -22,6 +23,7 @@ const technologies = [
   { name: "Python",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/python_d9dgyi.png" },
   { name: "Chatbot development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
   { name: "AI Agent development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
+
 ]
 
 export function Technologies() {
@@ -68,10 +70,11 @@ export function Technologies() {
               }}
               className="flex flex-col items-center"
             >
+
               <div className="bg-white p-4 rounded-full shadow-md mb-3 hover:transition-all">
                 <Image src={tech.icon} alt={tech.name} width={50} height={50} className="w-12 h-12 object-contain" />
               </div>
-              <p className="text-sm font-medium">{tech.name}</p>
+              {/* <p className="text-sm font-medium">{tech.name}</p> */}
             </motion.div>
           ))}
         </motion.div>

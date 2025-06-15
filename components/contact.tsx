@@ -203,7 +203,7 @@ export function Contact() {
 
                 {/* Terminal Input */}
                 {currentField !== "submitted" ? (
-                  <form onSubmit={handleInputSubmit} className="bg-gray-800 p-2 flex items-center">
+                  <form onSubmit={handleInputSubmit} className="bg-gray-800 p-2 flex items-center" >
                     <span className="text-green-500 font-mono mr-2">
                       <ChevronRight className="h-4 w-4 inline" />
                     </span>
