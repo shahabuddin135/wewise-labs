@@ -43,8 +43,8 @@ export function Services() {
   return (
     <section id="services" className="py-20">
       <div className="mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
-        <p className="text-gray-600 max-w-2xl">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+        <p className="font-body font-semibold text-gray-600 max-w-2xl">
           We offer a comprehensive range of web development and SaaS services to help you build and scale your digital
           products.
         </p>
@@ -85,7 +85,7 @@ function ServiceItem({ service, index }: ServiceItemProps) {
       <div className={`flex ${isEven ? "flex-row" : "flex-row-reverse"} items-center max-w-2xl gap-8`}>
         <div className="bg-gray-100 p-6 rounded-full">{service.icon}</div>
         <div className={`text-${isEven ? "left" : "right"}`}>
-          <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
+          <h3 className="font-subheading fornt-semibold text-2xl font-bold mb-2">{service.title}</h3>
           <p className="text-gray-600">{service.description}</p>
         </div>
       </div>

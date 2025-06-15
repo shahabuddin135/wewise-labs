@@ -4,28 +4,34 @@ import { useState, useRef } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import Link from "next/link"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Portfolio Website",
     category: "Web Application",
-    description: "A full-featured e-commerce platform with inventory management, payment processing, and analytics.",
-    image: "",
-    tags: ["Next.js", "Node.js", "MongoDB", "Stripe"],
+    description: "A full-featured portfolio website, a state of art layout. Innovative and unique UI, designed by our senior developers",
+    imageUrl: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749943/techverse-w_ezypv8.png" ,
+    tags: ["Next.js", "Typescript", "Tailwind"],
+    projectLink: "https://www.techverse51.com"
   },
   {
-    title: "Healthcare Management System",
+    title: "Coloriqo",
     category: "SaaS Application",
-    description: "A comprehensive healthcare management system for clinics and hospitals.",
-    image: "",
-    tags: ["React", "Express", "PostgreSQL", "Docker"],
+    description: "AI powered SaaS Applocation that make easy to extract colors and generate pallettes.",
+    imageUrl: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749476/coloriqo-w_bl1lwx.png",
+    tags: ["Next.js", "Typescript", "Tailwind", "PostgreSQL", "API Integration" ],
+    projectLink: "https://coloriqo-kohl.vercel.app"
   },
   {
-    title: "Real Estate Marketplace",
-    category: "Web Application",
-    description: "A platform connecting property buyers, sellers, and agents with advanced search capabilities.",
-    image: "",
-    tags: ["Next.js", "TypeScript", "GraphQL", "AWS"],
+    title: "Certificate Builder",
+    category: "SaaS Application",
+    description: "A fully customizable SaaS application. Generate unlimited certificates on a single click and make the task hassle free.",
+    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png",
+    tags: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
+    link: ""
+
   },
 ]
 
@@ -52,8 +58,8 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Projects</h2>
-          <p className="text-gray-600 max-w-2xl">
+          <h2 className="font-heading font-bold text-3xl md:text-5xl mb-4">Our Projects</h2>
+          <p className="font-body font-semibold text-lg text-gray-600 max-w-2xl">
             Take a look at some of our recent work that showcases our expertise and capabilities.
           </p>
         </motion.div>
@@ -66,34 +72,37 @@ export function Projects() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
-              className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center"
+              className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3 items-center"
             >
               <div className="order-2 md:order-1">
-                <span className="text-sm text-gray-500 mb-2 block">{projects[activeIndex].category}</span>
-                <h3 className="text-2xl md:text-3xl font-bold mb-4">{projects[activeIndex].title}</h3>
-                <p className="text-gray-600 mb-6">{projects[activeIndex].description}</p>
+                <span className="font-subheading text-lg sm:text-xl text-gray-500 mb-2 block">{projects[activeIndex].category}</span>
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{projects[activeIndex].title}</h2>
+                <p className="text-lg text-gray-600 text-wrap mb-6">{projects[activeIndex].description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {projects[activeIndex].tags.map((tag, index) => (
-                    <span key={index} className="bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    <span key={index} className="font-body font-semibold bg-gray-100 px-3 py-1 rounded-full text-sm">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <Button className="rounded-full bg-black text-white hover:bg-gray-800 px-6">
-                  View Project
+                <Button className="font-subheading tracking-wider rounded-full bg-black text-white hover:bg-gray-800 px-6">
+                  <Link href = {projects[activeIndex].projectLink || "https://www.techverse51.com"}>View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
 
               <div className="order-1 md:order-2 relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-lg">
-                  <img
-                    src={projects[activeIndex].image || "/placeholder.svg"}
+                  <Image
+                    src={projects[activeIndex].imageUrl || "/placeholder.svg"}
                     alt={projects[activeIndex].title}
+                    width={700}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
+                
                 </div>
               </div>
             </motion.div>
