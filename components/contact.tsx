@@ -430,6 +430,7 @@ export function Contact() {
                 </div>
 
                 {/* Terminal Input */}
+
                 {currentField !== "submitting" ? (
                   <form
                     onSubmit={
@@ -443,6 +444,7 @@ export function Contact() {
                       ) : (
                         <ChevronRight className="h-3 w-3 md:h-4 md:w-4 inline" />
                       )}
+
                     </span>
                     <input
                       type={getCurrentInputType()}
