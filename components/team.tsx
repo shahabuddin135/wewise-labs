@@ -73,13 +73,15 @@ export function Team() {
         >
           {team.map((member, index) => (
             <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 1} },
-              }}
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:border hover:border-black hover:shadow-black hover:shadow-md hover:transition hover:delay-50 hover:duration-300 "
-            >
+            key={index}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 1 } },
+            }}
+            whileHover={{ scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            className="bg-white rounded-xl border border-gray-400 transform-gpu transition-shadow duration-300 ease-in-out hover:shadow-[-7px_7px_0_7px_black]"
+          >
               <div className="p-6 ">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
                 <p className="text-gray-500 text-sm mb-3">{member.role}</p>
