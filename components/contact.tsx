@@ -1,11 +1,10 @@
 "use client"
-
 import type React from "react"
-
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ChevronRight, Minimize2, Maximize2, ExternalLink } from "lucide-react"
+import Link from "next/link"
 
 type FormField = "name" | "email" | "email-confirm" | "message" | "submitting" | "submitted" | "error"
 
@@ -29,7 +28,7 @@ export function Contact() {
   const [isMinimized, setIsMinimized] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
   const [submissionError, setSubmissionError] = useState<string | null>(null)
-  const [referenceNumber, setReferenceNumber] = useState<string>("")
+  
   const terminalRef = useRef<HTMLDivElement>(null)
 
   // Use the environment variable
@@ -126,14 +125,7 @@ export function Contact() {
         })
         return
       }
-      // Basic email validation
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-      if (!emailRegex.test(formState.email)) {
-        simulateTyping(() => {
-          addToHistory("error", "Please enter a valid email address:")
-        })
-        return
-      }
+      
       addToHistory("user", formState.email)
       simulateTyping(() => {
         addToHistory("system", `Email entered: ${formState.email}`)
@@ -183,11 +175,8 @@ export function Contact() {
         const result = await submitToFormspree(formState)
 
         if (result.success) {
-          const refNum = `WL${Date.now().toString().slice(-6)}`
-          setReferenceNumber(refNum)
           addToHistory("success", "✓ Message sent successfully!")
-          addToHistory("success", `Reference number: ${refNum}`)
-          addToHistory("system", "We'll get back to you within 24 hours.")
+          addToHistory("system", "We'll get back to you within 48 hours.")
           addToHistory("system", "Type 'reset' to send another message or 'exit' to close.")
           setCurrentField("submitted")
         } else {
@@ -196,7 +185,7 @@ export function Contact() {
           addToHistory("error", result.error || "Unknown error occurred")
           addToHistory("system", "You can:")
           addToHistory("system", "• Type 'retry' to try again")
-          addToHistory("system", "• Type 'email' to get our direct email")
+          addToHistory("system", "• Type 'contact' to get our direct email")
           addToHistory("system", "• Type 'reset' to start over")
           setCurrentField("error")
         }
@@ -214,7 +203,6 @@ export function Contact() {
       simulateTyping(() => {
         setFormState({ name: "", email: "", message: "" })
         setSubmissionError(null)
-        setReferenceNumber("")
         setTerminalHistory([
           { type: "system", content: "Terminal reset. Please enter your information to get in touch." },
           { type: "system", content: "Enter your name:" },
@@ -231,12 +219,13 @@ export function Contact() {
         addToHistory("system", "Available commands:")
         if (currentField === "error") {
           addToHistory("system", "  retry - Try submitting again")
-          addToHistory("system", "  email - Get our direct email address")
+          addToHistory("system", "  contact - Get our direct email address")
         }
         addToHistory("system", "  reset - Start a new message")
         addToHistory("system", "  exit - Close the terminal")
         addToHistory("system", "  help - Show available commands")
         addToHistory("system", "  debug - Show debug information")
+        addToHistory("system", "  contact - Get our direct email address")
       })
     } else if (command === "debug") {
       simulateTyping(() => {
@@ -259,10 +248,7 @@ export function Contact() {
         const result = await submitToFormspree(formState)
 
         if (result.success) {
-          const refNum = `WL${Date.now().toString().slice(-6)}`
-          setReferenceNumber(refNum)
           addToHistory("success", "✓ Message sent successfully!")
-          addToHistory("success", `Reference number: ${refNum}`)
           addToHistory("system", "We'll get back to you within 24 hours.")
           addToHistory("system", "Type 'reset' to send another message or 'exit' to close.")
           setCurrentField("submitted")
@@ -270,20 +256,14 @@ export function Contact() {
         } else {
           addToHistory("error", "✗ Still unable to send message")
           addToHistory("error", result.error || "Please try again later")
-          addToHistory("system", "Type 'email' to get our direct contact information")
+          addToHistory("system", "Type 'contact' to get our direct contact information")
         }
       }, 1500)
-    } else if (command === "email") {
+    } else if (command === "contact") {
       simulateTyping(() => {
         addToHistory("system", "Direct contact information:")
-        addToHistory("system", "📧 Email: hello@wewise-labs.com")
-        addToHistory("system", "📞 Phone: +1 (555) 123-4567")
-        addToHistory("system", "🌐 Website: https://wewise-labs.com")
-        addToHistory("system", "")
-        addToHistory("system", "You can copy your message and send it directly:")
-        addToHistory("system", `Name: ${formState.name}`)
-        addToHistory("system", `Email: ${formState.email}`)
-        addToHistory("system", `Message: ${formState.message}`)
+        addToHistory("system", "🌐 Website: https://wewiselabs@gmail.com")
+        
       })
     } else {
       simulateTyping(() => {
@@ -487,30 +467,11 @@ export function Contact() {
         <div className="mt-4 md:mt-6 text-center text-xs md:text-sm text-gray-500">
           <p className="mb-2">
             Prefer traditional contact? Email us at{" "}
-            <a href="mailto:hello@wewise-labs.com" className="text-black underline">
-              hello@wewise-labs.com
-            </a>
+            <Link href="mailto:wewiselabs@gmail.com" className="text-black underline">
+            wewiselabs@gmail.com
+            </Link>
           </p>
-          {referenceNumber && (
-            <p className="text-green-600 font-mono">
-              Your reference number: <span className="font-bold">{referenceNumber}</span>
-            </p>
-          )}
-          {!FORMSPREE_ENDPOINT && (
-            <p className="mt-2 text-yellow-600 text-xs">
-              ⚠️ Form submission requires Formspree configuration. Please use direct email for now.
-            </p>
-          )}
-          <p className="mt-2 text-xs">
-            <a
-              href="https://formspree.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-400 hover:text-gray-600 inline-flex items-center"
-            >
-              Powered by Formspree <ExternalLink className="ml-1 h-3 w-3" />
-            </a>
-          </p>
+          
         </div>
       </div>
     </section>
