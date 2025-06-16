@@ -1,8 +1,7 @@
 "use client"
 
-import { useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import Image from "next/image";
+import { cn } from "@/lib/utils";
+import { Marquee } from "../components/magicui/marquee";
 
 const technologies = [
   { name: "React", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
@@ -25,57 +24,68 @@ const technologies = [
 ]
 
 export function Technologies() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
-
-  return (
-    <section id="technologies" className="py-24 px-4 md:px-8 bg-gray-50">
+  return(
+    <section className="py-10 px-4 md:px-8 bg-gray-50 flex items-center mx-auto">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Tech Stack</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             We use cutting-edge technologies to build modern, scalable, and high-performance applications.
           </p>
-        </motion.div>
-
-        <motion.div
-          ref={ref}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8"
-          initial="hidden"
-          animate={isInView ? "visible" : "hidden"}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.05,
-              },
-            },
-          }}
-        >
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-              }}
-              className="flex flex-col items-center"
-            >
-              <div className="bg-white p-4 rounded-full shadow-md mb-3 hover:transition-all">
-                <Image src={tech.icon} alt={tech.name} width={50} height={50} className="w-12 h-12 object-contain" />
-              </div>
-              {/* <p className="text-sm font-medium">{tech.name}</p> */}
-            </motion.div>
-          ))}
-        </motion.div>
-      </div>
-    </section>
+          </div>
+          <div>
+        <MarqueeDemoVertical/>
+          </div>
+          </section>
   )
 }
+
+const TechnologyCard: React.FC<{
+  icon: string;
+  name: string;
+}> = ({
+  icon,
+  name,
+}) => {
+  return (
+
+    <div
+      className={cn(
+        "relative w-fit sm:w-36 cursor-pointer overflow-hidden rounded-xl border p-2 flex flex-col items-center justify-center text-center",
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
+        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
+      )}
+    >
+      <img src={icon} alt={name} width={48} height={48} className="mb-2" />
+      <p className="text-sm font-medium dark:text-white">{name}</p>
+</div>
+  );
+};
+
+export function MarqueeDemoVertical() {
+  const firstColumn = technologies.slice(0, Math.ceil(technologies.length / 3));
+  const secondColumn = technologies.slice(Math.ceil(technologies.length / 3));
+  const thirdColumn = technologies.slice(0, Math.ceil(technologies.length / 3));
+
+  return (
+    <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-4">
+      <Marquee pauseOnHover vertical className="[--duration:20s]">
+        {firstColumn.map((tech) => (
+          <TechnologyCard key={tech.name} {...tech} />
+        ))}
+      </Marquee>
+      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
+        {secondColumn.map((tech) => (
+          <TechnologyCard key={tech.name} {...tech} />
+        ))}
+      </Marquee>
+      <Marquee pauseOnHover vertical className="[--duration:20s]">
+        {thirdColumn.map((tech) => (
+          <TechnologyCard key={tech.name} {...tech} />
+        ))}
+      </Marquee>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
+    </div>
+  );
+}
+
