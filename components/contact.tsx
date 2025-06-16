@@ -35,12 +35,12 @@ export function Contact() {
   const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_URL
 
   // Auto-scroll to bottom of terminal
-  useEffect(() => {
+    useEffect(() => {
     if (terminalRef.current) {
       terminalRef.current.scrollTop = terminalRef.current.scrollHeight
     }
   }, [terminalHistory])
-
+  
   const addToHistory = (type: string, content: string) => {
     setTerminalHistory((prev) => [...prev, { type, content }])
   }
@@ -58,7 +58,7 @@ export function Contact() {
     if (!FORMSPREE_ENDPOINT || FORMSPREE_ENDPOINT.includes("YOUR_FORM_ID")) {
       return {
         success: false,
-        error: "Formspree endpoint not configured. Please contact us directly at hello@wewise-labs.com",
+        error: "Formspree endpoint not configured. Please contact us directly at hello@wewiselabs.com",
       }
     }
 
@@ -179,6 +179,7 @@ export function Contact() {
           addToHistory("system", "We'll get back to you within 48 hours.")
           addToHistory("system", "Type 'reset' to send another message or 'exit' to close.")
           setCurrentField("submitted")
+          setFormState({ ...formState, message: "" })
         } else {
           setSubmissionError(result.error || "Unknown error occurred")
           addToHistory("error", "✗ Failed to send message")
@@ -204,7 +205,7 @@ export function Contact() {
         setFormState({ name: "", email: "", message: "" })
         setSubmissionError(null)
         setTerminalHistory([
-          { type: "system", content: "Terminal reset. Please enter your information to get in touch." },
+          { type: "system", content: "Welcome to Wewise Labs Terminal. Please enter your information to get in touch." },
           { type: "system", content: "Enter your name:" },
         ])
         setCurrentField("name")
@@ -433,16 +434,13 @@ export function Contact() {
                       onChange={handleInputChange}
                       className="bg-transparent text-white font-mono flex-grow focus:outline-none text-xs md:text-sm"
                       placeholder={getCurrentPlaceholder()}
-                      autoFocus
                       required={currentField !== "submitted" && currentField !== "error"}
-                      //disabled={currentField === "submitting"}
                     />
                     <Button
                       type="submit"
                       variant="ghost"
                       size="sm"
                       className="text-green-500 hover:text-green-400 hover:bg-gray-700 text-xs md:text-sm px-2 md:px-3"
-                     // disabled={currentField === "submitting"}
                     >
                       Enter
                     </Button>

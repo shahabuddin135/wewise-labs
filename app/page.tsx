@@ -1,4 +1,3 @@
-import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
@@ -10,11 +9,12 @@ import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
+import {NavbarDemo} from "@/components/navbar-resize"
 
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
-      <Navbar />
+      <NavbarDemo/>
       <Hero />
 
       <HorizontalScrollText text="INNOVATIVE SOLUTIONS" direction="left" />
