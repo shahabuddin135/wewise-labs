@@ -8,7 +8,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2">
-            <Link href="/" className="font-subheading font-bold text-xl font-bold tracking-tighter mb-4 block">
+            <Link href="/" className="font-subheading text-xl font-bold tracking-tighter mb-4 block">
               Wewise Labs
             </Link>
             <p className="font-subheading text-gray-600 max-w-xs">

@@ -39,7 +39,7 @@ export function Process() {
   return (
     <section id="process" className="py-20">
       <div className="mb-16">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
+        <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Our Process</h2>
         <p className="font-body font-semibold text-gray-600 max-w-2xl">
           We follow a structured approach to deliver high-quality solutions that meet your business needs.
         </p>
@@ -57,7 +57,7 @@ export function Process() {
           >
             <div className="text-5xl font-bold text-gray-100 absolute -top-14 -left-2 z-0">{step.number}</div>
             <div className="relative z-10">
-              <h3 className="font-subheading font-bold  text-xl sm:text-2xl md:text-3xl font-bold mb-2">{step.title}</h3>
+              <h3 className="font-subheading text-xl sm:text-2xl md:text-3xl font-bold mb-2">{step.title}</h3>
               <p className="text-gray-600">{step.description}</p>
             </div>
           </motion.div>

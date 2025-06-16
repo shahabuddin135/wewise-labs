@@ -51,7 +51,7 @@ export function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
+          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
           <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
             We combine technical expertise with a deep understanding of business needs to deliver exceptional results.
           </p>
@@ -83,7 +83,7 @@ export function WhyChooseUs() {
             >
               <div className="bg-gray-100 p-3 rounded-full mr-4 mt-1">{reason.icon}</div>
               <div>
-                <h3 className="font-subheading font-bold text-xl sm:text-2xl md:text-3xl font-bold mb-2">{reason.title}</h3>
+                <h3 className="font-subheading text-xl sm:text-2xl md:text-3xl font-bold mb-2">{reason.title}</h3>
                 <p className="text-gray-600">{reason.description}</p>
               </div>
             </motion.div>

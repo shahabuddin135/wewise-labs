@@ -43,7 +43,7 @@ export function Services() {
   return (
     <section id="services" className="py-20">
       <div className="mb-16">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Services</h2>
+        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">Our Services</h2>
         <p className="font-body font-semibold text-gray-600 max-w-2xl">
           We offer a comprehensive range of web development and SaaS services to help you build and scale your digital
           products.
