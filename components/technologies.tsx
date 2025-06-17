@@ -2,33 +2,34 @@
 
 import { cn } from "@/lib/utils";
 import { Marquee } from "../components/magicui/marquee";
+import Image from "next/image";
 
 const technologies = [
-  { name: "React", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
-  { name: "Next.js", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981782/next-js-icon_j2iy7t.png" },
-  { name: "TypeScript",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749980923/Bold_Monogram_in_Black_and_White_hpyth8.png" },
-  { name: "Node.js",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
-  { name: "Tailwind CSS",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
-  { name: "MongoDB", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
-  { name: "PostgreSQL", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
-  { name: "MySQL",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
-  { name: "UI/UX", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981064/pngwing.com_7_lmiwyx.png" },
-  { name: "Prisma",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
-  { name: "Sanity", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
-  { name: "Express", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
-  { name: "Clerk",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
-  { name: "Firebase", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
-  { name: "Python",  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981302/ChatGPT_Image_Jun_15_2025_02_54_20_PM_dcftdj.png" },
-  { name: "Chatbot development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
-  { name: "AI Agent development", icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/react_i9fxfq.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981782/next-js-icon_j2iy7t.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749980923/Bold_Monogram_in_Black_and_White_hpyth8.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/Nodejs_fw9sf3.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749253/tailwind_fclik0.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/mongo_lrirdi.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/postgresql_pfyyxz.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/sql_t1dvgu.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981064/pngwing.com_7_lmiwyx.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749750077/pngwing.com_6_uzfjro.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749251/sanity_tgulgp.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749252/express_tmyzqt.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749250/clerk_u99cgo.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/firebase_javqen.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749981302/ChatGPT_Image_Jun_15_2025_02_54_20_PM_dcftdj.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/chatbot_wmenlo.png" },
+  {  icon: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749754807/agent_ygyuin.png" },
 ]
 
 export function Technologies() {
   return(
-    <section className="py-10 px-4 md:px-8 bg-gray-50 flex items-center mx-auto">
+    <section className="py-10 px-4 md:px-8 bg-gray-50 w-full items-center mx-auto">
       <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Tech Stack</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4">Our Tech Stack</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
             We use cutting-edge technologies to build modern, scalable, and high-performance applications.
           </p>
           </div>
@@ -41,22 +42,20 @@ export function Technologies() {
 
 const TechnologyCard: React.FC<{
   icon: string;
-  name: string;
 }> = ({
-  icon,
-  name,
+  icon
 }) => {
   return (
 
     <div
       className={cn(
-        "relative w-fit sm:w-36 cursor-pointer overflow-hidden rounded-xl border p-2 flex flex-col items-center justify-center text-center",
+        "relative h-[80px] sm:w-36 cursor-pointer overflow-hidden rounded-xl border p-2 flex flex-col items-center justify-center text-center",
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}
     >
-      <img src={icon} alt={name} width={48} height={48} className="mb-2" />
-      <p className="text-sm font-medium dark:text-white">{name}</p>
+      <Image src={icon} alt={icon} width={50} height={50} className="mb-2 object-cover" />
+      {/* <p className="text-sm font-medium dark:text-white">{name}</p> */}
 </div>
   );
 };
@@ -70,17 +69,17 @@ export function MarqueeDemoVertical() {
     <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-4">
       <Marquee pauseOnHover vertical className="[--duration:20s]">
         {firstColumn.map((tech) => (
-          <TechnologyCard key={tech.name} {...tech} />
+          <TechnologyCard key={tech.icon} {...tech} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
         {secondColumn.map((tech) => (
-          <TechnologyCard key={tech.name} {...tech} />
+          <TechnologyCard key={tech.icon} {...tech} />
         ))}
       </Marquee>
       <Marquee pauseOnHover vertical className="[--duration:20s]">
         {thirdColumn.map((tech) => (
-          <TechnologyCard key={tech.name} {...tech} />
+          <TechnologyCard key={tech.icon} {...tech} />
         ))}
       </Marquee>
       <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>

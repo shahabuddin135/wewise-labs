@@ -13,35 +13,30 @@ import { Testimonials } from "@/components/testimonials"
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col px-4 md:px-8 max-w-7xl mx-auto w-full">
       <Navbar />
       <Hero />
 
       <HorizontalScrollText text="INNOVATIVE SOLUTIONS" direction="left" />
 
-      <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
         <Services />
-      </div>
 
       <WhyChooseUs />
 
       <HorizontalScrollText text="EXPERT DEVELOPMENT" direction="right" />
 
-      <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
         <Process />
-      </div>
 
       <Technologies />
 
+      
       <Projects />
 
       <Testimonials />
 
       <Team />
 
-      <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
         <Contact />
-      </div>
 
       <Footer />
     </main>

@@ -40,7 +40,7 @@ export function Contact() {
     e.preventDefault()
 
     // Add user input to terminal history
-    setTerminalHistory([...terminalHistory, { type: "user", content: formState[currentField] }])
+    // setTerminalHistory([...terminalHistory, { type: "user", content: formState[currentField] }])
 
     // Set typing indicator
     setIsTyping(true)
