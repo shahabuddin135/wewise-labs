@@ -34,6 +34,7 @@ export function Technologies() {
           <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
             We use cutting-edge technologies to build modern, scalable, and high-performance applications.
           </p>
+
           </div>
           <div>
         <MarqueeDemoVertical/>
@@ -48,7 +49,6 @@ const TechnologyCard: React.FC<{
   icon
 }) => {
   return (
-
     <div
       className={cn(
         "relative h-[80px] sm:w-36 cursor-pointer overflow-hidden rounded-xl border p-2 flex flex-col items-center justify-center text-center",
