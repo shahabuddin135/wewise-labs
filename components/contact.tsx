@@ -136,6 +136,7 @@ export function Contact() {
       const confirmation = formState.message.toLowerCase().trim()
       addToHistory("user", confirmation)
 
+
       if (confirmation === "yes" || confirmation === "y") {
         simulateTyping(() => {
           addToHistory("system", "Great! Now please enter your message:")

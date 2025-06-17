@@ -34,14 +34,13 @@ export default function Home() {
 
   return (
     <div id="smooth-wrapper">
-        <main id="smooth-content" className="min-h-screen flex flex-col">
+    <main id="smooth-content"  className="min-h-screen flex flex-col px-4 md:px-8 max-w-7xl mx-auto w-full">
           <NavbarDemo/>
           <Hero />
 
           <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 my-5 py-5">INNOVATIVE SOLUTIONS</VelocityScroll>
-          <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-            <Services />
-          </div>
+
+          <Services />
 
           <WhyChooseUs />
 
@@ -49,9 +48,7 @@ export default function Home() {
             <AnimatedHorizontalScroll />
           </section>
 
-          <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-            <Process />
-          </div>
+          <Process />
 
           <Technologies />
 
@@ -61,9 +58,7 @@ export default function Home() {
 
           <Team />
 
-          <div className="px-4 md:px-8 max-w-7xl mx-auto w-full">
-            <Contact />
-          </div>
+          <Contact />
 
           <Footer />
         </main>

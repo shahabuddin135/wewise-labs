@@ -51,9 +51,8 @@ export function WhyChooseUs() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Why Choose Us</h2>
-          <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
-            We combine technical expertise with a deep understanding of business needs to deliver exceptional results.
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4">Why Choose Us</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">            We combine technical expertise with a deep understanding of business needs to deliver exceptional results.
           </p>
         </motion.div>
 

@@ -10,21 +10,21 @@ const testimonials = [
       "Wewise Labs transformed our business with a custom SaaS solution that streamlined our operations and improved customer satisfaction.",
     author: "Emily Chen",
     position: "CEO, TechStart Inc.",
-    image: "/placeholder.svg?height=100&width=100",
+    // image: "/placeholder.svg?height=100&width=100",
   },
   {
     quote:
       "The team at Wewise Labs delivered our project on time and exceeded our expectations. Their attention to detail and technical expertise is unmatched.",
     author: "David Wilson",
     position: "CTO, GrowthMetrics",
-    image: "/placeholder.svg?height=100&width=100",
+    // image: "/placeholder.svg?height=100&width=100",
   },
   {
     quote:
       "Working with Wewise Labs was a game-changer for our startup. They understood our vision and brought it to life with a beautiful, functional web application.",
     author: "Sarah Johnson",
     position: "Founder, EcoSolutions",
-    image: "/placeholder.svg?height=100&width=100",
+    // image: "/placeholder.svg?height=100&width=100",
   },
 ]
 
@@ -70,8 +70,8 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
-          <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4">What Our Clients Say</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
             Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>
         </motion.div>
@@ -93,13 +93,13 @@ export function Testimonials() {
               <p className="text-xl md:text-2xl mb-8 text-gray-700 italic">"{testimonials[activeIndex].quote}"</p>
 
               <div className="flex flex-col items-center">
-                <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
+                {/* <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
                   <img
                     src={testimonials[activeIndex].image || "/placeholder.svg"}
                     alt={testimonials[activeIndex].author}
                     className="w-full h-full object-cover"
                   />
-                </div>
+                </div> */}
                 <h4 className="font-bold text-lg">{testimonials[activeIndex].author}</h4>
                 <p className="text-gray-500">{testimonials[activeIndex].position}</p>
               </div>
