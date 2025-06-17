@@ -87,10 +87,10 @@ export function Team() {
                 <div className="flex space-x-3 ">
                   <Link href={member.linkedin} target="blank" className="text-gray-400">
 
-                    <Image src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/linkedIn_qwcwfs.png" alt="linked-in icon" className="h-5 w-5" />
+                    <Image src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/linkedIn_qwcwfs.png" alt="linked-in icon" className="h-5 w-5" width ={200} height={200} />
                   </Link>
                   <Link href={member.github} target="blank" className="text-gray-400">
-                  <Image src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749248/github_nqa1zy.png" alt="github-icon" className="h-6 w-6" />
+                  <Image src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749248/github_nqa1zy.png" alt="github-icon" className="h-6 w-6"  width ={200} height={200} />
 
                   </Link>
                 </div>
