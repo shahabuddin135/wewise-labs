@@ -13,6 +13,7 @@ import {
 import { useState } from "react";
 
 import Link from "next/link";
+import { ModeToggle } from "./ui/theme-button";
 
 export function NavbarDemo() {
   const navItems = [
@@ -33,7 +34,8 @@ export function NavbarDemo() {
         <NavBody>
         <NavbarLogo />
         <NavItems items={navItems} />
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 z-10">
+            <ModeToggle/>
             <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
         </NavBody>
@@ -43,10 +45,13 @@ export function NavbarDemo() {
           <MobileNavHeader>
             
             <NavbarLogo />
+            <div className="flex items-center justify-center gap-5">
+            <ModeToggle/>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            />
+              />
+            </div>
           </MobileNavHeader>
 
           <MobileNavMenu
@@ -64,7 +69,6 @@ export function NavbarDemo() {
               </Link>
             ))}
             <div className="flex w-full flex-col gap-4">
-              
               <NavbarButton
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"

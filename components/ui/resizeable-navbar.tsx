@@ -254,18 +254,22 @@ export const NavbarLogo = () => {
   return (
    <Link
           href="#"
-          className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
+          className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal"
         >
-          <Image
-            src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749757890/wewise-labs-logo_pfpin6.png"
-            alt="logo"
-            width={60}
-            height={60}
-          />
-          
+          <svg 
+            width="60" 
+            height="60" 
+            viewBox="0 0 180 128" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            className="transition-colors duration-200"
+          >
+            <path d="M78.6259 38.832C73.1355 30.0558 79.9798 19.0256 90.9159 19.0256V19.0256C95.9638 19.0256 100.622 21.5226 103.145 25.5801L143.724 90.8642C145.832 94.2543 146.186 98.3492 144.69 102.018V102.018C140.494 112.31 125.342 113.504 119.402 104.01L78.6259 38.832Z" className="fill-black dark:fill-white"/>
+            <path d="M34.6428 42.8981C27.6461 32.2271 35.8741 18.6466 49.2631 18.7671V18.7671C55.3185 18.8216 60.9183 21.8481 63.989 26.726L103.195 89.0068C106.026 93.5035 106.218 99.0116 103.705 103.629V103.629C97.9155 114.268 81.7676 114.769 75.0466 104.519L34.6428 42.8981Z" className="fill-black dark:fill-white"/>
+            <path d="M160.053 69.3467C161.229 66.3076 160.897 62.9169 159.148 60.0817L137.86 25.5824C135.668 22.0288 131.606 19.8274 127.243 19.8274V19.8274C117.98 19.8274 112.348 29.176 117.096 36.671L138.808 70.9438C143.918 79.0109 156.686 78.0511 160.053 69.3467V69.3467Z" className="fill-black dark:fill-white"/>
+            <path d="M163.801 32.4324C166.824 32.4067 169.63 33.7805 171.302 36.1052L171.971 37.0345C173.82 39.6042 174.018 42.9461 172.49 45.7714V45.7714C169.105 52.0318 159.729 52.3625 156.178 46.3466L155.599 45.3649C152.226 39.6513 156.767 32.4922 163.801 32.4324V32.4324Z" className="fill-black dark:fill-white"/>
+          </svg>
         </Link>
-      
-    
   );
 };
 
