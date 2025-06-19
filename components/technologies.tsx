@@ -1,8 +1,6 @@
 "use client"
 
-import { cn } from "@/lib/utils";
-import { Marquee } from "../components/magicui/marquee";
-import Image from "next/image";
+import { IconCloudDemo } from "./icon-cloud";
 
 const technologies = [
 
@@ -29,64 +27,17 @@ const technologies = [
 export function Technologies() {
   return(
     <section className="py-10 px-4 md:px-8 bg-gray-50 w-full items-center mx-auto">
-      <div className="max-w-7xl mx-auto">
+        
+         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4">Our Tech Stack</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
             We use cutting-edge technologies to build modern, scalable, and high-performance applications.
           </p>
-
-          </div>
-          <div>
-        <MarqueeDemoVertical/>
-          </div>
-          </section>
+        </div>
+      
+       <div className=" w-[800px] mx-auto">
+          <IconCloudDemo />
+        </div>
+    </section>
   )
 }
-
-const TechnologyCard: React.FC<{
-  icon: string;
-}> = ({
-  icon
-}) => {
-  return (
-    <div
-      className={cn(
-        "relative h-[80px] sm:w-36 cursor-pointer overflow-hidden rounded-xl border p-2 flex flex-col items-center justify-center text-center",
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
-        "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
-      )}
-    >
-      <Image src={icon} alt={icon} width={50} height={50} className="mb-2 object-cover" />
-      {/* <p className="text-sm font-medium dark:text-white">{name}</p> */}
-</div>
-  );
-};
-
-export function MarqueeDemoVertical() {
-  const firstColumn = technologies.slice(0, Math.ceil(technologies.length / 3));
-  const secondColumn = technologies.slice(Math.ceil(technologies.length / 3));
-  const thirdColumn = technologies.slice(0, Math.ceil(technologies.length / 3));
-
-  return (
-    <div className="relative flex h-[500px] w-full flex-row items-center justify-center overflow-hidden gap-4">
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
-        {firstColumn.map((tech) => (
-          <TechnologyCard key={tech.icon} {...tech} />
-        ))}
-      </Marquee>
-      <Marquee reverse pauseOnHover vertical className="[--duration:20s]">
-        {secondColumn.map((tech) => (
-          <TechnologyCard key={tech.icon} {...tech} />
-        ))}
-      </Marquee>
-      <Marquee pauseOnHover vertical className="[--duration:20s]">
-        {thirdColumn.map((tech) => (
-          <TechnologyCard key={tech.icon} {...tech} />
-        ))}
-      </Marquee>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background"></div>
-    </div>
-  );
-}
-
