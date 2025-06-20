@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/navbar"
-import { Hero } from "@/components/hero"
+import  Hero  from "@/components/hero"
+
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
@@ -15,7 +16,8 @@ export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">
       <Navbar />
-      <Hero />
+      <Hero/>
+      
 
       <HorizontalScrollText text="INNOVATIVE SOLUTIONS" direction="left" />
 
