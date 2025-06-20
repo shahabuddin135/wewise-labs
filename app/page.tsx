@@ -17,8 +17,10 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
+import { useSmoothScroll } from "@/lib/smooth-scroll"
 
 export default function Home() {
+  useSmoothScroll()
   useEffect(() => {
     // Register required plugins
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
