@@ -20,9 +20,11 @@ const config = {
     },
     extend: {
       fontFamily: {
+        
         heading: ["var(--font-heading)", "sans-serif"],
         subheading: ["var(--font-subheading)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
+        arizonia: ["var(--font-arizonia)"]
        
       },
       colors: {

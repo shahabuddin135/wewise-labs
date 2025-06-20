@@ -1,6 +1,6 @@
 "use client"
 
-import { Hero } from "@/components/hero"
+import  Hero  from "@/components/hero"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
@@ -34,6 +34,7 @@ export default function Home() {
   }, [])
 
   return (
+
     <div id="smooth-wrapper">
         <main id="smooth-content" className="min-h-screen flex flex-col">
           

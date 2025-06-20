@@ -1,9 +1,11 @@
 import type React from "react"
 import type { Metadata } from "next"
-import {Archivo, Nunito_Sans, PT_Sans_Caption } from "next/font/google"
+import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico, Arizonia} from "next/font/google"
 import "./globals.css"
+
 import { ThemeProvider } from "@/components/theme-provider"
 import { NavbarDemo } from "@/components/navbar-resize"
+
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ["latin"],
@@ -23,6 +25,18 @@ const nunito = Nunito_Sans({
   weight:["300"]
 })
 
+const ubuntu = Ubuntu({
+  subsets:["latin"],
+  variable: "--font-heading",
+  weight:["500", "700"]
+})
+
+const arizonia = Arizonia({
+  subsets:["latin"],
+  variable: "--font-arizonia",
+  weight:["400"]
+})
+
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
@@ -36,7 +50,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} font-sans bg-white text-black antialiased`}>
+      <body className={`${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         <NavbarDemo/>
           {children}
