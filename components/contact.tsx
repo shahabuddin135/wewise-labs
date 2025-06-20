@@ -3,7 +3,7 @@ import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ChevronRight, Minimize2, Maximize2, ExternalLink } from "lucide-react"
+import { ChevronRight, Minimize2, Maximize2} from "lucide-react"
 import Link from "next/link"
 
 type FormField = "name" | "email" | "email-confirm" | "message" | "submitting" | "submitted" | "error"

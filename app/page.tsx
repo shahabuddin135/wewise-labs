@@ -10,7 +10,6 @@ import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
-import { NavbarDemo } from "@/components/navbar-resize"
 import AnimatedHorizontalScroll from "@/components/animated-horizontal-scroll"
 import { useEffect } from "react"
 import gsap from "gsap"
@@ -36,8 +35,8 @@ export default function Home() {
 
   return (
     <div id="smooth-wrapper">
-    <main id="smooth-content"  className="min-h-screen flex flex-col px-4 md:px-8 max-w-7xl mx-auto w-full">
-          <NavbarDemo/>
+        <main id="smooth-content" className="min-h-screen flex flex-col">
+          
           <Hero />
 
           <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 my-5 py-5">INNOVATIVE SOLUTIONS</VelocityScroll>
