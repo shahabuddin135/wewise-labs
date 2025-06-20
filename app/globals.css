@@ -27,6 +27,7 @@
   }
   .theme {
     --animate-shine: shine var(--duration) infinite linear;
+
   }
 }
 
@@ -61,7 +62,6 @@
   .font-arizonia{
     font-family: var(--font-arizonia);
   }
-
 }
 
 /* Terminal styling */
@@ -131,4 +131,23 @@
     background-position: 0% 0%;
     }
   }
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d3748; /* Dark gray for the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a5568; /* Slightly lighter gray for the thumb */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0; /* Lighter gray on hover */
+
 }

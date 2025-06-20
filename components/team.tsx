@@ -2,41 +2,48 @@
 
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Github, Linkedin, Twitter } from "lucide-react"
+import Link from "next/link"
+import Image from "next/image"
+import { useTheme } from "next-themes"
 
 const team = [
   {
-    name: "Alex Johnson",
-    role: "Founder & CEO",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "10+ years of experience in web development and SaaS product management.",
+    name: "Darakhshan Imran",
+    role: "Founder & Full Stack Developer",
+    bio: "Leads the team and builds complete web solutions from front to back.",
+    linkedin:"https://www.linkedin.com/in/darakhshan-imran-5b9727297/",
+    github:"https://github.com/Darakhshan-Imran"
   },
   {
-    name: "Sarah Chen",
-    role: "Lead Developer",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "Full-stack developer specializing in React and Node.js applications.",
+    name: "Shahabuddin",
+    role: "Co-founder & Project Manager",
+    bio: "Full stack developer, coo coo moo, Product designer, Project manager",
+    linkedin:"https://www.linkedin.com/in/shahab-uddin-368086300/",
+    github:"https://github.com/shahabuddin135"
   },
   {
-    name: "Michael Rodriguez",
-    role: "UX/UI Designer",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "Creating intuitive and beautiful user experiences for web and mobile applications.",
+    name: "Abeera Umair",
+    role: "Co-founder & Frontend Developer",
+    bio: "Designs and develops user-friendly interfaces for web apps.",
+    linkedin:"https://www.linkedin.com/in/abeera-u-4377a8296/",
+    github:"https://github.com/AbeeraUmair"
   },
   {
-    name: "Priya Patel",
-    role: "Project Manager",
-    image: "/placeholder.svg?height=400&width=400",
-    bio: "Ensuring projects are delivered on time and exceed client expectations.",
+    name: "Saba Sarfaraz",
+    role: "Co-founder & Backend Developer",
+    bio: "Builds and maintains server-side logic and database systems.",
+    linkedin:"https://www.linkedin.com/in/saba-sarfaraz-5abbb4232/",
+    github:"https://github.com/sarfarazsaba11"
   },
 ]
 
 export function Team() {
-  const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
+  const { theme, setTheme } = useTheme();
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="team" className="py-24 px-4 md:px-8 bg-gray-50">
+    <section id="team" className="py-24 px-4 md:px-8 ">
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -45,9 +52,11 @@ export function Team() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="font-heading font-bold text-3xl md:text-4xl font-bold mb-4">Our Team</h2>
-          <p className="font-subheading text-gray-600 max-w-2xl mx-auto">
-            Meet the talented individuals who make Wewise Labs a leader in web development and SaaS solutions.
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4 text-black dark:text-white">
+            Our Team
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
+            Meet the talented individuals who make Wewise Labs a leader in Web development and SaaS solutions.
           </p>
         </motion.div>
 
@@ -73,29 +82,26 @@ export function Team() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
-              className="bg-white rounded-lg overflow-hidden shadow-sm"
+              whileHover={{ scale: 1.02, boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)" }}
+              className="rounded-xl p-6 bg-white/5 backdrop-blur-sm border border-gray/10 shadow-xl transition-all duration-300 hover:bg-white/10 group"
             >
-              <div className="aspect-square overflow-hidden">
-                <img
-                  src={member.image || "/placeholder.svg"}
-                  alt={member.name}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-300"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="font-subheading font-semibold text-xl font-bold mb-1">{member.name}</h2>
-                <p className="text-gray-500 text-sm mb-3">{member.role}</p>
-                <p className="text-gray-600 mb-4">{member.bio}</p>
-                <div className="flex space-x-3">
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Linkedin className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Twitter className="h-5 w-5" />
-                  </a>
-                  <a href="#" className="text-gray-400 hover:text-black transition-colors">
-                    <Github className="h-5 w-5" />
-                  </a>
+              <div className="flex flex-col items-center"> 
+                <h3 className="text-xl font-bold mb-1 font-heading text-black dark:text-white">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-center mb-2 font-medium text-gray-400">
+                  {member.role}
+                </p>
+                <p className="text-gray-500 mb-4 text-center text-sm">
+                  {member.bio}
+                </p>
+                <div className="flex space-x-3 mt-2">
+                  <Link href={member.linkedin} target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
+                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/linkedIn_qwcwfs.png" alt="linked-in icon" className="h-5 w-5 filter invert"/>
+                  </Link>
+                  <Link href={member.github} target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
+                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749248/github_nqa1zy.png" alt="github-icon" className="h-5 w-5 filter invert"/>
+                  </Link>
                 </div>
               </div>
             </motion.div>
@@ -103,5 +109,5 @@ export function Team() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }

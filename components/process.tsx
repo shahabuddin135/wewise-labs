@@ -220,7 +220,7 @@ export function Process() {
           We follow a structured approach to deliver high-quality solutions that meet your business needs.
         </p>
       </div>
-
+      
       <div className="relative w-full max-w-6xl mx-auto px-2">
         {/* Timeline Bar */}
         <div
