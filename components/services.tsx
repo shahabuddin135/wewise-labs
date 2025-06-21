@@ -55,10 +55,10 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-20">
+    <section id="services" className="py-20 z-50">
       <div className="mb-16 text-center">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">Our Services</h2>
-        <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 dark:text-white">Our Services</h2>
+        <p className="font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
           We offer a comprehensive range of web development and SaaS services to help you build and scale your digital
           products.
         </p>

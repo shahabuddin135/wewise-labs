@@ -97,10 +97,10 @@ export function Team() {
                 </p>
                 <div className="flex space-x-3 mt-2">
                   <Link href={member.linkedin} target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
-                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/linkedIn_qwcwfs.png" alt="linked-in icon" className="h-5 w-5 filter invert"/>
+                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749249/linkedIn_qwcwfs.png" alt="linked-in icon" className="h-5 w-5 filter invert text-black"/>
                   </Link>
                   <Link href={member.github} target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
-                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749248/github_nqa1zy.png" alt="github-icon" className="h-5 w-5 filter invert"/>
+                    <Image height={20} width={20} src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749248/github_nqa1zy.png" alt="github-icon" className="h-5 w-5 filter invert text-black"/>
                   </Link>
                 </div>
               </div>

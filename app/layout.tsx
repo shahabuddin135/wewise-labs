@@ -4,7 +4,8 @@ import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico, Arizonia} from 
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
-import { NavbarDemo } from "@/components/navbar-resize"
+import {ResizableNavbar} from "@/components/navbar-resize"
+// import { Footer } from "@/components/footer"
 
 
 const ptSansCaption = PT_Sans_Caption({
@@ -50,10 +51,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} font-sans bg-white text-black antialiased`}>
+      <body className={`dark:bg-gray-950 ${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-        <NavbarDemo/>
+        <ResizableNavbar/>
           {children}
+        
         </ThemeProvider>
       </body>
     </html>

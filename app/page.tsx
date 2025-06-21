@@ -40,7 +40,7 @@ export default function Home() {
           
           <Hero />
 
-          <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 my-5 py-5">INNOVATIVE SOLUTIONS</VelocityScroll>
+          <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
           <Services />
 
@@ -62,7 +62,7 @@ export default function Home() {
 
           <Contact />
 
-          <Footer />
+          <Footer/>
         </main>
       </div>
   )

@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { GradientText } from "./animate-ui/text/gradient"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import IPad from "./ui/ipad"
 
 // Register GSAP plugins
 gsap.registerPlugin(InertiaPlugin)
@@ -368,7 +369,7 @@ export default function Hero() {
   return (
     <div
       ref={heroRef}
-      className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-40 bg-white dark:bg-black"
+      className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden pt-40 bg-white dark:bg-gray-950"
     >
       {/* Animated shapes background */}
       <div ref={containerRef} className="absolute inset-0 pointer-events-none z-10" />
@@ -383,12 +384,12 @@ export default function Hero() {
         )}
       />
 
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-black mt-12"></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] dark:bg-gray-950 mt-12"></div>
 
       <div className="relative z-20 w-full max-w-7xl px-4 md:px-8 flex flex-col items-center text-center">
         <motion.div variants={container} initial="hidden" animate="show" className="w-full">
           <motion.div variants={item} className="mb-2">
-            <h1 className="font-subheading inline-block rounded-full bg-black text-white px-4 py-1.5 text-sm mb-8">
+            <h1 className="font-subheading inline-block rounded-full bg-black dark:bg-white text-white dark:text-black px-4 py-1.5 text-sm mb-8">
               Web Development & SaaS Experts
             </h1>
           </motion.div>
@@ -403,13 +404,37 @@ export default function Hero() {
             variants={item}
             className="font-subheading text-6xl md:text-8xl font-bold tracking-tight leading-[1.5] mb-8"
           >
-            <span>INNOVATING</span>
+            <span className="dark:text-white">INNOVATING</span>
             <span className="inline-block ml-8 ">
               <GradientText text="Future" className="font-arizonia font-bold text-9xl grainy-texture text-clip"/>
             </span>{" "}
-            <span className="relative font-subheading font-bold">WISELY</span>
+            <span className="relative font-subheading font-bold dark:text-white">WISELY</span>
           </motion.h1>
-          <motion.div
+
+          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center mt-28">
+            <Link href="#contact">
+              <Button
+                size="lg"
+                className="font-subheading tracking-wider rounded-full border border-white bg-black text-white dark:border-white hover:bg-gray-800 px-8 py-6 text-base"
+              >
+                Start a Project
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="#services">
+              <Button
+                variant="outline"
+                size="lg"
+                className="font-body rounded-full border-black hover:bg-gray-100 dark:hover:bg-gray-300 px-8 py-6 text-base"
+              >
+                Our Services
+              </Button>
+            </Link>
+          </motion.div>
+
+          <IPad/>
+
+          {/* <motion.div
             variants={item}
             style={{
               boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.15)",
@@ -431,45 +456,9 @@ export default function Hero() {
                 playsInline
               />
             </div>
-          </motion.div>
-          <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center mt-28">
-            <Link href="#contact">
-              <Button
-                size="lg"
-                className="font-subheading tracking-wider rounded-full bg-black text-white hover:bg-gray-800 px-8 py-6 text-base"
-              >
-                Start a Project
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="#services">
-              <Button
-                variant="outline"
-                size="lg"
-                className="font-body rounded-full border-black hover:bg-gray-100 dark:border-white dark:hover:bg-gray-800 px-8 py-6 text-base"
-              >
-                Our Services
-              </Button>
-            </Link>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
-      <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2, duration: 1 }}
-      >
-        <div className="flex flex-col items-center mb-10">
-          <span className="font-body text-sm text-gray-500 mb-2">Scroll to explore</span>
-          <motion.div
-            className="w-6 h-10 border-2 border-gray-300 dark:border-gray-600 rounded-full"
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.5, duration: 0.7 }}
-          />
-        </div>
-      </motion.div>
     </div>
   )
 }

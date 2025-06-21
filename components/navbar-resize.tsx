@@ -15,7 +15,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./ui/theme-button";
 
-export function NavbarDemo() {
+export function ResizableNavbar() {
   const navItems = [
     { name: "Services", link: "#services" },
     { name: "Why Us", link: "#why-choose-us" },
@@ -36,7 +36,6 @@ export function NavbarDemo() {
         <NavItems items={navItems} />
           <div className="flex items-center gap-4 z-10">
             <ModeToggle/>
-            <NavbarButton variant="primary">Book a call</NavbarButton>
           </div>
         </NavBody>
 
@@ -68,20 +67,9 @@ export function NavbarDemo() {
                 <span className="block">{item.name}</span>
               </Link>
             ))}
-            <div className="flex w-full flex-col gap-4">
-              <NavbarButton
-                onClick={() => setIsMobileMenuOpen(false)}
-                variant="primary"
-                className="w-full"
-              >
-                Book a call
-              </NavbarButton>
-            </div>
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
-      {/* Navbar */}
     </div>
   );
 }
