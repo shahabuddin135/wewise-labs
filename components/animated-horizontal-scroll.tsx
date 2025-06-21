@@ -329,7 +329,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   // Loading state
   if (!isGSAPLoaded && !error) {
     return (
-      <div className="h-screen flex items-center justify-center bg-black">
+      <div className="h-screen flex items-center justify-center bg-white darK:bg-gray-950">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
           <p className="text-white">Loading creative animations...</p>
@@ -358,10 +358,22 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   }
 
   return (
-    <div ref={containerRef} className={`h-screen overflow-hidden bg-black ${className}`}>
+    <div
+      ref={containerRef}
+      className={`relative h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 ${className}`}
+    >
+      {/* Background Glow Blobs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
+        <div className="absolute top-[20%] left-[10%] w-[40rem] h-[40rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
+        <div className="absolute top-[40%] left-[50%] w-[30rem] h-[30rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-[10%] right-[20%] w-[35rem] h-[35rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
+
       <div ref={scrollRef} className="flex items-center h-full whitespace-nowrap px-8">
         {/* At */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white ml-10 mr-8 md:mr-16">At</span>
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 dark:from-sky-300 dark:via-blue-400 dark:to-indigo-500 bg-clip-text text-transparent ml-10 mr-8 md:mr-16">
+          At
+        </span>
 
         {/* Shape 1 */}
         <div className="shape-element mx-4 md:mx-8">
@@ -394,7 +406,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* wewise */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent mr-8 md:mr-16">
           wewise,
         </span>
 
@@ -429,7 +441,9 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white mr-8 md:mr-16">we</span>
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-lime-400 via-green-500 to-emerald-600 dark:from-lime-300 dark:via-green-400 dark:to-emerald-500 bg-clip-text text-transparent mr-8 md:mr-16">
+          we
+        </span>
 
         {/* Shape 3 */}
         <div className="shape-element mx-4 md:mx-8">
@@ -462,7 +476,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* mean */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 dark:from-yellow-400 dark:via-orange-400 dark:to-red-400 bg-clip-text text-transparent mr-8 md:mr-16">
           mean
         </span>
 
@@ -497,7 +511,9 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* it */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white mr-8 md:mr-16">it</span>
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 dark:from-amber-300 dark:via-orange-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
+          it
+        </span>
 
         {/* Shape 5 */}
         <div className="shape-element mx-4 md:mx-8">
@@ -530,7 +546,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* when */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mr-8 md:mr-16">
           when
         </span>
 
@@ -565,25 +581,29 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white mr-8 md:mr-16">we</span>
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-600 dark:from-violet-300 dark:via-purple-400 dark:to-fuchsia-500 bg-clip-text text-transparent mr-8 md:mr-16">
+          we
+        </span>
 
         {/* say: */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-green-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-green-500 dark:from-cyan-400 dark:via-teal-400 dark:to-green-400 bg-clip-text text-transparent mr-8 md:mr-16">
           say:
         </span>
 
         {/* "Creative */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-rose-400 via-pink-500 to-red-600 dark:from-rose-300 dark:via-pink-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
           "Creative
         </span>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-400 via-red-400 to-orange-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 dark:from-pink-400 dark:via-red-400 dark:to-orange-400 bg-clip-text text-transparent mr-8 md:mr-16">
           we
         </span>
 
         {/* are!" */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold text-white mr-56">are!"              .</span>
+        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56">
+          are!"
+        </span>
       </div>
     </div>
   )

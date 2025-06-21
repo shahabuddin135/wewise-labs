@@ -213,10 +213,10 @@ export function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="process" className="py-20 bg-white">
+    <section ref={sectionRef} id="process" className="py-20 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4">HOW WE DEVELOP</h2>
-        <p className="font-body font-semibold text-gray-600 max-w-2xl mx-auto">
+        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 dark:text-white">HOW WE DEVELOP</h2>
+        <p className="font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
           We follow a structured approach to deliver high-quality solutions that meet your business needs.
         </p>
       </div>
@@ -243,8 +243,8 @@ export function Process() {
                 {isAbove && (
                   <div className="flex flex-col items-center justify-center mb-8 min-h-[180px]">
                     <div className="step-icon mb-2">{step.icon}</div>
-                    <h3 className="step-title font-heading text-xl font-bold mb-1">{step.title}</h3>
-                    <p className="step-description text-gray-600 text-sm max-w-xs">{step.description}</p>
+                    <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                    <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs">{step.description}</p>
                   </div>
                 )}
 
@@ -252,15 +252,15 @@ export function Process() {
                 <div
                   className={`number-node absolute top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border-2 ${step.color} bg-white shadow text-lg font-bold z-10`}
                 >
-                  <span className="text-gray-400">{step.number}</span>
+                  <span className="text-gray-400 dark:text-gray-950">{step.number}</span>
                 </div>
 
                 {/* Bottom Content */}
                 {!isAbove && (
                   <div className="flex flex-col items-center justify-center min-h-[180px] pt-[16rem]">
                     <div className="step-icon mb-2">{step.icon}</div>
-                    <h3 className="step-title font-heading text-xl font-bold mb-1">{step.title}</h3>
-                    <p className="step-description text-gray-600 text-sm max-w-xs">{step.description}</p>
+                    <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                    <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs">{step.description}</p>
                   </div>
                 )}
               </div>

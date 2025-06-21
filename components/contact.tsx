@@ -312,7 +312,7 @@ export function Contact() {
   }
 
   return (
-    <section id="contact" className="py-16 md:py-20 lg:py-24 px-4 md:px-8">
+    <section id="contact" className="py-16 md:py-20 lg:py-24 px-4 md:px-8 dark:bg-gray-950 z-50">
       <motion.div
         className="text-center mb-12 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
@@ -320,15 +320,15 @@ export function Contact() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">Get in Touch</h2>
-        <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 dark:text-white">Get in Touch</h2>
+        <p className="text-gray-600 dark:text-white max-w-2xl mx-auto text-sm md:text-base">
           Ready to start your project? Contact us through our terminal interface below.
         </p>
       </motion.div>
 
       <div className="max-w-4xl mx-auto">
         <motion.div
-          className="rounded-lg overflow-hidden shadow-lg border border-gray-200"
+          className="rounded-lg overflow-hidden shadow-lg border border-gray-200 dark:border-white"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -463,10 +463,10 @@ export function Contact() {
           </AnimatePresence>
         </motion.div>
 
-        <div className="mt-4 md:mt-6 text-center text-xs md:text-sm text-gray-500">
+        <div className="mt-4 md:mt-6 text-center text-xs md:text-sm text-gray-500 dark:text-gray-100">
           <p className="mb-2">
             Prefer traditional contact? Email us at{" "}
-            <Link href="mailto:wewiselabs@gmail.com" className="text-black underline">
+            <Link href="mailto:wewiselabs@gmail.com" className="text-black dark:text-white hover:text-white/50 underline">
             wewiselabs@gmail.com
             </Link>
           </p>

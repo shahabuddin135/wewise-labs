@@ -58,8 +58,8 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4">Our Projects</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center">
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4 dark:text-white">Our Projects</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
             Take a look at some of our recent work that showcases our expertise and capabilities.
           </p>
         </motion.div>
@@ -75,9 +75,9 @@ export function Projects() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3 items-center"
             >
               <div className="order-2 md:order-1">
-                <span className="font-subheading text-lg sm:text-xl text-gray-500 mb-2 block">{projects[activeIndex].category}</span>
-                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4">{projects[activeIndex].title}</h2>
-                <p className="text-lg text-gray-600 text-wrap mb-6">{projects[activeIndex].description}</p>
+                <span className="font-subheading text-lg sm:text-xl text-gray-500 dark:text-gray-100 mb-2 block">{projects[activeIndex].category}</span>
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 dark:text-white">{projects[activeIndex].title}</h2>
+                <p className="text-lg text-gray-600 dark:text-gray-100 text-wrap mb-6">{projects[activeIndex].description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {projects[activeIndex].tags.map((tag, index) => (
@@ -87,7 +87,7 @@ export function Projects() {
                   ))}
                 </div>
 
-                <Button className="font-subheading tracking-wider rounded-full bg-black text-white hover:bg-gray-800 px-6">
+                <Button className="font-subheading tracking-wider border dark:border-white rounded-full bg-black text-white hover:bg-gray-800 px-6">
                   <Link href = {projects[activeIndex].projectLink || "https://www.techverse51.com"}>View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
