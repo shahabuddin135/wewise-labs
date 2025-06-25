@@ -218,13 +218,13 @@ const siteMapData: TreeNode[] = [
 
 export function SiteMapContent() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div className="col-span-1 md:col-span-2 lg:col-span-3">
-        <p className="text-gray-600 mb-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 dark:bg-black">
+      <div className="col-span-1 md:col-span-2 lg:col-span-3 px-4">
+        <p className=" mb-3 text-neutral-600 dark:text-neutral-300">
           Use this site map to navigate through our website structure and find the information you need quickly.
         </p>
       </div>
-      <div className="col-span-1 md:col-span-2 lg:col-span-3 border rounded-lg p-6 bg-white">
+      <div className="col-span-1 md:col-span-2 lg:col-span-3 border rounded-lg p-6 bg-white dark:bg-black text-neutral-600 dark:text-neutral-300">
         <Tree data={siteMapData} />
       </div>
     </div>
@@ -259,19 +259,20 @@ function TreeItem({ item, level }: TreeItemProps) {
     <li className="select-none">
       <div
         className={cn(
-          "flex items-center py-2 px-2 rounded-md hover:bg-gray-100 cursor-pointer",
+          "flex items-center py-2 px-2 rounded-md hover:bg-gray-200 hover:text-gray-700 cursor-pointer group",
           item.url && "transition-colors",
         )}
+
         onClick={handleToggle}
       >
         {item.children?.length ? (
-          <button className="mr-1 h-4 w-4 shrink-0 text-gray-500">
-            {isOpen ? <ChevronDown className="h-4 w-4" /> : <ChevronRight className="h-4 w-4" />}
+          <button className="mr-1 h-4 w-4 shrink-0 text-neutral-600 dark:text-neutral-300 group-hover:bg-gray-200 group-hover:text-gray-700">
+            {isOpen ? <ChevronDown className="h-4 w-4 " /> : <ChevronRight className="h-4 w-4" />}
           </button>
         ) : (
           <span className="mr-1 h-4 w-4" />
         )}
-        <span className="mr-2 shrink-0 text-gray-500">{item.icon}</span>
+        <span className="mr-2 shrink-0 text-gray-500 dark:text-gray-200 group-hover:text-neutral-700 ">{item.icon}</span>
         {item.url ? (
           <Link href={item.url} className="flex-grow hover:underline">
             {item.name}
@@ -280,7 +281,7 @@ function TreeItem({ item, level }: TreeItemProps) {
           <span className="flex-grow">{item.name}</span>
         )}
         {item.isNew && (
-          <Badge variant="outline" className="ml-2 bg-black text-white border-black text-xs">
+          <Badge variant="outline" className="ml-2 bg-black text-white border-black text-xs dark:bg-white dark:text-black dark:border-white">
             New
           </Badge>
         )}
