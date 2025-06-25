@@ -259,6 +259,8 @@ export const MobileNavToggle = ({
   );
 };
 
+// wewise logo
+
 export const NavbarLogo = () => {
   return (
    <Link
