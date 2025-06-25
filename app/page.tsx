@@ -17,21 +17,34 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
+import TechnologiesCard from "@/components/technologies-card"
+import { useTheme } from "next-themes"
 
 export default function Home() {
+  const { theme } = useTheme()
   useSmoothScroll()
   useEffect(() => {
-    // Register required plugins
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
-    // Create smooth scrolling
-    ScrollSmoother.create({
+    const smoother = ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 1.5,
-      effects: true
+      effects: true,
     })
+
+    return () => {
+      smoother.kill()
+    }
   }, [])
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      ScrollTrigger.refresh()
+    }, 100)
+
+    return () => clearTimeout(timeoutId)
+  }, [theme])
 
   return (
 
@@ -52,7 +65,8 @@ export default function Home() {
 
           <Process />
 
-          <Technologies />
+          {/* <Technologies /> */}
+          {/* <TechnologiesCard/> */}
 
           <Projects />
 
