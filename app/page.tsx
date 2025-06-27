@@ -17,8 +17,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
-import TechnologiesCard from "@/components/technologies-card"
+// import TechnologiesCard from "@/components/technologies-card"
 import { useTheme } from "next-themes"
+import BgGlowBouncingSVGs from "@/components/ui/bg-glow"
 
 export default function Home() {
   const { theme } = useTheme()
@@ -65,6 +66,7 @@ export default function Home() {
 
           <Process />
 
+          {/* <BgGlowBouncingSVGs/> */}
           {/* <Technologies /> */}
           {/* <TechnologiesCard/> */}
 
