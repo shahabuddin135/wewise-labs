@@ -14,6 +14,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 import { ModeToggle } from "./ui/theme-button";
+import { useRouter, usePathname } from "next/navigation";
 
 export function ResizableNavbar() {
   const navItems = [
@@ -26,25 +27,67 @@ export function ResizableNavbar() {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [ideasClickCount, setIdeasClickCount] = useState(0);
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // Check if user is on ideas page or any slug page
+  const isOnIdeasPage = pathname?.startsWith('/ideas');
+
+  const handleIdeasClick = () => {
+    const newCount = ideasClickCount + 1;
+    setIdeasClickCount(newCount);
+    
+    if (newCount >= 10) {
+      // Reset counter and navigate to ideas page
+      setIdeasClickCount(0);
+      router.push('/ideas');
+    }
+  };
 
   return (
     <div className="relative w-full ">
       <Navbar>
         {/* Desktop Navigation */}
-        <NavBody>
+        <NavBody 
+          className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none" : ""}
+        >
         <NavbarLogo />
-        <NavItems items={navItems} />
+        <NavItems 
+          items={navItems} 
+          className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
+        />
           <div className="flex items-center gap-4 z-10">
+            {!isOnIdeasPage && (
+              <button
+                onClick={handleIdeasClick}
+                className="px-3 py-1 border-2 border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-600 text-sm cursor-not-allowed opacity-50"
+                title="This button doesn't work..."
+              >
+                IDEAS
+              </button>
+            )}
             <ModeToggle/>
           </div>
         </NavBody>
 
         {/* Mobile Navigation */}
-        <MobileNav>
+        <MobileNav 
+          className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none" : ""}
+        >
           <MobileNavHeader>
             
             <NavbarLogo />
             <div className="flex items-center justify-center gap-5">
+            {!isOnIdeasPage && (
+              <button
+                onClick={handleIdeasClick}
+                className="px-2 py-1 border-2 border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-600 text-xs cursor-not-allowed opacity-50"
+                title="This button doesn't work..."
+              >
+                IDEAS
+              </button>
+            )}
             <ModeToggle/>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
@@ -56,13 +99,18 @@ export function ResizableNavbar() {
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
             onClose={() => setIsMobileMenuOpen(false)}
+            className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !rounded-none" : ""}
           >
             {navItems.map((item, idx) => (
               <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="relative text-neutral-600 dark:text-neutral-300"
+                className={`relative ${
+                  isOnIdeasPage 
+                    ? "!text-black dark:!text-white" 
+                    : "text-neutral-600 dark:text-neutral-300"
+                }`}
               >
                 <span className="block">{item.name}</span>
               </Link>
