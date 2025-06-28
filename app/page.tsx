@@ -65,7 +65,7 @@ export default function Home() {
 
           <Process />
 
-          {/* <Technologies /> */}
+          <Technologies />
           {/* <TechnologiesCard/> */}
 
           <Projects />
