@@ -74,7 +74,10 @@ export default function Home() {
 
           <Testimonials />
 
+          
+         
           <Team />
+         
 
           <Contact />
 
