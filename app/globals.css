@@ -224,3 +224,21 @@ video::-webkit-media-controls-time-remaining-display {
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
+
+/* globals.css */
+.hexagon {
+  clip-path: polygon(
+    50% 0%,
+    93% 25%,
+    93% 75%,
+    50% 100%,
+    7% 75%,
+    7% 25%
+  );
+  aspect-ratio: 1 / 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

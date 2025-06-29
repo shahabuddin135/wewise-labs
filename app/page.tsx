@@ -1,7 +1,7 @@
 "use client"
 
 import  Hero  from "@/components/hero"
-import { Services } from "@/components/services"
+import { Services } from "@/components/new-service"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
@@ -17,7 +17,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
-import TechnologiesCard from "@/components/technologies-card"
+// import TechnologiesCard from "@/components/technologies-card"
 import { useTheme } from "next-themes"
 
 export default function Home() {
