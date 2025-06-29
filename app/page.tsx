@@ -20,6 +20,7 @@ import { useSmoothScroll } from "@/lib/smooth-scroll"
 import TechnologiesCard from "@/components/technologies-card"
 import { useTheme } from "next-themes"
 
+
 export default function Home() {
   const { theme } = useTheme()
   useSmoothScroll()
@@ -69,6 +70,7 @@ export default function Home() {
           {/* <TechnologiesCard/> */}
 
           <Projects />
+         
 
           <Testimonials />
 
