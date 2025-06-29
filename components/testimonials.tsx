@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { Quote } from "lucide-react"
+import BgGlowBouncingSVGs from "../components/ui/bg-glow"
 
 const testimonials = [
   {
@@ -62,6 +63,7 @@ export function Testimonials() {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
+      <BgGlowBouncingSVGs className="-z-10 blur-xl"/>
       <div className="max-w-5xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -70,7 +72,7 @@ export function Testimonials() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-4 dark:text-white">What Our Clients Say</h2>
+          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-6 dark:text-white">What Our Clients Say</h2>
           <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
             Don't just take our word for it. Here's what our clients have to say about working with us.
           </p>
@@ -78,7 +80,7 @@ export function Testimonials() {
 
         <div className="relative">
           <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 text-gray-100">
-            <Quote className="w-20 h-20" />
+            <Quote className="w-20 h-20 text-gray-300" />
           </div>
 
           <AnimatePresence mode="wait">
@@ -88,7 +90,7 @@ export function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl p-8 md:p-12 shadow-sm text-center"
+              className="bg-white/50 rounded-xl p-8 md:p-12 shadow-sm text-center"
             >
               <p className="text-xl md:text-2xl mb-8 text-gray-700 italic">"{testimonials[activeIndex].quote}"</p>
 
@@ -100,8 +102,8 @@ export function Testimonials() {
                     className="w-full h-full object-cover"
                   />
                 </div> */}
-                <h4 className="font-bold text-lg">{testimonials[activeIndex].author}</h4>
-                <p className="text-gray-500">{testimonials[activeIndex].position}</p>
+                <h4 className="font-bold text-lg ">{testimonials[activeIndex].author}</h4>
+                <p className="text-gray-600 dark:text-gray-800">{testimonials[activeIndex].position}</p>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -112,7 +114,7 @@ export function Testimonials() {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-                  index === activeIndex ? "bg-black w-8" : "bg-gray-300"
+                  index === activeIndex ? "bg-black dark:bg-gray-200 w-8" : "bg-gray-300 dark:bg-white/30"
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

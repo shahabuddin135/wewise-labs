@@ -163,7 +163,7 @@ export function Team() {
 
   return (
     <section id="team" className="relative isolate py-24 px-4 md:px-8 overflow-hidden">
-      {/* <BgGlowBouncingSVGs className="-z-10 bg-blur-md"/> */}
+      
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           className="text-center mb-16"
@@ -205,7 +205,7 @@ export function Team() {
               whileHover={{ scale: 1.02, boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)" }}
               className="rounded-xl bg-blur-sm overflow-hidden p-6 bg-white/5 backdrop-blur-sm border border-gray/10 shadow-xl transition-all duration-300 hover:bg-white/10 group"
             >
-              <BgGlowBouncingSVGs className="-z-10 blur-xl"/>
+              
               <div className="flex flex-col items-center">
                 <h3 className="text-xl font-bold mb-1 font-heading text-white dark:text-white">
                   {member.name}
