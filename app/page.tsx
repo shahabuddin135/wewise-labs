@@ -5,7 +5,7 @@ import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
-import { WhyChooseUs } from "@/components/why-choose-us"
+import WhyChooseUs  from "@/components/why-choose-us"
 // import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
@@ -55,7 +55,6 @@ export default function Home() {
           <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
           <Services />
-
           <WhyChooseUs />
 
           <section>

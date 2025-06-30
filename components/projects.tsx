@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -48,8 +48,17 @@ export function Projects() {
     setActiveIndex((prev) => (prev - 1 + projects.length) % projects.length)
   }
 
+  useEffect(() => {
+    const autoplay = setInterval(handleNext, 5000);
+
+    return () => clearInterval(autoplay);
+  }, [activeIndex]);
+
   return (
-    <section id="projects" className="py-24 px-4 md:px-8 relative overflow-hidden">
+    <section 
+      id="projects" 
+      className="py-24 px-4 md:px-8 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="mb-16"
@@ -96,7 +105,7 @@ export function Projects() {
               <div className="order-1 md:order-2 relative">
                 <div className="aspect-[4/3] overflow-hidden rounded-lg">
                   <Image
-                    src={projects[activeIndex].imageUrl || "/placeholder.svg"}
+                    src={projects[activeIndex].imageUrl || "/wewise-logo.svg"}
                     alt={projects[activeIndex].title}
                     width={700}
                     height={600}
