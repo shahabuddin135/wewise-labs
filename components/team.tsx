@@ -86,16 +86,16 @@ export function Team() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
               whileHover={{ scale: 1.02, boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)" }}
-              className="rounded-2xl overflow-hidden p-6 bg-white/5 backdrop-blur-lg border-4 border-gray-500 dark:border-gray-300 shadow-[0_4px_24px_0_rgba(180,180,200,0.10),0_1.5px_0_#fff_inset] transition-all duration-300 hover:bg-white/10 group"
+              className="rounded-2xl overflow-hidden p-4 bg-white/5 backdrop-blur-lg border-gray-400 dark:border-gray-300 border-r-8 border-b-4 border-l-[1px] border-t-[1px] transition-all duration-300 hover:bg-white/10 group"
             >
-              <div className="flex flex-col items-center">
-                <h3 className="text-xl font-bold mb-1 font-heading text-slate-900 dark:text-white">
+              <div className="flex flex-col items-center gap-4">
+                <h3 className="text-xl font-bold mt-2 font-heading text-slate-900 dark:text-white">
                   {member.name}
                 </h3>
-                <p className="text-sm text-center mb-2 font-medium text-slate-900 dark:text-white">
+                <p className="text-sm text-center font-medium text-slate-900 dark:text-white">
                   {member.role}
                 </p>
-                <p className="mb-4 text-center text-sm text-slate-800 dark:text-white">
+                <p className=" text-center text-sm text-slate-800 dark:text-white">
                   {member.bio}
                 </p>
                 <div className="flex space-x-3 mt-2">

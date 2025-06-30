@@ -83,7 +83,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         ref={ref}
         initial={{ y: 0, opacity: 1 }}
         animate={{
-          y: visible ? 0 : -100,
+          // y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
         transition={{ duration: 0.25 }}

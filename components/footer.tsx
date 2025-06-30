@@ -32,7 +32,7 @@ export function Footer() {
           <div>
             <h3 className="font-subheading font-semibold mb-4 dark:text-white">Company</h3>
             <ul className="space-y-2">
-              {["About", "Process", "Contact", "Blog", "Careers"].map((item) => (
+              {[ "Process", "Contact","Team"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`#${item.toLowerCase()}`}

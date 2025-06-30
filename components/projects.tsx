@@ -266,26 +266,6 @@ export function Projects() {
               />
             ))}
           </div>
-
-          <div className="absolute top-1/2 -translate-y-1/2 left-0 md:-left-12 flex items-center justify-center">
-            <button
-              onClick={handlePrev}
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
-              aria-label="Previous project"
-            >
-              <ArrowRight className="h-4 w-4 rotate-180" />
-            </button>
-          </div>
-
-          <div className="absolute top-1/2 -translate-y-1/2 right-0 md:-right-12 flex items-center justify-center">
-            <button
-              onClick={handleNext}
-              className="w-10 h-10 rounded-full bg-white shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
-              aria-label="Next project"
-            >
-              <ArrowRight className="h-4 w-4" />
-            </button>
-          </div>
         </div>
       </div>
     </section>
