@@ -1,12 +1,11 @@
 "use client"
 
-import  Hero  from "@/components/hero"
+import Hero from "@/components/hero"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { WhyChooseUs } from "@/components/why-choose-us"
-// import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
@@ -18,7 +17,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
 import { useTheme } from "next-themes"
-import BgGlowBouncingSVGs from "@/components/ui/bg-glow"
+import ServicesComponent from "@/components/honeycomb"
 
 
 export default function Home() {
@@ -50,40 +49,39 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper">
-        <main id="smooth-content" className="min-h-screen flex flex-col">
-          
-          <Hero />
+      <main id="smooth-content" className="min-h-screen flex flex-col">
 
-          <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
+        <Hero />
 
-          <Services />
+        <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
-          <WhyChooseUs />
+        {/* <Services /> */}
+      
+          <ServicesComponent />
+ 
 
-          <section>
-            <AnimatedHorizontalScroll />
-          </section>
+        <WhyChooseUs />
 
-          <Process />
+        <section>
+          <AnimatedHorizontalScroll />
+        </section>
 
-          {/* <BgGlowBouncingSVGs/> */}
-          {/* <Technologies /> */}
-          {/* <TechnologiesCard/> */}
+        <Process />
 
-          <Projects />
-         
+        {/* <BgGlowBouncingSVGs/> */}
+        {/* <Technologies /> */}
+        {/* <TechnologiesCard/> */}
 
-          <Testimonials />
+        <Projects />
 
-          
-         
-          <Team />
-         
+        <Testimonials />
 
-          <Contact />
+        <Team />
 
-          <Footer/>
-        </main>
-      </div>
+        <Contact />
+
+        <Footer />
+      </main>
+    </div>
   )
 }
