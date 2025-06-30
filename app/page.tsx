@@ -20,6 +20,7 @@ import { useSmoothScroll } from "@/lib/smooth-scroll"
 import { useTheme } from "next-themes"
 import BgGlowBouncingSVGs from "@/components/ui/bg-glow"
 
+
 export default function Home() {
   const { theme } = useTheme()
   useSmoothScroll()
@@ -70,6 +71,7 @@ export default function Home() {
           {/* <TechnologiesCard/> */}
 
           <Projects />
+         
 
           <Testimonials />
 
