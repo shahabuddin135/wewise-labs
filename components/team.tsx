@@ -86,6 +86,7 @@ export function Team() {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
               }}
               whileHover={{ scale: 1.02, boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.15)" }}
+
               className="rounded-2xl overflow-hidden p-4 bg-white/5 backdrop-blur-lg border-gray-400 dark:border-gray-300 border-r-8 border-b-4 border-l-[1px] border-t-[1px] transition-all duration-300 hover:bg-white/10 group"
             >
               <div className="flex flex-col items-center gap-4">
@@ -103,8 +104,8 @@ export function Team() {
                     <svg
                       viewBox="0 0 24 24"
                       fill={theme === "dark" ? "#fff" : "#000"}
-                      width="30px"
-                      height="30px"
+                      width="25px"
+                      height="25px"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -117,8 +118,8 @@ export function Team() {
                   <Link href={member.github} target="_blank" className="opacity-60 hover:opacity-100 transition-opacity">
                     <svg
                       fill={theme === "dark" ? "#fff" : "#000"}
-                      width="30px"
-                      height="30px"
+                      width="25px"
+                      height="25px"
                       viewBox="-2 -2 24 24"
                       xmlns="http://www.w3.org/2000/svg"
                       preserveAspectRatio="xMinYMin"

@@ -1,6 +1,6 @@
 "use client"
 
-import  Hero  from "@/components/hero"
+import Hero from "@/components/hero"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
@@ -18,7 +18,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
 import { useTheme } from "next-themes"
-import BgGlowBouncingSVGs from "@/components/ui/bg-glow"
+import ServicesComponent from "@/components/honeycomb"
 
 
 export default function Home() {
@@ -50,39 +50,39 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper">
-        <main id="smooth-content" className="min-h-screen flex flex-col">
-          
-          <Hero />
+      <main id="smooth-content" className="min-h-screen flex flex-col">
 
-          <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
+        <Hero />
 
-          <Services />
           <WhyChooseUs />
 
-          <section>
-            <AnimatedHorizontalScroll />
-          </section>
+        <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
-          <Process />
+      
+          <ServicesComponent />
 
-          {/* <BgGlowBouncingSVGs/> */}
-          {/* <Technologies /> */}
-          {/* <TechnologiesCard/> */}
+        <WhyChooseUs />
 
-          <Projects />
-         
+        <section>
+          <AnimatedHorizontalScroll />
+        </section>
 
-          <Testimonials />
+        <Process />
 
-          
-         
-          <Team />
-         
+        {/* <BgGlowBouncingSVGs/> */}
+        {/* <Technologies /> */}
+        {/* <TechnologiesCard/> */}
 
-          <Contact />
+        <Projects />
 
-          <Footer/>
-        </main>
-      </div>
+        <Testimonials />
+
+        <Team />
+
+        <Contact />
+
+        <Footer />
+      </main>
+    </div>
   )
 }
