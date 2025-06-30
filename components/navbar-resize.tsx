@@ -34,6 +34,14 @@ export function ResizableNavbar() {
   // Check if user is on ideas page or any slug page
   const isOnIdeasPage = pathname?.startsWith('/ideas');
 
+  // Conditionally update nav links for ideas page
+  const displayNavItems = isOnIdeasPage
+    ? navItems.map(item => ({
+        ...item,
+        link: `/${item.link}`, // e.g., "/#services"
+      }))
+    : navItems;
+
   const handleIdeasClick = () => {
     const newCount = ideasClickCount + 1;
     setIdeasClickCount(newCount);
@@ -52,11 +60,19 @@ export function ResizableNavbar() {
         <NavBody 
           className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none" : ""}
         >
-        <NavbarLogo />
-        <NavItems 
-          items={navItems} 
-          className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
-        />
+          {isOnIdeasPage ? (
+            <Link href="/" className="focus:outline-none">
+              <NavbarLogo />
+            </Link>
+          ) : (
+            <Link href="#" className="focus:outline-none">
+              <NavbarLogo />
+            </Link>
+          )}
+          <NavItems 
+            items={displayNavItems} 
+            className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
+          />
           <div className="flex items-center gap-4 z-10">
             {!isOnIdeasPage && (
               <button
@@ -76,8 +92,15 @@ export function ResizableNavbar() {
           className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none" : ""}
         >
           <MobileNavHeader>
-            
-            <NavbarLogo />
+            {isOnIdeasPage ? (
+              <Link href="/" className="focus:outline-none">
+                <NavbarLogo />
+              </Link>
+            ) : (
+              <Link href="#" className="focus:outline-none">
+                <NavbarLogo />
+              </Link>
+            )}
             <div className="flex items-center justify-center gap-5">
             {!isOnIdeasPage && (
               <button
@@ -101,7 +124,7 @@ export function ResizableNavbar() {
             onClose={() => setIsMobileMenuOpen(false)}
             className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !rounded-none" : ""}
           >
-            {navItems.map((item, idx) => (
+            {displayNavItems.map((item, idx) => (
               <Link
                 key={`mobile-link-${idx}`}
                 href={item.link}
