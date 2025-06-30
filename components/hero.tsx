@@ -397,15 +397,14 @@ export default function Hero() {
             variants={item}
             className="font-body text-xl text-gray-600 dark:text-gray-300 mb-4 max-w-2xl mx-auto"
           >
-            Wewise Labs transforms ideas into exceptional SaaS applications and web experiences that drive business
-            growth and user engagement.
+            At Wewise Labs, we turn ideas into smooth, high-impact SaaS products and websites that actually help your business grow and your users stick around.
           </motion.p>
           <motion.h1
             variants={item}
             className="font-subheading text-6xl md:text-8xl font-bold tracking-tight leading-[1.5] mb-8"
           >
-            <span className="dark:text-white">INNOVATING</span>
-            <span className="inline-block ml-8 ">
+            <span className="dark:text-white inline-block">INNOVATING</span>
+            <span className="inline-block ml-8">
               <GradientText text="Future" className="font-arizonia font-bold text-9xl grainy-texture text-clip"/>
             </span>{" "}
             <span className="relative font-subheading font-bold dark:text-white">WISELY</span>
@@ -417,7 +416,7 @@ export default function Hero() {
                 size="lg"
                 className="font-subheading tracking-wider rounded-full border border-white bg-black text-white dark:border-white hover:bg-gray-800 px-8 py-6 text-base"
               >
-                Start a Project
+                Click To Craft
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
@@ -427,7 +426,7 @@ export default function Hero() {
                 size="lg"
                 className="font-body rounded-full border-black hover:bg-gray-100 dark:hover:bg-gray-300 px-8 py-6 text-base"
               >
-                Our Services
+                Explore Us
               </Button>
             </Link>
           </motion.div>
