@@ -54,8 +54,6 @@ export default function Home() {
 
         <Hero />
 
-          <WhyChooseUs />
-
         <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
       

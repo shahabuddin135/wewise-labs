@@ -83,7 +83,7 @@ export function ResizableNavbar() {
                 IDEAS
               </button>
             )}
-            <ModeToggle/>
+            <ModeToggle className="ml-2 my-auto"/>
           </div>
         </NavBody>
 
@@ -111,7 +111,7 @@ export function ResizableNavbar() {
                 IDEAS
               </button>
             )}
-            <ModeToggle/>
+            <ModeToggle className="ml-2 my-auto"/>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
