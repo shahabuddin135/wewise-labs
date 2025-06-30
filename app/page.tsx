@@ -6,7 +6,7 @@ import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import { WhyChooseUs } from "@/components/why-choose-us"
-import { Technologies } from "@/components/technologies"
+// import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
@@ -17,9 +17,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
-// import TechnologiesCard from "@/components/technologies-card"
 import { useTheme } from "next-themes"
 import BgGlowBouncingSVGs from "@/components/ui/bg-glow"
+
 
 export default function Home() {
   const { theme } = useTheme()
@@ -71,10 +71,14 @@ export default function Home() {
           {/* <TechnologiesCard/> */}
 
           <Projects />
+         
 
           <Testimonials />
 
+          
+         
           <Team />
+         
 
           <Contact />
 
