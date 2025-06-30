@@ -221,22 +221,71 @@ export function Process() {
         </p>
       </div>
       
-      <div className="relative w-full max-w-6xl mx-auto px-2">
+      {/* Responsive Timeline: Vertical for <lg, Horizontal for lg+ */}
+      {/* Vertical Timeline for mobile, small, and medium screens */}
+      <div className="block lg:hidden relative w-full max-w-6xl mx-auto px-2">
         {/* Timeline Bar */}
         <div
           ref={timelineRef}
-          className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-yellow-400 z-0 transform -translate-y-1/2"
+          className="absolute left-1/2 top-0 bottom-0 w-1 h-full -translate-x-1/2 bg-gradient-to-b from-pink-400 via-purple-400 to-yellow-400 z-0"
         />
-
-        <div className="flex flex-wrap justify-between relative z-10">
+        <div className="flex flex-col relative z-10">
           {steps.map((step, idx) => {
-            const isAbove = idx % 2 === 0
+            const isLeft = idx % 2 === 0
             return (
               <div
                 key={idx}
                 ref={(el) => {
                   if (el) stepsRef.current[idx] = el
                 }}
+                className="relative flex w-full items-center mb-8 min-h-[120px]"
+              >
+                {/* Left content */}
+                <div className="flex-1 flex justify-end pr-4">
+                  {isLeft && (
+                    <div className="flex flex-col items-end">
+                      <div className="step-icon mb-2">{step.icon}</div>
+                      <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                      <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs text-right">{step.description}</p>
+                    </div>
+                  )}
+                </div>
+                {/* Timeline node */}
+                <div className="flex flex-col items-center z-10">
+                  <div
+                    className={`number-node w-10 h-10 flex items-center justify-center rounded-full border-2 ${step.color} bg-white shadow text-lg font-bold`}
+                  >
+                    <span className="text-gray-400 dark:text-gray-950">{step.number}</span>
+                  </div>
+                </div>
+                {/* Right content */}
+                <div className="flex-1 flex justify-start pl-4">
+                  {!isLeft && (
+                    <div className="flex flex-col items-start">
+                      <div className="step-icon mb-2">{step.icon}</div>
+                      <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                      <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs text-left">{step.description}</p>
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Horizontal Timeline for large screens and up */}
+      <div className="hidden lg:block relative w-full max-w-6xl mx-auto px-2">
+        {/* Timeline Bar */}
+        <div
+          className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-yellow-400 z-0 transform -translate-y-1/2"
+        />
+        <div className="flex flex-wrap justify-between relative z-10">
+          {steps.map((step, idx) => {
+            const isAbove = idx % 2 === 0
+            return (
+              <div
+                key={idx}
                 className="relative w-1/2 sm:w-1/3 lg:w-1/6 flex flex-col items-center text-center px-2"
               >
                 {/* Top Content */}
@@ -247,14 +296,12 @@ export function Process() {
                     <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs">{step.description}</p>
                   </div>
                 )}
-
                 {/* Number Node */}
                 <div
                   className={`number-node absolute top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center rounded-full border-2 ${step.color} bg-white shadow text-lg font-bold z-10`}
                 >
                   <span className="text-gray-400 dark:text-gray-950">{step.number}</span>
                 </div>
-
                 {/* Bottom Content */}
                 {!isAbove && (
                   <div className="flex flex-col items-center justify-center min-h-[180px] pt-[16rem]">
