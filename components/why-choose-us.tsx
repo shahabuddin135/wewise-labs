@@ -1,6 +1,4 @@
-import { AnimatedTestimonials } from "./animated-testimonials";
-import { CheckCircle, Shield, Zap, Users, Clock, Award } from "lucide-react";
-import time from "../public/icons/time-removebg-preview.png";
+import { AnimatedTestimonials } from "./animated-choose-cards";
 
 const reasons = [
   {
