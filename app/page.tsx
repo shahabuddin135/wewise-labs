@@ -1,12 +1,12 @@
 "use client"
 
-import  Hero  from "@/components/hero"
+import Hero from "@/components/hero"
 import { Services } from "@/components/services"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
-import { WhyChooseUs } from "@/components/why-choose-us"
-import { Technologies } from "@/components/technologies"
+import WhyChooseUs  from "@/components/why-choose-us"
+// import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
@@ -17,8 +17,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
-import TechnologiesCard from "@/components/technologies-card"
 import { useTheme } from "next-themes"
+import ServicesComponent from "@/components/honeycomb"
+
 
 export default function Home() {
   const { theme } = useTheme()
@@ -49,35 +50,35 @@ export default function Home() {
   return (
 
     <div id="smooth-wrapper">
-        <main id="smooth-content" className="min-h-screen flex flex-col">
-          
-          <Hero />
+      <main id="smooth-content" className="min-h-screen flex flex-col">
 
-          <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
+        <Hero />
 
-          <Services />
+        <VelocityScroll defaultVelocity={1} numRows={2} className="text-gray-300/90 dark:bg-gray-950 py-5 mt-10 md:mt-28">INNOVATIVE SOLUTIONS</VelocityScroll>
 
-          <WhyChooseUs />
+      
+          <ServicesComponent />
 
-          <section>
-            <AnimatedHorizontalScroll />
-          </section>
+        <WhyChooseUs />
 
-          <Process />
+        <section>
+          <AnimatedHorizontalScroll />
+        </section>
+
+        <Process />
 
           <Technologies />
-          {/* <TechnologiesCard/> */}
 
-          <Projects />
+        <Projects />
 
-          <Testimonials />
+        <Testimonials />
 
-          <Team />
+        <Team />
 
-          <Contact />
+        <Contact />
 
-          <Footer/>
-        </main>
-      </div>
+        <Footer />
+      </main>
+    </div>
   )
 }
