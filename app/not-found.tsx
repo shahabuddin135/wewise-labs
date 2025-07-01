@@ -18,7 +18,7 @@ const NotFound = () => {
       </LineShadowText>
     </h1>
     <p className='text-2xl font-bold text-center mt-10 text-black dark:text-white'>Looks 
-     like you've ventured off the map, <br/> but don't worry, here is the{' '}
+     like you've ventured off the map,but don't worry, here  <br/>  is the{' '}
      <span className='text-gray-500'>
     <Link href='/sitemap'>
          sitemap
