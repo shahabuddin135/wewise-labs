@@ -67,9 +67,7 @@ export default function Home() {
 
         <Process />
 
-        {/* <BgGlowBouncingSVGs/> */}
-        {/* <Technologies /> */}
-        {/* <TechnologiesCard/> */}
+          <Technologies />
 
         <Projects />
 
