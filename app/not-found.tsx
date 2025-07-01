@@ -3,6 +3,7 @@
 import React from 'react'
 import { LineShadowText } from "@/components/magicui/line-shadow-text";
 import { useTheme } from "next-themes";
+import Link from 'next/link';
 
 const NotFound = () => {
   const { theme } = useTheme();
@@ -16,7 +17,14 @@ const NotFound = () => {
         404
       </LineShadowText>
     </h1>
-    <p className='text-2xl font-bold text-center mt-10 text-black dark:text-white'>Looks like you’ve ventured off the map, <br/> but don’t worry, at WeWise Labs, we innovate even in lost spaces.</p>
+    <p className='text-2xl font-bold text-center mt-10 text-black dark:text-white'>Looks 
+     like you've ventured off the map, <br/> but don't worry, here is the{' '}
+     <span className='text-gray-500'>
+    <Link href='/sitemap'>
+         sitemap
+    </Link>
+      </span>{' '}
+    to help you find your way back to innovation at WeWise Labs.</p>
       </div>
     </section>
   )
