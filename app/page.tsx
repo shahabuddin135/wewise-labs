@@ -6,7 +6,7 @@ import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import WhyChooseUs  from "@/components/why-choose-us"
-// import { Technologies } from "@/components/technologies"
+import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
@@ -67,7 +67,7 @@ export default function Home() {
 
         <Process />
 
-          <Technologies />
+        <Technologies />
 
         <Projects />
 

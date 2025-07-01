@@ -41,8 +41,13 @@ const arizonia = Arizonia({
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
-    generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: "/favicon.png", // Use a leading slash for public assets
+  },
 }
+
+
 
 export default function RootLayout({
   children,
