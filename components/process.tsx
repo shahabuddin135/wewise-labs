@@ -213,7 +213,7 @@ export function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="process" className="py-20 bg-white dark:bg-gray-950">
+    <section ref={sectionRef} id="process" className="py-24 mt-6 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
         <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 dark:text-white">HOW WE DEVELOP</h2>
         <p className="font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">

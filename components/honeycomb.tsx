@@ -147,8 +147,8 @@ const ServicesComponent = () => {
         `}
         style={{ minHeight: 150 }}
       >
-        <IconComponent className={`w-10 h-10 mb-2 ${iconColor}`} />
-        <h3 className="text-base sm:text-base text-xs font-extrabold text-center mb-1 transition-all duration-300">
+        <IconComponent className={`w-6 h-6 sm:w-10 sm:h-10 mb-2 ${iconColor}`} />
+        <h3 className="sm:text-base text-xs font-extrabold text-center mb-1 transition-all duration-300">
           {service.title}
         </h3>
         <p className="text-xs sm:text-xs text-[10px] text-center opacity-90 leading-tight transition-all duration-300">

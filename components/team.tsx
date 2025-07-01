@@ -3,7 +3,6 @@
 import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
 import { useTheme } from "next-themes"
 import BgGlowBouncingSVGs from "./ui/bg-glow"
 

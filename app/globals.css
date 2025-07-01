@@ -30,6 +30,7 @@
     --animate-shine: shine var(--duration) infinite linear;
     --animate-marquee: marquee var(--duration) infinite linear;
     --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+    --animate-line-shadow: line-shadow 15s linear infinite;
 
   }
 }
@@ -210,6 +211,14 @@
     }
   to {
     transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes line-shadow {
+  0% {
+    background-position: 0 0;
+    }
+  100% {
+    background-position: 100% -100%;
     }
   }
 }

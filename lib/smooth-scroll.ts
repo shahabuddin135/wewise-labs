@@ -1,4 +1,3 @@
-// lib/use-smooth-scroll.ts
 "use client"
 
 import { useEffect } from "react"
@@ -23,7 +22,7 @@ export function useSmoothScroll() {
 
         const smoother = ScrollSmoother.get()
         if (smoother) {
-          smoother.scrollTo(targetElement, true, "top center")
+          smoother.scrollTo(targetElement, true, "top top")
         } else {
           targetElement.scrollIntoView({ behavior: "smooth" })
         }
