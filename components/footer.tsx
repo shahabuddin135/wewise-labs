@@ -57,6 +57,11 @@ export function Footer() {
                   Site Map
                 </Link>
               </li>
+              <li>
+                <Link href="/careers" className="text-gray-600 dark:text-white hover:text-black hover:dark:text-white transition-colors text-sm">
+                    Careers 
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
