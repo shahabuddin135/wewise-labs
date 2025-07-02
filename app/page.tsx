@@ -6,7 +6,7 @@ import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
 import { Footer } from "@/components/footer"
 import WhyChooseUs  from "@/components/why-choose-us"
-// import { Technologies } from "@/components/technologies"
+import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Team } from "@/components/team"
 import { Testimonials } from "@/components/testimonials"
@@ -19,6 +19,7 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
 import { useTheme } from "next-themes"
 import ServicesComponent from "@/components/honeycomb"
+
 
 
 export default function Home() {
