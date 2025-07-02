@@ -18,13 +18,13 @@ const NotFound = () => {
       </LineShadowText>
     </h1>
     <p className='text-2xl font-bold text-center mt-10 text-black dark:text-white'>Looks 
-     like you've ventured off the map,but don't worry, here  <br/>  is the{' '}
-     <span className='text-gray-500'>
+     like you've ventured off the map, but don't worry, here  <br/>  is the{' '}
+     <span className='text-blue-500'>
     <Link href='/sitemap'>
          sitemap
     </Link>
       </span>{' '}
-    to help you find your way back to innovation at WeWise Labs.</p>
+    to help you find your way back to the site.</p>
       </div>
     </section>
   )
