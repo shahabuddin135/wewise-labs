@@ -19,7 +19,9 @@ import {
   FileCode2,
   User,
   MessageSquare,
-  FileQuestion,
+  LightbulbIcon,
+  Shield,
+  Pen
 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 
@@ -108,12 +110,6 @@ const siteMapData: TreeNode[] = [
         url: "/#testimonials",
       },
       {
-        id: "team",
-        name: "Team",
-        icon: <Users className="h-4 w-4" />,
-        url: "/#team",
-      },
-      {
         id: "contact",
         name: "Contact",
         icon: <Mail className="h-4 w-4" />,
@@ -144,76 +140,32 @@ const siteMapData: TreeNode[] = [
       },
     ],
   },
-  {
-    id: "services-page",
-    name: "Services",
-    icon: <Settings className="h-4 w-4" />,
-    url: "/services",
-    children: [
-      {
-        id: "saas-dev",
-        name: "SaaS Development",
-        icon: <Code className="h-4 w-4" />,
-      },
-      {
-        id: "web-dev",
-        name: "Web Development",
-        icon: <FileCode2 className="h-4 w-4" />,
-      },
-      {
-        id: "mobile-dev",
-        name: "Mobile Development",
-        icon: <FileCode2 className="h-4 w-4" />,
-      },
-      {
-        id: "backend-dev",
-        name: "Backend Development",
-        icon: <Layers className="h-4 w-4" />,
-      },
-      {
-        id: "ui-ux",
-        name: "UI/UX Design",
-        icon: <FileText className="h-4 w-4" />,
-      },
-    ],
-  },
-  {
-    id: "projects-page",
-    name: "Projects",
-    icon: <Briefcase className="h-4 w-4" />,
-    url: "/projects",
-  },
-  {
-    id: "blog",
-    name: "Blog",
-    icon: <FileText className="h-4 w-4" />,
-    url: "/blog",
-    isNew: true,
-  },
-  {
+    {
     id: "careers",
     name: "Careers",
     icon: <User className="h-4 w-4" />,
     url: "/careers",
   },
-  {
-    id: "faq",
-    name: "FAQ",
-    icon: <FileQuestion className="h-4 w-4" />,
-    url: "/faq",
+{
+    id: "ideas",
+    name: "Ideas",
+    icon: <LightbulbIcon className="h-4 w-4" />,
+    url: "/ideas",
+   children: [
+      {
+        id: "idea-details",
+        name: "Ideas/Blog",
+        icon: <Pen className="h-4 w-4" />,
+        isNew: true,
+        },
+    ],
   },
   {
-    id: "contact-page",
-    name: "Contact",
-    icon: <Mail className="h-4 w-4" />,
-    url: "/contact",
-  },
-  {
-    id: "sitemap",
-    name: "Site Map",
-    icon: <FileText className="h-4 w-4" />,
-    url: "/sitemap",
-  },
+    id: "privacypolicy",
+    name: "Privacy Policy",
+    icon: <Shield className="h-4 w-4" />,
+    url: "/ideas",
+  }
 ]
 
 export function SiteMapContent() {

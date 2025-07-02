@@ -132,28 +132,40 @@ const TechIcon = ({ name, icon }: { name: string; icon: React.ReactNode }) => {
   return (
     <div className="flex flex-col items-center justify-center p-4 mx-8">
       <div className="transition-all duration-300 hover:scale-120">{icon}</div>
-      <span className="text-xl text-gray-600 mt-4 font-medium dark:text-gray-400 ">{name}</span>
+      {/* <span className="text-xl text-gray-700 mt-4 font-medium dark:text-gray-400 ">{name}</span> */}
+       <span
+        className={`text-xl text-gray-700 mt-4 font-medium dark:text-gray-400 ${
+          name === "GSAP3" ? "ml-6" : ""
+        }`}
+      >
+        {name}
+      </span>
     </div>
   )
 }
 
 export default function TechStackMarquee() {
   return (
-    <div className="relative w-full h-96 py-16 bg-white dark:bg-gray-950 overflow-hidden">
+    <div className="relative w-full h-[22rem] py-16 bg-white/5 dark:bg-gray-950 overflow-hidden flex justify-center items-center">
       {/* Background glow effect in the middle - different for light and dark modes */}
-      <div className="absolute inset-0 flex items-center justify-center ">
-        {/* Light and Dark mode radial backgroundadd */}
-        <div className="w-48 h-48 sm:w-96 sm:h-60  bg-orange-400/50 dark:bg-pink-500/20 rounded-full filter blur-3xl"></div>
+        <div className="absolute inset-0 flex items-center justify-center ">
+        {/* Light mode glow */}
+        <div className="absolute w-[160px] h-[80px] sm:w-[365px] sm:h-[150px] bg-rose-400 sm:bg-rose-500/80 rounded-full blur-[60px] sm:blur-[80px] dark:hidden"></div>
        
+        {/* Dark mode glow */}
+        <div className="absolute w-48 h-20 sm:w-[350px] sm:h-[110px] bg-[radial-gradient(circle_farthest-corner_at_34.2%_44.3%,#ee6b6b_6.5%,#9439b8_100.2%)] rounded-full blur-3xl hidden dark:block"></div>
       </div>
 
       {/* Main marquee */}
       <div className="relative">
-        <Marquee pauseOnHover={false} className="[--duration:30s]">
-          {techStack.map((tech, index) => (
-            <TechIcon key={`${tech.name}-${index}`} name={tech.name} icon={tech.icon} />
-          ))}
-        </Marquee>
+        <div>
+
+          <Marquee pauseOnHover={false} className="[--duration:30s]">
+            {techStack.map((tech, index) => (
+              <TechIcon key={`${tech.name}-${index}`} name={tech.name} icon={tech.icon} />
+            ))}
+          </Marquee>
+        </div>
       </div>
 
       {/* Fade gradients on the sides - theme aware */}
@@ -161,7 +173,9 @@ export default function TechStackMarquee() {
       <div className="pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-32 bg-gradient-to-l from-white via-white/90 to-transparent dark:from-gray-950  dark:via-gray-950/80 dark:to-transparent"></div>
 
       {/* Center highlight region - theme aware */}
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[25rem] bg-gradient-to-r from-transparent via-gray-900/5 to-transparent dark:via-white/5 "></div>
+      {/* <div className="pointer-events-none absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[25rem] dark:bg-gradient-to-r dark:from-transparent via-gray-700/5 to-transparent dark:via-white/5 "></div> */}
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[28rem] h-[150px] bg-gradient-to-r from-transparent via-gray-200/10 to-transparent dark:via-white/5"></div>
     </div>
   )
 }
+
