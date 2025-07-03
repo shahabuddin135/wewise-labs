@@ -82,7 +82,7 @@ export function ResizableNavbar() {
                 <NavbarLogo />
               </Link>
             ) : (
-              <Link href="#" className="focus:outline-none">
+              <Link href="/" className="focus:outline-none">
                 <NavbarLogo />
               </Link>
             )}
