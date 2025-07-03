@@ -11,21 +11,18 @@ const testimonials = [
       "Wewise Labs transformed our business with a custom SaaS solution that streamlined our operations and improved customer satisfaction.",
     author: "Emily Chen",
     position: "CEO, TechStart Inc.",
-    // image: "/placeholder.svg?height=100&width=100",
   },
   {
     quote:
       "The team at Wewise Labs delivered our project on time and exceeded our expectations. Their attention to detail and technical expertise is unmatched.",
     author: "David Wilson",
     position: "CTO, GrowthMetrics",
-    // image: "/placeholder.svg?height=100&width=100",
   },
   {
     quote:
       "Working with Wewise Labs was a game-changer for our startup. They understood our vision and brought it to life with a beautiful, functional web application.",
     author: "Sarah Johnson",
     position: "Founder, EcoSolutions",
-    // image: "/placeholder.svg?height=100&width=100",
   },
 ]
 
@@ -95,13 +92,6 @@ export function Testimonials() {
               <p className="text-xl md:text-2xl mb-8 text-gray-700 italic">"{testimonials[activeIndex].quote}"</p>
 
               <div className="flex flex-col items-center">
-                {/* <div className="w-16 h-16 rounded-full overflow-hidden mb-4">
-                  <img
-                    src={testimonials[activeIndex].image || "/placeholder.svg"}
-                    alt={testimonials[activeIndex].author}
-                    className="w-full h-full object-cover"
-                  />
-                </div> */}
                 <h4 className="font-bold text-lg ">{testimonials[activeIndex].author}</h4>
                 <p className="text-gray-600 dark:text-gray-800">{testimonials[activeIndex].position}</p>
               </div>

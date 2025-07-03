@@ -32,7 +32,7 @@ export function Footer() {
           <div>
             <h3 className="font-subheading font-semibold mb-4 dark:text-white">Company</h3>
             <ul className="space-y-2">
-              {[ "Process", "Contact","Team"].map((item) => (
+              {[ "Process", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
                     href={`#${item.toLowerCase()}`}
@@ -42,6 +42,16 @@ export function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link href="/team" className="text-gray-600 dark:text-white hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Meet Our Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/ideas" className="text-gray-600 dark:text-white hover:text-black dark:hover:text-white transition-colors text-sm">
+                  Ideas
+                </Link>
+              </li>
               <li>
                 <Link href="/sitemap" className="text-gray-600 dark:text-white hover:text-black hover:dark:text-white transition-colors text-sm">
                   Site Map

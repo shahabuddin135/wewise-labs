@@ -7,8 +7,6 @@ import {
   useScroll,
   useMotionValueEvent,
 } from "motion/react";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useRef, useState } from "react";
 import { useTheme } from "next-themes";
 
@@ -83,7 +81,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         ref={ref}
         initial={{ y: 0, opacity: 1 }}
         animate={{
-          // y: visible ? 0 : -100,
+          y: visible ? 0 : -100,
           opacity: visible ? 1 : 0,
         }}
         transition={{ duration: 0.25 }}
