@@ -47,10 +47,10 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto max-w-sm px-4 py-10 font-sans antialiased md:max-w-4xl md:px-8 lg:px-12">
+    <div className="mx-auto max-w-xl px-8 py-10 font-sans antialiased md:max-w-6xl md:px-8">
       <div className="relative grid grid-cols-1 gap-32 md:grid-cols-2">
         <div>
-          <div className="relative h-80 w-full">
+          <div className="relative h-[28rem] w-full">
             <AnimatePresence>
               {reasons.map((reason, index) => (
                 <motion.div
@@ -88,8 +88,8 @@ export const AnimatedTestimonials = ({
                       <Image 
                         src={reason.icon}
                         alt={reason.title}
-                        width={350}
-                        height={320}
+                        width={500}
+                        height={400}
                         className="object-cover w-full h-full rounded-3xl "
                       />
                     ) : React.isValidElement(reason.icon) ? (
@@ -103,7 +103,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4">
+        <div className="flex flex-col justify-between">
           <motion.div
             key={active}
             initial={{
@@ -123,10 +123,10 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-2xl font-bold text-black dark:text-white">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white">
               {reasons[active].title}
             </h3>
-            <motion.p className="text-lg text-gray-600 dark:text-gray-100 text-wrap mt-6">
+            <motion.p className="text-lg md:text-xl lg:text-xl text-gray-600 dark:text-gray-100 text-wrap mt-6">
               {reasons[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -152,7 +152,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:pt-0">
+          <div className="flex gap-4 pt-12 md:mt-3">
             <button
               onClick={handlePrev}
               className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
