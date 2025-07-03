@@ -70,11 +70,9 @@ export function Footer() {
           <p className="text-sm text-gray-600 dark:text-white">© {currentYear} Wewise Labs. All rights reserved.</p>
 
           <div className="flex space-x-6 mt-4 md:mt-0">
-            {["Terms", "Privacy", "Cookies"].map((item) => (
-              <Link key={item} href="#" className="text-sm text-gray-600 dark:text-white hover:text-black dark:hover:text-white  transition-colors">
-                {item}
-              </Link>
-            ))}
+            <Link href="/terms-privacy" className="text-sm text-gray-600 dark:text-white hover:text-black dark:hover:text-white  transition-colors">
+              Terms & Privacy
+            </Link>
           </div>
         </div>
       </div>
