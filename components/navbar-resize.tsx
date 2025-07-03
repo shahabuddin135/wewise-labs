@@ -10,25 +10,23 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizeable-navbar";
-import { useState } from "react";
 
+import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "./ui/theme-button";
-import { useRouter, usePathname } from "next/navigation";
+import {usePathname } from "next/navigation";
 
 export function ResizableNavbar() {
   const navItems = [
     { name: "Services", link: "#services" },
     { name: "Why Us", link: "#why-choose-us" },
     { name: "Process", link: "#process" },
+    { name:"About", link:"/about"},
     { name: "Projects", link: "#projects" },
-    { name: "Team", link: "#team" },
     { name: "Contact", link: "#contact" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [ideasClickCount, setIdeasClickCount] = useState(0);
-  const router = useRouter();
   const pathname = usePathname();
 
   // Check if user is on ideas page or any slug page
@@ -42,23 +40,12 @@ export function ResizableNavbar() {
       }))
     : navItems;
 
-  const handleIdeasClick = () => {
-    const newCount = ideasClickCount + 1;
-    setIdeasClickCount(newCount);
-    
-    if (newCount >= 10) {
-      // Reset counter and navigate to ideas page
-      setIdeasClickCount(0);
-      router.push('/ideas');
-    }
-  };
-
   return (
     <div className="relative w-full ">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody 
-          className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none" : ""}
+          className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !shadow-none !rounded-none " : ""}
         >
           {isOnIdeasPage ? (
             <Link href="/" className="focus:outline-none">
@@ -73,17 +60,15 @@ export function ResizableNavbar() {
             items={displayNavItems} 
             className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
           />
-          <div className="flex items-center gap-4 z-10">
+          <div className="flex items-center gap-3 z-10">
             {!isOnIdeasPage && (
-              <button
-                onClick={handleIdeasClick}
-                className="px-3 py-1 border-2 border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-600 text-sm cursor-not-allowed opacity-50"
-                title="This button doesn't work..."
-              >
+              <Link href='/ideas'>
+              <button className="px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm  font-semibold rounded-full">
                 IDEAS
               </button>
+              </Link>
             )}
-            <ModeToggle className="ml-2 my-auto"/>
+            <ModeToggle className="my-auto"/>
           </div>
         </NavBody>
 
@@ -101,17 +86,15 @@ export function ResizableNavbar() {
                 <NavbarLogo />
               </Link>
             )}
-            <div className="flex items-center justify-center gap-5">
+            <div className="flex items-center justify-center gap-1 sm:gap-3">
             {!isOnIdeasPage && (
-              <button
-                onClick={handleIdeasClick}
-                className="px-2 py-1 border-2 border-gray-400 dark:border-gray-600 text-gray-400 dark:text-gray-600 text-xs cursor-not-allowed opacity-50"
-                title="This button doesn't work..."
-              >
-                IDEAS
-              </button>
+              <Link href="/ideas">
+                <button className="px-2 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-200 text-xs  font-semibold rounded-[5px]">
+                  IDEAS
+                </button>
+              </Link>
             )}
-            <ModeToggle className="ml-2 my-auto"/>
+            <ModeToggle/>
             <MobileNavToggle
               isOpen={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
