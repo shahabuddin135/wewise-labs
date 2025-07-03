@@ -13,23 +13,29 @@ export function ModeToggle({ className = "" }: { className?: string }) {
   }
 
   return (
-    <button
-      onClick={toggleTheme}
-      aria-label="Toggle theme"
+    <div
       className={`relative flex items-center justify-center ${className}`}
-      style={{
-        height: '2.4em',
-        width: '2.4em',
-        background: 'transparent',
-        border: 'none',
-        padding: 0,
-        cursor: 'pointer'
-      }}
+      style={{ height: '2em', width: '2em' }}
     >
+      <button
+        aria-label="Toggle theme"
+        onClick={toggleTheme}
+        className="themeToggle st-sunMoonThemeToggleBtn"
+        style={{
+          width: '2em',
+          height: '2em',
+          display: 'inline-flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: 0,
+          background: 'transparent',
+          border: 'none',
+        }}
+      >
         <svg
           width="24"
           height="24"
-         viewBox="0 0 24 24"
+          viewBox="0 0 28 28"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -54,14 +60,15 @@ export function ModeToggle({ className = "" }: { className?: string }) {
               <circle
                 cx="12"
                 cy="12"
-                r="10" // increased from 10 to 12
+                r="10"
                 fill="gray"
                 mask={`url(#${maskId})`}
-                transform="rotate(-10 12 12)"
+                transform="rotate(-40 12 12)"
               />
             </>
           )}
         </svg>
-    </button>
+      </button>
+    </div>
   )
 }
