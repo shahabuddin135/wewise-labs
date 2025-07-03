@@ -112,7 +112,7 @@ const Ideas = () => {
   }
 
   return (
-    <main className='flex justify-center items-center flex-col min-h-screen p-4'>
+    <main className='flex justify-center items-center flex-col min-h-screen p-4 mt-8 sm:mt-0'>
       {/* Header Section */}
       <div className='flex flex-col justify-center items-center border-4 border-black dark:border-white p-4 sm:p-6 md:p-10 mt-20 sm:mt-32 md:mt-44 h-64 sm:h-80 md:h-96 w-full max-w-6xl'>
         <h1 className='font-bold text-sm sm:text-base md:text-lg mt-2 sm:mt-3 md:mt-5 text-black dark:text-white'>Back Rooms</h1>
