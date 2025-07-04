@@ -67,6 +67,14 @@
   .font-arizonia {
     font-family: var(--font-arizonia);
   }
+
+  .font-berdiate{
+    font-family : var(--font-berdiate);
+  }
+
+  .font-inter{
+    font-family : var(--font-inter)
+  }
 }
 
 /* Terminal styling */

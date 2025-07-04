@@ -37,14 +37,14 @@ export default function WhyChooseUs() {
   return (
     <section className="bg-white dark:bg-black py-20 px-4">
       <div className="text-center mb-12">
-        <h2 className="text-3xl text-center md:text-5xl font-heading font-bold dark:text-white mb-6">
+        <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] text-center font-heading font-bold dark:text-white mb-10 mt-4">
           Why Choose Us
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
+        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight text-gray-600 max-w-3xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
           We combine technical expertise with a deep understanding of business needs to deliver exceptional results.
         </p>
       </div>
-      <div className="">
+      <div className="mt-3">
         <AnimatedTestimonials reasons={reasons} autoplay={true} />
       </div>
     </section>

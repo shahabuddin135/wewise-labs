@@ -1,8 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
-import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico, Arizonia} from "next/font/google"
+import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Arizonia} from "next/font/google"
 import "./globals.css"
-
 import { ThemeProvider } from "@/components/theme-provider"
 import {ResizableNavbar} from "@/components/navbar-resize"
 // import { Footer } from "@/components/footer"
@@ -37,6 +36,7 @@ const arizonia = Arizonia({
   variable: "--font-arizonia",
   weight:["400"]
 })
+
 
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",

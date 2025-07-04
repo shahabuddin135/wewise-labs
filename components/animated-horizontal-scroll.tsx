@@ -11,6 +11,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   const scrollRef = useRef<HTMLDivElement>(null)
   const [isGSAPLoaded, setIsGSAPLoaded] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(false)
 
   // Load GSAP on client side only
   useEffect(() => {
@@ -48,6 +49,16 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
     return () => {
       mounted = false
     }
+  }, [])
+
+  // Check if the screen size is mobile or tablet
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobileOrTablet(window.innerWidth < 1024) // Tailwind's 'lg' breakpoint
+    }
+    checkScreen()
+    window.addEventListener("resize", checkScreen)
+    return () => window.removeEventListener("resize", checkScreen)
   }, [])
 
   // Setup animations after GSAP is loaded
@@ -371,7 +382,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
       <div ref={scrollRef} className="flex items-center h-full whitespace-nowrap px-8">
         {/* At */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 dark:from-sky-300 dark:via-blue-400 dark:to-indigo-500 bg-clip-text text-transparent ml-10 mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 dark:from-sky-300 dark:via-blue-400 dark:to-indigo-500 bg-clip-text text-transparent ml-10 mr-8 md:mr-16">
           At
         </span>
 
@@ -406,7 +417,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* wewise */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 dark:from-pink-400 dark:via-purple-400 dark:to-blue-400 bg-clip-text text-transparent mr-8 md:mr-16">
           wewise,
         </span>
 
@@ -441,7 +452,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-lime-400 via-green-500 to-emerald-600 dark:from-lime-300 dark:via-green-400 dark:to-emerald-500 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-lime-400 via-green-500 to-emerald-600 dark:from-lime-300 dark:via-green-400 dark:to-emerald-500 bg-clip-text text-transparent mr-8 md:mr-16">
           we
         </span>
 
@@ -476,7 +487,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* mean */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 dark:from-yellow-400 dark:via-orange-400 dark:to-red-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 dark:from-yellow-400 dark:via-orange-400 dark:to-red-400 bg-clip-text text-transparent mr-8 md:mr-16">
           mean
         </span>
 
@@ -511,7 +522,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* it */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 dark:from-amber-300 dark:via-orange-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-amber-400 via-orange-500 to-red-600 dark:from-amber-300 dark:via-orange-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
           it
         </span>
 
@@ -546,7 +557,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* when */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-green-500 via-blue-500 to-purple-500 dark:from-green-400 dark:via-blue-400 dark:to-purple-400 bg-clip-text text-transparent mr-8 md:mr-16">
           when
         </span>
 
@@ -581,29 +592,40 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </div>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-600 dark:from-violet-300 dark:via-purple-400 dark:to-fuchsia-500 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-violet-500 via-purple-500 to-fuchsia-600 dark:from-violet-300 dark:via-purple-400 dark:to-fuchsia-500 bg-clip-text text-transparent mr-8 md:mr-16">
           we
         </span>
 
         {/* say: */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-green-500 dark:from-cyan-400 dark:via-teal-400 dark:to-green-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-cyan-500 via-teal-500 to-green-500 dark:from-cyan-400 dark:via-teal-400 dark:to-green-400 bg-clip-text text-transparent mr-8 md:mr-16">
           say:
         </span>
 
         {/* "Creative */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-rose-400 via-pink-500 to-red-600 dark:from-rose-300 dark:via-pink-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-rose-400 via-pink-500 to-red-600 dark:from-rose-300 dark:via-pink-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
           "Creative
         </span>
 
         {/* we */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 dark:from-pink-400 dark:via-red-400 dark:to-orange-400 bg-clip-text text-transparent mr-8 md:mr-16">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-pink-500 via-red-500 to-orange-500 dark:from-pink-400 dark:via-red-400 dark:to-orange-400 bg-clip-text text-transparent mr-8 md:mr-16">
           we
         </span>
 
         {/* are!" */}
-        <span className="text-element text-6xl md:text-8xl lg:text-9xl font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56">
           are!"
         </span>
+        {/* Spacer to ensure last text is fully visible on md+ screens only */}
+        {/* <div
+          className="hidden md:inline-block"
+          style={{ width: "160vw" }}
+          aria-hidden="true"
+        ></div> */}
+        <div
+          className="inline-block"
+          style={{ width: isMobileOrTablet ? "140vw" : "180vw" }}
+          aria-hidden="true"
+        ></div>
       </div>
     </div>
   )
