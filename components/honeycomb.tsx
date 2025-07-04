@@ -179,11 +179,10 @@ const ServicesComponent = () => {
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">
-            Our Services
+            What We Build <br/> <span className="text-3xl md:text-[2rem] lg:text-[3rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">We Build to Win</span>
           </h2>
-          <p className="px-2 sm:px-0 text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">            
-            We offer comprehensive digital solutions to help your business thrive 
-            in the modern digital landscape.
+          <p className="px-2 sm:px-0 text-lg md:text-[1rem] lg:text-[1.35rem] leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">            
+             WeWise isn&apos;t just coding for fun. We build products that solve, scale, and stick. Here&apos;s what we bring to your table.
           </p> 
         </div>
 

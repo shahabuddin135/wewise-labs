@@ -38,10 +38,10 @@ export default function WhyChooseUs() {
     <section className="bg-white dark:bg-black py-20 px-4">
       <div className="text-center mb-12">
         <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] text-center font-heading font-bold dark:text-white mb-10 mt-4">
-          Why Choose Us
+          Why WeWise? <br/> <span className="text-5xl md:text-[4rem] lg:text-[5rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">Because We Don’t Miss</span> 
         </h2>
-        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight text-gray-600 max-w-3xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
-          We combine technical expertise with a deep understanding of business needs to deliver exceptional results.
+        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 text-gray-600 max-w-3xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
+          We&apos;re not here to “deliver projects.” We&apos;re here to create results. <br/>Here&apos;s why our clients don&apos;t just choose us......<br/> They stay with us.
         </p>
       </div>
       <div className="mt-3">
