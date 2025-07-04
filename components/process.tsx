@@ -215,9 +215,9 @@ export function Process() {
   return (
     <section ref={sectionRef} id="process" className="py-24 mt-6 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
-        <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DEVELOP</h2>
-        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
-          We follow a structured approach to deliver high-quality solutions that meet your business needs.
+        <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?</h2>
+        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
+         From spark to ship. <br/> We focus process that gets ideas from the whiteboard to the real world.
         </p>
       </div>
       

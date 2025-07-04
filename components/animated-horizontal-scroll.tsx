@@ -603,7 +603,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         {/* "Creative */}
         <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-rose-400 via-pink-500 to-red-600 dark:from-rose-300 dark:via-pink-400 dark:to-red-500 bg-clip-text text-transparent mr-8 md:mr-16">
-          "Creative
+          &quot;Creative
         </span>
 
         {/* we */}
@@ -613,7 +613,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         {/* are!" */}
         <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56">
-          are!"
+          are!&quot;
         </span>
         {/* Spacer to ensure last text is fully visible on md+ screens only */}
         {/* <div

@@ -186,9 +186,9 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 text-center font-heading font-bold dark:text-white">Our Projects</h2>
+          <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 text-center font-heading font-bold dark:text-white">Chapters We&apos;ve Written</h2>
           <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
-            Take a look at some of our recent work that showcases our expertise and capabilities.
+            Every project here tells a story and we&apos;re just getting started.
           </p>
         </motion.div>
 
