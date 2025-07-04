@@ -48,9 +48,10 @@ export const AnimatedTestimonials = ({
   };
   return (
     <div className="mx-auto max-w-xl px-8 py-10 font-sans antialiased md:max-w-6xl md:px-8">
-      <div className="relative grid grid-cols-1 gap-32 md:grid-cols-2">
-        <div>
-          <div className="relative h-[28rem] w-full">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-40">
+        {/* Image Section */}
+        <div className="flex-1">
+          <div className="relative h-[24rem] w-full">
             <AnimatePresence>
               {reasons.map((reason, index) => (
                 <motion.div
@@ -103,7 +104,8 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between">
+        {/* Text Section */}
+        <div className="flex-1 flex flex-col gap-28">
           <motion.div
             key={active}
             initial={{
@@ -126,7 +128,7 @@ export const AnimatedTestimonials = ({
             <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black dark:text-white">
               {reasons[active].title}
             </h3>
-            <motion.p className="text-lg md:text-xl lg:text-xl text-gray-600 dark:text-gray-100 text-wrap mt-6">
+            <motion.p className="text-lg md:text-xl lg:text-xl text-gray-600 dark:text-gray-100 text-wrap mt-14">
               {reasons[active].description.split(" ").map((word, index) => (
                 <motion.span
                   key={index}
@@ -152,18 +154,18 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-4 pt-12 md:mt-3">
+          <div className="flex gap-6 pt-6 md:mt-3">
             <button
               onClick={handlePrev}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-700"
             >
-              <IconArrowLeft className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-400" />
+              <IconArrowLeft className="h-6 w-6 text-black transition-transform duration-300 group-hover/button:rotate-12 dark:text-neutral-200" />
             </button>
             <button
               onClick={handleNext}
-              className="group/button flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
+              className="group/button flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-700"
             >
-              <IconArrowRight className="h-5 w-5 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-400" />
+              <IconArrowRight className="h-6 w-6 text-black transition-transform duration-300 group-hover/button:-rotate-12 dark:text-neutral-200" />
             </button>
           </div>
         </div>

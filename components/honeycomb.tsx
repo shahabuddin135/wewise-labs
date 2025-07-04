@@ -138,7 +138,7 @@ const ServicesComponent = () => {
       <div
         className={`
           relative h-full w-full flex flex-col items-center justify-center p-3
-          bg-gray-50 dark:bg-zinc-900
+          bg-gray-50 dark:bg-slate-700
           rounded-2xl
           shadow-[8px_8px_24px_#e5e7eb,_-8px_-8px_24px_#fff] dark:shadow-[8px_8px_24px_#18181b,_-8px_-8px_24px_#27272a]
           transition-all duration-300 ease-in-out
