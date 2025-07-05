@@ -4,22 +4,22 @@ import Image from 'next/image'
 const WhereOnEarth = () => {
   return (
 <section>
-      <div className="flex h-[50%] max-w-7xl bg-gray-100 dark:bg-gray-950 dark:border dark:border-1 dark:border-white rounded-2xl mx-auto justify-between">
-      <div className="flex justify-center items-center m-8 w-1/3">
+      <div className="flex h-[50%] max-w-7xl bg-gray-100 dark:bg-gray-950 mt-10 dark:border dark:border-1 dark:border-white rounded-2xl mx-auto justify-between">
+      <div className="flex justify-center items-center  w-1/3">
           {/* Light mode image */}
           <Image
             src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751722518/Map-dark_n3uz1h.png"
             alt="why-us"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="w-[400px] h-[400px] object-cover block dark:hidden"
           />
           {/* Dark mode image */}
           <Image
             src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751722518/Map-light_jrecig.png"
             alt="why-us-dark"
-            width={400}
-            height={400}
+            width={300}
+            height={300}
             className="w-[400px] h-[400px] object-cover hidden dark:block"
           />
         </div>

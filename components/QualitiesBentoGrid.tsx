@@ -4,7 +4,7 @@ import React from "react";
 const qualities = [
   {
     title: "Collaborative Spirit",
-    subtitle: "",
+    subtitle: "The Wewise.",
     image: "/pattern-randomized.png",
     span: "col-span-2",
   },
@@ -13,8 +13,8 @@ const qualities = [
     isButton: true,
   },
   {
-    title: "Seamless UX",
-    subtitle: "The Wewise .",
+    title: " Growth-Focused",
+    subtitle: "We engineer growth, not just software.",
     bgColor: "bg-[#e9decf]",
   },
   {
@@ -22,9 +22,12 @@ const qualities = [
     subtitle: "Know More About Your Destiny?",
     image: "/hex-hero.jpg", 
     span: "col-span-2",
+    textClass: "text-white text-3xl md:text-5xl", // Add this line
+    subtitleClass: "text-white text-lg md:text-2xl", // Optional: for subtitle
   },
   {
-    title: "Design-Driven",
+    title: "Agile Execution",
+    subtitle:"We move fast, learn faster.",
     image: "/hexagon-bg.jpg",
   },
   {
@@ -69,11 +72,11 @@ const QualitiesBentoGrid = () => {
 
             <div className="relative z-10 text-center">
               {item.subtitle && (
-                <p className="text-sm uppercase tracking-wide opacity-80">
+                <p className={`text-sm uppercase tracking-wide opacity-80 ${item.subtitleClass ?? ""}`}>
                   {item.subtitle}
                 </p>
               )}
-              <h3 className="text-xl font-semibold">{item.title}</h3>
+              <h3 className={`text-xl font-semibold ${item.textClass ?? ""}`}>{item.title}</h3>
             </div>
 
             <div className="absolute inset-0 bg-black/20 z-0" />
