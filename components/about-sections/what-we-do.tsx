@@ -6,11 +6,11 @@ const WhatWeDo = () => {
     <section>
     <div 
     className="flex flex-col md:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto gap-8 pl-8   bg-gray-100 dark:bg-gray-950 dark:border dark:border-1 dark:border-white rounded-2xl justify-between"
-    style={{
-      backgroundImage : "url('/lightblue.png')",
-      backgroundSize : "cover",
-      backgroundRepeat : "no-repeat"
-     }}
+    // style={{
+    //   backgroundImage : "url('/lightblue.png')",
+    //   backgroundSize : "cover",
+    //   backgroundRepeat : "no-repeat"
+    //  }}
     >
     
     <div className="flex justify-center items-center w-1/3">

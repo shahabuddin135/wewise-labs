@@ -6,11 +6,11 @@ const FoundingMembers = () => {
     <section>
     <div
      className="flex flex-col md:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto dark:bg-gray-950 dark:border dark:border-1 dark:border-white rounded-2xl justify-between shadow-md"
-     style={{
-      backgroundImage : "url('/noise.png')",
-      backgroundSize : "cover",
-      backgroundRepeat : "no-repeat"
-     }}
+    //  style={{
+    //   backgroundImage : "url('https://res.cloudinary.com/dqkt0g0he/image/upload/v1751746883/magicpattern-noise-1751746850158_xgpbb4.png')",
+    //   backgroundSize : "cover",
+    //   backgroundRepeat : "no-repeat"
+    //  }}
      >
     
     <div className="flex justify-center items-center p-6 md:p-8 w-full md:w-1/3">
