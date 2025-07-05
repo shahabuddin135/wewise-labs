@@ -4,7 +4,7 @@ import React from 'react'
 import BgGlowBouncingSVGs from './ui/bg-glow'
 import CardPicker from './CardPicker'
 // import VerticalGSAPCards from './VerticalCarousel'
-import QualitiesBentoGrid from './QualitiesBentoGrid'
+import QualitiesBentoGrid from './about-sections/QualitiesBentoGrid'
 // import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const WhyWewise = () => {
