@@ -16,10 +16,11 @@ export default function AboutPage() {
           <AboutHero/>
           <WhatWeDo/>
           <Mission/>
-          <FoundingMembers/>
           <WhyUs/>
           <WhereOnEarth/>
+          <FoundingMembers/>
           <QualitiesBentoGrid />
+          
       </section>
 
   )
