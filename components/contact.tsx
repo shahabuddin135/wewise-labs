@@ -320,9 +320,11 @@ export function Contact() {
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 dark:text-white">Get in Touch</h2>
-        <p className="text-gray-600 dark:text-white max-w-2xl mx-auto text-sm md:text-base">
-          Ready to start your project? Contact us through our terminal interface below.
+        <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 font-bold dark:text-white">Reach Out... Build Bold...<br/>
+        <span className="text-3xl md:text-[2rem] lg:text-[3rem] mb-10 mt-4 ">Got an idea? A project? A dream?</span></h2>
+        <p className="text-gray-600 dark:text-white max-w-2xl mx-auto text-lg md:text-[1rem] lg:text-[1.5rem] leading-8">
+          <br/>Hit us up. <br/>We&apos;re all ears and ready to build.
+          
         </p>
       </motion.div>
 
@@ -340,7 +342,7 @@ export function Contact() {
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-red-500 mr-1.5 md:mr-2"></div>
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-yellow-500 mr-1.5 md:mr-2"></div>
               <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-green-500 mr-1.5 md:mr-2"></div>
-              <span className="text-white text-xs md:text-sm font-mono ml-2">wewise-labs:~/contact</span>
+              <span className="text-white text-sm md:text-lg font-mono ml-2">wewise-labs:~/contact</span>
             </div>
             <div className="flex items-center gap-2">
               {!FORMSPREE_ENDPOINT && (

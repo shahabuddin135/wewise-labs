@@ -137,8 +137,8 @@ const ServicesComponent = () => {
     return (
       <div
         className={`
-          relative h-full w-full flex flex-col items-center justify-center p-4
-          bg-gray-50 dark:bg-zinc-900
+          relative h-full w-full flex flex-col items-center justify-center p-3
+          bg-gray-50 dark:bg-slate-700
           rounded-2xl
           shadow-[8px_8px_24px_#e5e7eb,_-8px_-8px_24px_#fff] dark:shadow-[8px_8px_24px_#18181b,_-8px_-8px_24px_#27272a]
           transition-all duration-300 ease-in-out
@@ -147,11 +147,11 @@ const ServicesComponent = () => {
         `}
         style={{ minHeight: 150 }}
       >
-        <IconComponent className={`w-6 h-6 sm:w-10 sm:h-10 mb-2 ${iconColor}`} />
-        <h3 className="sm:text-base text-xs font-extrabold text-center mb-1 transition-all duration-300">
+        <IconComponent className={`w-6 h-6 sm:w-12 sm:h-12 sm:mb-6 mb-2 ${iconColor}`} />
+        <h3 className=" sm:text-lg text-sm font-extrabold text-center mb-1 transition-all duration-300">
           {service.title}
         </h3>
-        <p className="text-xs sm:text-xs text-[10px] text-center opacity-90 leading-tight transition-all duration-300">
+        <p className="text-xs sm:text-lg text-[10px] text-center opacity-90 leading-tight transition-all duration-300">
           {service.description}
         </p>
       </div>
@@ -178,13 +178,12 @@ const ServicesComponent = () => {
       <div className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-fuchsia-400 dark:bg-fuchsia-900 opacity-30 blur-[100px] pointer-events-none z-0" />
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Our Services
+          <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">
+            What We Build <br/> <span className="text-3xl md:text-[2rem] lg:text-[3rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">We Build to Win</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            We offer comprehensive digital solutions to help your business thrive
-            in the modern digital landscape.
-          </p>
+          <p className="px-2 sm:px-0 text-lg md:text-[1rem] lg:text-[1.35rem] leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">            
+             WeWise isn&apos;t just coding for fun. We build products that solve, scale, and stick. Here&apos;s what we bring to your table.
+          </p> 
         </div>
 
         {width >= 1024 ? (

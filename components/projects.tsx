@@ -186,9 +186,9 @@ export function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-6 dark:text-white">Our Projects</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
-            Take a look at some of our recent work that showcases our expertise and capabilities.
+          <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 text-center font-heading font-bold dark:text-white">Chapters We&apos;ve Written</h2>
+          <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-tight text-gray-600 max-w-2xl mx-auto mb-4 font-body font-semibold text-center dark:text-white">
+            Every project here tells a story and we&apos;re just getting started.
           </p>
         </motion.div>
 
@@ -203,19 +203,19 @@ export function Projects() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3 items-center"
             >
               <div className="order-2 md:order-1 px-5">
-                <span className="font-subheading text-lg sm:text-xl text-gray-500 dark:text-gray-100 mb-2 block">{projects[activeIndex].category}</span>
-                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-4 dark:text-white">{projects[activeIndex].title}</h2>
-                <p className="text-lg text-gray-600 dark:text-gray-100 text-wrap mb-6">{projects[activeIndex].description}</p>
+                <span className="font-subheading text-lg sm:text-xl md:text-3xl text-gray-500 dark:text-gray-100 mb-4 block">{projects[activeIndex].category}</span>
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold mb-6 dark:text-white">{projects[activeIndex].title}</h2>
+                <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-100 text-wrap mb-8">{projects[activeIndex].description}</p>
 
-                <div className="flex flex-wrap gap-4 mb-8">
+                <div className="flex flex-wrap gap-4 mb-10">
                   {projects[activeIndex].tags.map((tag, index) => (
-                    <span key={index} className="font-body font-semibold bg-gray-100 px-3 py-1 rounded-full text-sm">
+                    <span key={index} className="font-body font-semibold bg-gray-100 px-3 py-1 rounded-full text-sm md:text-lg">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <Button className="font-subheading tracking-wider border dark:border-white rounded-full bg-black text-white hover:bg-gray-800 px-6">
+                <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-black text-white hover:bg-gray-800 px-6">
                   <Link href = {projects[activeIndex].projectLink || "https://www.techverse51.com"}>View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>

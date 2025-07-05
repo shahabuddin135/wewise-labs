@@ -215,9 +215,9 @@ export function Process() {
   return (
     <section ref={sectionRef} id="process" className="py-24 mt-6 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
-        <h2 className="font-heading font-bold text-3xl md:text-4xl mb-4 dark:text-white">HOW WE DEVELOP</h2>
-        <p className="font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
-          We follow a structured approach to deliver high-quality solutions that meet your business needs.
+        <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?</h2>
+        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
+         From spark to ship. <br/> We focus process that gets ideas from the whiteboard to the real world.
         </p>
       </div>
       
@@ -245,8 +245,8 @@ export function Process() {
                   {isLeft && (
                     <div className="flex flex-col items-end">
                       <div className="step-icon mb-2">{step.icon}</div>
-                      <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
-                      <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs text-right">{step.description}</p>
+                      <h3 className="step-title font-heading text-xl md:text-2xl lg:text-2xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                      <p className="step-description text-gray-600 dark:text-white text-base md:text-lg max-w-sm text-right">{step.description}</p>
                     </div>
                   )}
                 </div>
@@ -263,8 +263,8 @@ export function Process() {
                   {!isLeft && (
                     <div className="flex flex-col items-start">
                       <div className="step-icon mb-2">{step.icon}</div>
-                      <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
-                      <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs text-left">{step.description}</p>
+                      <h3 className="step-title font-heading text-xl md:text-2xl lg:text-2xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                      <p className="step-description text-gray-600 dark:text-white text-base md:text-lg max-w-sm text-left">{step.description}</p>
                     </div>
                   )}
                 </div>
@@ -292,8 +292,8 @@ export function Process() {
                 {isAbove && (
                   <div className="flex flex-col items-center justify-center mb-8 min-h-[180px]">
                     <div className="step-icon mb-2">{step.icon}</div>
-                    <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
-                    <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs">{step.description}</p>
+                    <h3 className="step-title font-heading text-xl md:text-2xl lg:text-2xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                    <p className="step-description text-gray-600 dark:text-white text-base md:text-lg max-w-sm leading-4">{step.description}</p>
                   </div>
                 )}
                 {/* Number Node */}
@@ -304,10 +304,10 @@ export function Process() {
                 </div>
                 {/* Bottom Content */}
                 {!isAbove && (
-                  <div className="flex flex-col items-center justify-center min-h-[180px] pt-[16rem]">
+                  <div className="flex flex-col items-center justify-center min-h-[180px] pt-[18rem]">
                     <div className="step-icon mb-2">{step.icon}</div>
-                    <h3 className="step-title font-heading text-xl font-bold mb-1 dark:text-white">{step.title}</h3>
-                    <p className="step-description text-gray-600 dark:text-white text-sm max-w-xs">{step.description}</p>
+                    <h3 className="step-title font-heading text-xl md:text-2xl lg:text-2xl font-bold mb-1 dark:text-white">{step.title}</h3>
+                    <p className="step-description text-gray-600 dark:text-white text-base md:text-lg max-w-sm">{step.description}</p>
                   </div>
                 )}
               </div>

@@ -24,7 +24,8 @@ const config = {
         heading: ["var(--font-heading)", "sans-serif"],
         subheading: ["var(--font-subheading)", "sans-serif"],
         body: ["var(--font-body)", "sans-serif"],
-        arizonia: ["var(--font-arizonia)"]
+        arizonia: ["var(--font-arizonia)"],
+      
        
       },
       backgroundImage: {

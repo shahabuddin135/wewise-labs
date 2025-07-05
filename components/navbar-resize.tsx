@@ -21,7 +21,7 @@ export function ResizableNavbar() {
     { name: "Services", link: "#services" },
     { name: "Why Us", link: "#why-choose-us" },
     { name: "Process", link: "#process" },
-    { name:"About", link:"/about"},
+    { name:"About", link:"about"},
     { name: "Projects", link: "#projects" },
     { name: "Contact", link: "#contact" },
   ];
@@ -30,10 +30,19 @@ export function ResizableNavbar() {
   const pathname = usePathname();
 
   // Check if user is on ideas page or any slug page
-  const isOnIdeasPage = pathname?.startsWith('/ideas');
+    const isOnIdeasPage = pathname?.startsWith('/ideas');
 
+  const specialPages = [
+  "/ideas",
+  "/about",
+  "/careers",
+  "/sitemap",
+  "/terms-privacy",
+];
+
+const isOnSpecialPage = specialPages.some((prefix) => pathname?.startsWith(prefix));
   // Conditionally update nav links for ideas page
-  const displayNavItems = isOnIdeasPage
+  const displayNavItems = isOnSpecialPage
     ? navItems.map(item => ({
         ...item,
         link: `/${item.link}`, // e.g., "/#services"
@@ -86,7 +95,7 @@ export function ResizableNavbar() {
                 <NavbarLogo />
               </Link>
             )}
-            <div className="flex items-center justify-center gap-1 sm:gap-3">
+            <div className="flex items-center justify-center gap-3 sm:gap-4">
             {!isOnIdeasPage && (
               <Link href="/ideas">
                 <button className="px-2 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-200 text-xs  font-semibold rounded-[5px]">
