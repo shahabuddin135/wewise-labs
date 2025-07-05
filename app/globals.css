@@ -67,6 +67,11 @@
   .font-arizonia {
     font-family: var(--font-arizonia);
   }
+
+  .font-libre{
+    font-family: var(--font-libre-caslon);
+  }
+
 }
 
 /* Terminal styling */

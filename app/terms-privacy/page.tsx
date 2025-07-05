@@ -21,21 +21,21 @@ export default function PrivacyPolicyPage() {
   }
 
   return (
-    <div className="min-h-screen bg-background dark:bg-[#0a0a0a] dark:text-[#fafafa]">
+    <div className="min-h-screen mt-28 bg-background dark:bg-[#0a0a0a] dark:text-[#fafafa]">
       <div className="container mx-auto px-4 py-8 max-w-6xl">
         {/* Header */}
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <Shield className="h-8 w-8 text-primary" />
-            <h1 className="text-4xl font-bold">Privacy Policy & Terms</h1>
+            <Shield className="h-8 w-8 text-black dark:text-[#fafafa]" />
+            <h1 className="text-4xl font-bold text-black dark:text-[#fafafa]">Privacy Policy & Terms</h1>
           </div>
-          <p className="text-xl text-muted-foreground dark:text-[#d4d4d4] max-w-2xl mx-auto">
+          <p className="text-xl text-black text-muted-foreground dark:text-[#d4d4d4] max-w-2xl mx-auto">
             Your privacy and security are our top priorities. Learn how we protect your information and outline our
             terms of service.
           </p>
           <div className="flex items-center justify-center gap-2 mt-4">
-            <Calendar className="h-4 w-4 text-muted-foreground dark:text-[#a3a3a3]" />
-            <span className="text-sm text-muted-foreground dark:text-[#a3a3a3]">Last updated: July 2, 2025</span>
+            <Calendar className="h-4 w-4 text-black dark:text-[#a3a3a3]" />
+            <span className="text-sm text-black text-muted-foreground dark:text-[#a3a3a3]">Last updated: July 2, 2025</span>
           </div>
         </div>
 
@@ -44,80 +44,116 @@ export default function PrivacyPolicyPage() {
           <div className="lg:col-span-1">
             <Card className="sticky top-8 dark:bg-[#171717] dark:border-[#262626]">
               <CardHeader>
-                <CardTitle className="text-lg dark:text-[#fafafa]">Contents</CardTitle>
+                <CardTitle className="text-lg text-black dark:text-[#fafafa]">Contents</CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
                 <Button
                   variant={activeSection === "privacy" ? "default" : "ghost"}
-                  className="w-full justify-start"
+                  className={`w-full justify-start ${
+                    activeSection === "privacy"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("privacy")}
                 >
-                  <Shield className="h-4 w-4 mr-2" />
-                  <span className="dark:text-[#fafafa]">Privacy Policy</span>
+                  <Shield className={`h-4 w-4 mr-2 ${activeSection === "privacy" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "privacy" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Privacy Policy</span>
                 </Button>
                 <Button
                   variant={activeSection === "information" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm dark:hover:text-black"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "information"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("information")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2 dark:text-white dark:hover:text-black" />
-                  <span className="dark:text-[#fafafa] ">Information We Collect</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "information" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "information" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Information We Collect</span>
                 </Button>
                 <Button
                   variant={activeSection === "usage" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm dark:text-white"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "usage"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("usage")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2 dark:text-white" />
-                  <span className="dark:text-[#fafafa]">How We Use Your Info</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "usage" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "usage" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>How We Use Your Info</span>
                 </Button>
                 <Button
                   variant={activeSection === "rights" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm dark:text-white"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "rights"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("rights")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2" />
-                  <span className="dark:text-[#fafafa]">Your Rights</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "rights" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "rights" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Your Rights</span>
                 </Button>
                 <Button
                   variant={activeSection === "security" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "security"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("security")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2" />
-                  <span className="dark:text-[#fafafa]">Data Security</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "security" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "security" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Data Security</span>
                 </Button>
                 <Button
                   variant={activeSection === "terms" ? "default" : "ghost"}
-                  className="w-full justify-start"
+                  className={`w-full justify-start ${
+                    activeSection === "terms"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("terms")}
                 >
-                  <FileText className="h-4 w-4 mr-2" />
-                  <span className="dark:text-[#fafafa]">Terms & Conditions</span>
+                  <FileText className={`h-4 w-4 mr-2 ${activeSection === "terms" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "terms" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Terms & Conditions</span>
                 </Button>
                 <Button
                   variant={activeSection === "ownership" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "ownership"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("ownership")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2" />
-                  <span className="dark:text-[#fafafa]">Content Ownership</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "ownership" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "ownership" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Content Ownership</span>
                 </Button>
                 <Button
                   variant={activeSection === "acceptable" ? "default" : "ghost"}
-                  className="w-full justify-start text-sm"
+                  className={`w-full justify-start text-sm ${
+                    activeSection === "acceptable"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("acceptable")}
                 >
-                  <ChevronRight className="h-3 w-3 mr-2" />
-                  <span className="dark:text-[#fafafa]">Acceptable Use</span>
+                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "acceptable" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "acceptable" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Acceptable Use</span>
                 </Button>
                 <Button
                   variant={activeSection === "contact" ? "default" : "ghost"}
-                  className="w-full justify-start"
+                  className={`w-full justify-start ${
+                    activeSection === "contact"
+                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
+                  }`}
                   onClick={() => scrollToSection("contact")}
                 >
-                  <Mail className="h-4 w-4 mr-2" />
-                  <span className="dark:text-[#fafafa]">Contact Us</span>
+                  <Mail className={`h-4 w-4 mr-2 ${activeSection === "contact" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
+                  <span className={activeSection === "contact" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Contact Us</span>
                 </Button>
               </CardContent>
             </Card>
@@ -132,8 +168,8 @@ export default function PrivacyPolicyPage() {
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
-                        <Shield className="h-6 w-6 text-primary" />
-                        <CardTitle className="text-2xl dark:text-[#fafafa]">Privacy Policy</CardTitle>
+                        <Shield className="h-6 w-6 text-black dark:text-[#fafafa]" />
+                        <CardTitle className="text-2xl text-black dark:text-[#fafafa]">Privacy Policy</CardTitle>
                       </div>
                       <CardDescription className="dark:text-[#d4d4d4]">
                         Your privacy is important to us. This Privacy Policy explains what information WeWise Labs
@@ -147,7 +183,7 @@ export default function PrivacyPolicyPage() {
                 <section id="information">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">Information We Collect</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">Information We Collect</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-muted-foreground dark:text-[#d4d4d4] leading-relaxed">
@@ -158,7 +194,7 @@ export default function PrivacyPolicyPage() {
                         to respond to your inquiry.
                       </p>
                       <div className="bg-muted/50 dark:bg-[#1f1f1f] p-4 rounded-lg border dark:border-[#262626]">
-                        <h4 className="font-semibold mb-2 dark:text-[#fafafa]">No Cookies Policy</h4>
+                        <h4 className="font-semibold mb-2 text-black dark:text-[#fafafa]">No Cookies Policy</h4>
                         <p className="text-sm text-muted-foreground dark:text-[#d4d4d4]">
                           We do not use cookies or any similar tracking technologies on our website. Our site does not
                           place any cookies on your device, and we do not collect analytics data or personal identifiers
@@ -173,7 +209,7 @@ export default function PrivacyPolicyPage() {
                 <section id="usage">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">How We Use Your Information</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">How We Use Your Information</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-muted-foreground dark:text-[#d4d4d4] leading-relaxed">
@@ -202,7 +238,7 @@ export default function PrivacyPolicyPage() {
                 <section id="rights">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">Your Rights</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">Your Rights</CardTitle>
                       <CardDescription className="dark:text-[#d4d4d4]">
                         WeWise Labs respects your rights regarding your personal data. You have the following rights:
                       </CardDescription>
@@ -214,7 +250,7 @@ export default function PrivacyPolicyPage() {
                             1
                           </Badge>
                           <div>
-                            <h4 className="font-semibold dark:text-[#fafafa]">Access Your Data</h4>
+                            <h4 className="font-semibold text-black dark:text-[#fafafa]">Access Your Data</h4>
                             <p className="text-sm text-muted-foreground dark:text-[#d4d4d4]">
                               You can request a copy of the personal information we hold about you. We will provide you
                               with a summary of any information we have collected from you, such as details you
@@ -227,7 +263,7 @@ export default function PrivacyPolicyPage() {
                             2
                           </Badge>
                           <div>
-                            <h4 className="font-semibold dark:text-[#fafafa]">Request Deletion</h4>
+                            <h4 className="font-semibold text-black dark:text-[#fafafa]">Request Deletion</h4>
                             <p className="text-sm text-muted-foreground dark:text-[#d4d4d4]">
                               You can ask us to delete the personal data you have given us. Upon request, we will erase
                               your name, contact information, and any messages you sent, unless we are required to keep
@@ -249,7 +285,7 @@ export default function PrivacyPolicyPage() {
                 <section id="security">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">Data Security</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">Data Security</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground dark:text-[#d4d4d4] leading-relaxed">
@@ -271,8 +307,8 @@ export default function PrivacyPolicyPage() {
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
-                        <FileText className="h-6 w-6 text-primary" />
-                        <CardTitle className="text-2xl dark:text-[#fafafa]">Terms and Conditions</CardTitle>
+                        <FileText className="h-6 w-6 text-black dark:text-[#fafafa]" />
+                        <CardTitle className="text-2xl text-black dark:text-[#fafafa]">Terms and Conditions</CardTitle>
                       </div>
                       <CardDescription className="dark:text-[#d4d4d4]">
                         Welcome to the WeWise Labs website. These Terms and Conditions govern your use of our website.
@@ -286,7 +322,7 @@ export default function PrivacyPolicyPage() {
                 <section id="ownership">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">Ownership of Content</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">Ownership of Content</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
                       <p className="text-muted-foreground dark:text-[#d4d4d4] leading-relaxed">
@@ -310,7 +346,7 @@ export default function PrivacyPolicyPage() {
                 <section id="acceptable">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
-                      <CardTitle className="text-xl dark:text-[#fafafa]">Acceptable Use</CardTitle>
+                      <CardTitle className="text-xl text-black dark:text-[#fafafa]">Acceptable Use</CardTitle>
                       <CardDescription className="dark:text-[#d4d4d4]">
                         We value a secure and fair online environment. By using our website, you agree not to misuse it
                         or engage in any activity that could harm us or other users.
@@ -318,9 +354,9 @@ export default function PrivacyPolicyPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        <div className="bg-red-50 dark:bg-[#1f1f1f] border border-red-200 dark:border-[#404040] p-4 rounded-lg">
-                          <h4 className="font-semibold text-red-800 dark:text-[#fafafa] mb-3">Prohibited Activities</h4>
-                          <div className="space-y-2 text-sm text-red-700 dark:text-[#d4d4d4]">
+                        <div className="bg-red-50 dark:bg-red-50 border border-red-200 dark:border-[#404040] p-4 rounded-lg">
+                          <h4 className="font-semibold text-red-800 dark:text-red-900 mb-3">Prohibited Activities</h4>
+                          <div className="space-y-2 text-sm text-red-700 dark:text-red-800">
                             <div className="flex items-start gap-2">
                               <span className="font-medium">•</span>
                               <span>
@@ -371,11 +407,11 @@ export default function PrivacyPolicyPage() {
                 {/* Disclaimer */}
                 <Card className="dark:bg-[#171717] dark:border-[#262626]">
                   <CardHeader>
-                    <CardTitle className="text-xl dark:text-[#fafafa]">Disclaimer of Warranties and Liability</CardTitle>
+                    <CardTitle className="text-xl text-black dark:text-[#fafafa]">Disclaimer of Warranties and Liability</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2 dark:text-[#fafafa]">Use at Your Own Risk</h4>
+                      <h4 className="font-semibold mb-2 text-black dark:text-[#fafafa]">Use at Your Own Risk</h4>
                       <p className="text-muted-foreground text-sm leading-relaxed dark:text-[#d4d4d4]">
                         WeWise Labs provides this website and its content on an "as is" and "as available" basis. While
                         we strive to keep information up-to-date and accurate, we make no express or implied warranties
@@ -383,7 +419,7 @@ export default function PrivacyPolicyPage() {
                       </p>
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2 dark:text-[#fafafa]">Limitation of Liability</h4>
+                      <h4 className="font-semibold mb-2 text-black dark:text-[#fafafa]">Limitation of Liability</h4>
                       <p className="text-muted-foreground text-sm leading-relaxed dark:text-[#d4d4d4]">
                         WeWise Labs (including our directors, employees, and affiliates) will not be liable for any
                         direct, indirect, incidental, consequential, or special losses or damages arising out of or in
@@ -396,7 +432,7 @@ export default function PrivacyPolicyPage() {
                 {/* Governing Law */}
                 <Card className="dark:bg-[#171717] dark:border-[#262626]">
                   <CardHeader>
-                    <CardTitle className="text-xl dark:text-[#fafafa]">Governing Law</CardTitle>
+                    <CardTitle className="text-xl text-black dark:text-[#fafafa]">Governing Law</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground leading-relaxed dark:text-[#d4d4d4]">
@@ -413,8 +449,8 @@ export default function PrivacyPolicyPage() {
                   <Card className="bg-primary/5 border-primary/20 dark:bg-[#1f1f1f] dark:border-[#404040]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
-                        <Mail className="h-6 w-6 text-primary dark:text-[#fafafa]" />
-                        <CardTitle className="text-xl dark:text-[#fafafa]">Contact Us</CardTitle>
+                        <Mail className="h-6 w-6 text-black dark:text-[#fafafa]" />
+                        <CardTitle className="text-xl text-black dark:text-[#fafafa]">Contact Us</CardTitle>
                       </div>
                       <CardDescription className="dark:text-[#d4d4d4]">
                         If you have any questions or concerns about this Privacy Policy or Terms and Conditions, please
@@ -425,11 +461,11 @@ export default function PrivacyPolicyPage() {
                       <div className="space-y-4">
                         <div className="flex items-center gap-3">
                           <Badge variant="secondary" className="dark:bg-[#262626] dark:text-[#fafafa]">Privacy</Badge>
-                          <span className="text-sm dark:text-[#fafafa]">privacy@wewiselabs.com</span>
+                          <span className="text-sm text-black dark:text-[#fafafa]">privacy@wewiselabs.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <Badge variant="secondary" className="dark:bg-[#262626] dark:text-[#fafafa]">General</Badge>
-                          <span className="text-sm dark:text-[#fafafa]">info@wewiselabs.com</span>
+                          <span className="text-sm text-black dark:text-[#fafafa]">info@wewiselabs.com</span>
                         </div>
                         <p className="text-sm text-muted-foreground dark:text-[#d4d4d4]">
                           We value our users and will do our best to address your inquiries promptly and professionally.

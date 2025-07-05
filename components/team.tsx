@@ -44,7 +44,6 @@ export function Team() {
 
   return (
     <section id="team" className="relative isolate py-24 px-4 md:px-8 overflow-hidden">
-      <BgGlowBouncingSVGs className="-z-10"/>
       
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
@@ -54,11 +53,11 @@ export function Team() {
           viewport={{ once: true }}
           transition={{ duration:  0.7 }}
         >
-          <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-slate-950 dark:text-white">
+           <h2 className="text-3xl md:text-[7rem] uppercase font-berdiate font-semibold mb-6 text-slate-950 dark:text-white text-center">
             Our Team
           </h2>
-          <p className="text-gray-700 dark:text-white max-w-2xl mx-auto mb-4 font-body font-semibold">
-            Meet the talented individuals who make Wewise Labs a leader in Web development and SaaS solutions.
+          <p className="text-gray-700 font-inter dark:text-white max-w-2xl mx-auto mb-4 text-center">
+                        Meet the talented individuals who make Wewise Labs a leader in Web development and SaaS solutions.
           </p>
         </motion.div>
 

@@ -180,7 +180,7 @@ const SVG_SHAPES = [
   ),
 ]
 
-export default function BgGlowBouncingSVGs({ className = "" }: { className?: string }) {
+export default function BgGlowBouncingSVGs({ className = "", blobIndex }: { className?: string, blobIndex?: number }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const svgRefs = useRef<(HTMLDivElement | null)[]>([])
   const animationFrame = useRef<number | null>(null)
@@ -263,13 +263,13 @@ export default function BgGlowBouncingSVGs({ className = "" }: { className?: str
       aria-hidden="true"
     >
       {/* Glowing Blobs - Smaller sizes */}
-      <div className="absolute top-[15%] left-[8%] w-[22rem] h-[22rem] bg-pink-400/60 dark:bg-pink-500/40 rounded-full blur-[100px] animate-blob"></div>
-      <div className="absolute top-[45%] left-[55%] w-[18rem] h-[18rem] bg-blue-400/50 dark:bg-blue-500/30 rounded-full blur-[90px] animate-blob animation-delay-2000"></div>
-      <div className="absolute bottom-[12%] right-[18%] w-[20rem] h-[20rem] bg-purple-500/50 dark:bg-purple-500/30 rounded-full blur-[110px] animate-blob animation-delay-4000"></div>
-      <div className="absolute bottom-[28%] left-[32%] w-[17rem] h-[17rem] bg-emerald-400/40 dark:bg-emerald-400/20 rounded-full blur-[80px] animate-blob animation-delay-3000"></div>
+      {/* <div className="absolute top-[15%] left-[8%] w-[22rem] h-[22rem] bg-pink-400/60 dark:bg-pink-500/40 rounded-full blur-[100px] animate-blob"></div>
+      <div className="absolute top-[45%] left-[55%] w-[18rem] h-[18rem] bg-blue-400/50 dark:bg-blue-500/30 rounded-full blur-[90px] animate-blob animation-delay-2000"></div> 
+       <div className="absolute bottom-[12%] right-[18%] w-[20rem] h-[20rem] bg-purple-500/50 dark:bg-purple-500/30 rounded-full blur-[110px] animate-blob animation-delay-4000"></div> 
+       <div className="absolute bottom-[28%] left-[32%] w-[17rem] h-[17rem] bg-emerald-400/40 dark:bg-emerald-400/20 rounded-full blur-[80px] animate-blob animation-delay-3000"></div>  */}
 
       {/* Bouncing SVGs */}
-      {SVG_SHAPES.map((svg, i) => (
+      {(typeof blobIndex === 'number' ? [SVG_SHAPES[blobIndex]] : SVG_SHAPES).map((svg, i) => (
         <div
           key={i}
           ref={el => {
