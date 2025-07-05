@@ -27,10 +27,10 @@ const AboutHero = () => {
     //          />
     //    </div> */}
     //    </div>
-    <div className="flex h-screen max-w-7xl w-full mx-auto items-center justify-center overflow-hidden">
+    <div className="flex h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto items-center justify-center overflow-hidden">
     <MaskContainer
       revealText={
-        <p className="mx-auto w-full text-center text-5xl sm:text-6xl font-libre font-bold text-black dark:text-white">
+        <p className="mx-auto w-full text-center text-5xl sm:text-6xl md:text-8xl leading-8 font-libre font-bold text-black dark:text-white">
           Curiosity brought you <br/> to know About Us
         </p>
       }

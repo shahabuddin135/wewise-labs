@@ -8,9 +8,11 @@ import React from 'react'
 import VerticalGSAPCards from '../../components/VerticalCarousel'
 import AboutHero from '@/components/about-sections/about-hero'
 import WhyUs from "../../components/about-sections/why-us"
+import Mission from "../../components/about-sections/mission"
 import FoundingMembers from '@/components/about-sections/founding-members'
 import WhereOnEarth from '@/components/about-sections/where-on-earth'
 import WhatWeDo from '@/components/about-sections/what-we-do'
+import QualitiesBentoGrid from '@/components/QualitiesBentoGrid'
 
 
 export default function AboutPage() {
@@ -56,10 +58,13 @@ export default function AboutPage() {
 <section>
 
 <AboutHero/>
+<Mission/>
 <WhyUs/>
 <FoundingMembers/>
 <WhereOnEarth/>
 <WhatWeDo/>
+<QualitiesBentoGrid />
+
  {/* <VerticalGSAPCards/>
 <OurMission />
 <OurVision />

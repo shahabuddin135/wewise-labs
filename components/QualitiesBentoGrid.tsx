@@ -42,10 +42,10 @@ const qualities = [
 const QualitiesBentoGrid = () => {
   return (
     <section className="px-6 py-12 max-w-7xl mx-auto">
-      <h2 className="text-2xl md:text-4xl font-bold mb-6 max-w-xl">
+      <h2 className="text-2xl md:text-4xl font-bold mb-16 ">
       The name says it all.<br/>
           We believe in working together closely, collaboratively, and wisely.<br/>
-          {/* From our clients to our team, we thrive on shared growth, smart problem-solving, and building tech that's not just great... but grounded, scalable, and forward-thinking. */}
+          From our clients to our team, we thrive on shared growth, smart problem-solving, and building tech that's not just great... but grounded, scalable, and forward-thinking.
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
