@@ -8,8 +8,8 @@ const whyUs = () => {
         
         {/* <div className="flex flex-col gap-6 items-center md:items-start p-6 md:p-8 w-full md:w-1/3">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-libre font-bold text-black dark:text-white text-center md:text-left"> */}
-              <div className="flex flex-col gap-14 items-start p-8 w-1/2 m-8">
-              <h1 className="text-5xl sm:text-6xl md:text-7xl mt-5 font-libre font-bold text-black dark:text-white">
+    <div className="flex flex-col gap-14 mb-6 md:items-start md:p-8 md:w-2/3 md:m-8 items-center text-center">
+    <h1 className="text-5xl sm:text-6xl md:text-7xl mt-5 text-center font-libre font-bold text-black dark:text-white">
             Why Wewise?
           </h1>
           <p className="flex justify-center font-semibold items-center text-xl sm:text-2xl md:text-3xl max-w-xl text-gray-700 dark:text-white">
@@ -17,7 +17,7 @@ const whyUs = () => {
           </p>
         </div>
        
-        <div className="flex justify-center items-center w-1/2">        
+        <div className="flex justify-center items-center md:w-1/2">        
           {/* Light mode image */}
           <Image
             src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751722519/Question-light_detsyn.png"

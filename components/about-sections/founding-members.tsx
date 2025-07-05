@@ -32,15 +32,15 @@ const FoundingMembers = () => {
         />
       </div>
       
-      <div className="flex flex-col gap-6 items-center md:items-start p-6 md:p-8 w-full md:w-2/3">
+      <div className="flex flex-col gap-6 items-center  md:items-start p-6 md:p-8 w-full md:w-2/3">
         <h1 className="text-5xl sm:text-6xl md:text-7xl mt-5 font-libre font-bold text-black dark:text-white">
           Founding Members
         </h1>
-        <p className="flex justify-center font-semibold items-center text-xl sm:text-2xl md:text-3xl max-w-xl text-gray-700 dark:text-white">
+        <p className="flex justify-center font-semibold items-center text-xl sm:text-2xl md:text-3xl max-w-xl text-black dark:text-white">
         These humans contributed in the<br/> creation of WeWise Labs.        </p>
       
       <div>
-        <ul className='grid grid-cols-2 list-disc font-semibold leading-9 ml-4 text-2xl text-black dark:text-white'>
+        <ul className='grid grid-cols-1 list-disc font-semibold leading-9 ml-4 text-2xl text-black dark:text-white'>
             <li>Shahabuddin COO</li>
             <li>Darakhshan Imran CEO</li>
             <li>Saba Sarfaraz CMO</li>

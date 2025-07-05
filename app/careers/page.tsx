@@ -26,7 +26,7 @@ const Careers = () => {
     />
   } */}
      <Image
-        src={isDark ? '/Coming Soon (4).png' : '/Coming Soon (1).png'}
+        src={isDark ? 'https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753736/Coming_Soon_4_acgpfp.png' : 'https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753736/Coming_Soon_1_ncvkzg.png'}
         alt='Coming Soon'
         width={350}
         height={350}

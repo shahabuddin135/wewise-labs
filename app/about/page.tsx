@@ -7,7 +7,7 @@ import Mission from "../../components/about-sections/mission"
 import FoundingMembers from '@/components/about-sections/founding-members'
 import WhereOnEarth from '@/components/about-sections/where-on-earth'
 import WhatWeDo from '@/components/about-sections/what-we-do'
-import QualitiesBentoGrid from '@/components/QualitiesBentoGrid'
+import QualitiesBentoGrid from '@/components/about-sections/qualities-bento-grid'
 
 
 export default function AboutPage() {

@@ -4,40 +4,17 @@ import { MaskContainer } from '../ui/svg-mask-effect'
 
 const AboutHero = () => {
   return (
-    // <div className="relative z-10 flex w-[80%] h-full">
-    //        {/* Left: Heading */}
-    //        <div className="flex-1 flex items-center">
-    //          <h1 className="absolute top-44 text-5xl md:text-8xl font-bold text-black ">
-    //          <MaskContainer
-    //     revealText={
-    //         <p>  Curiosity brought you <br/> to know about us</p>
-    //     }
-    //      className="h-[40rem] rounded-md border text-white dark:text-black"/>
-    //          </h1>
-    //        </div>
-    //        {/* Right: Video */}
-    //        {/* <div className="flex-1 flex items-center justify-center  h-[100vh]">
-    //          <video
-    //            className=" w-full object-contain rounded-lg shadow-lg"
-    //            src="/metallic.mp4"
-    //            autoPlay
-    //            loop
-    //            muted
-    //            playsInline
-    //          />
-    //    </div> */}
-    //    </div>
     <div className="flex h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto items-center justify-center overflow-hidden">
     <MaskContainer
       revealText={
-        <p className="mx-auto w-full text-center text-5xl sm:text-6xl md:text-8xl leading-8 font-libre font-bold text-black dark:text-white">
-          Curiosity brought you <br/> to know About Us
+        <p className="mx-auto w-full text-center text-5xl sm:text-6xl md:text-8xl leading-[1.15] sm:leading-[1.2] md:leading-[1.25] font-libre font-bold text-black dark:text-white">
+          Curiosity brought you to know About Us
         </p>
       }
-      className="h-[40rem] w-full mx-auto rounded-md leading-8 text-black dark:text-white"
+      className="h-[40rem] w-full mx-auto rounded-md text-black dark:text-white"
     >
-     <p className="mx-auto w-full text-center text-5xl sm:text-6xl font-libre font-bold text-white dark:text-black">
-          Curiosity brought you <br/> to know About Us
+     <p className="mx-auto w-full text-center text-5xl sm:text-6xl md:text-8xl leading-[1.15] sm:leading-[1.2] md:leading-[1.25] font-libre font-bold text-white dark:text-black">
+          Curiosity brought you to know About Us
         </p>
     </MaskContainer>
   </div>
