@@ -34,7 +34,7 @@ const AboutHero = () => {
           Curiosity brought you <br/> to know About Us
         </p>
       }
-      className="h-[40rem] w-full mx-auto rounded-md border leading-8 text-black dark:text-white"
+      className="h-[40rem] w-full mx-auto rounded-md leading-8 text-black dark:text-white"
     >
      <p className="mx-auto w-full text-center text-5xl sm:text-6xl font-libre font-bold text-white dark:text-black">
           Curiosity brought you <br/> to know About Us
