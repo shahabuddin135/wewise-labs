@@ -8,6 +8,7 @@ import React from 'react'
 import VerticalGSAPCards from '../../components/VerticalCarousel'
 import AboutHero from '@/components/about-sections/about-hero'
 import WhyUs from "../../components/about-sections/why-us"
+import Mission from "../../components/about-sections/mission"
 
 
 export default function AboutPage() {
@@ -53,6 +54,7 @@ export default function AboutPage() {
 <section>
 
 <AboutHero/>
+<Mission/>
 <WhyUs/>
  {/* <VerticalGSAPCards/>
 <OurMission />
