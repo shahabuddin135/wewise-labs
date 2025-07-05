@@ -6,7 +6,8 @@ import OurVision from '../../components/our-vision'
 import { Team } from '@/components/team'
 import React from 'react'
 import VerticalGSAPCards from '../../components/VerticalCarousel'
-import AboutHero from '@/components/about-hero'
+import AboutHero from '@/components/about-sections/about-hero'
+import WhyUs from "../../components/about-sections/why-us"
 
 
 export default function AboutPage() {
@@ -52,11 +53,12 @@ export default function AboutPage() {
 <section>
 
 <AboutHero/>
- <VerticalGSAPCards/>
+<WhyUs/>
+ {/* <VerticalGSAPCards/>
 <OurMission />
 <OurVision />
 <WhyWewise />
-  <Team />
+  <Team /> */}
 </section>
 
   )

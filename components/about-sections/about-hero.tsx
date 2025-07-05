@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { MaskContainer } from './ui/svg-mask-effect'
+import { MaskContainer } from '../ui/svg-mask-effect'
 
 const AboutHero = () => {
   return (
@@ -27,7 +27,7 @@ const AboutHero = () => {
     //          />
     //    </div> */}
     //    </div>
-    <div className="flex h-screen w-full items-center justify-center overflow-hidden">
+    <div className="flex h-screen max-w-7xl w-full mx-auto items-center justify-center overflow-hidden">
     <MaskContainer
       revealText={
         <p className="mx-auto w-full text-center text-5xl sm:text-6xl font-libre font-bold text-black dark:text-white">
