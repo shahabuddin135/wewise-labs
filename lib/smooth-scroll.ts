@@ -1,9 +1,11 @@
 "use client"
 
 import { useEffect } from "react"
-import { ScrollSmoother } from "gsap/ScrollSmoother"
+import { useRouter } from "next/navigation"
 
 export function useSmoothScroll() {
+  const router = useRouter()
+
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
       const target = e.target as HTMLElement
@@ -12,24 +14,50 @@ export function useSmoothScroll() {
       if (!anchor) return
 
       const href = anchor.getAttribute("href")
-      if (!href || !href.startsWith("#")) return
+      if (!href) return
 
-      const targetId = href.substring(1)
-      const targetElement = document.getElementById(targetId)
+      // Handle hash links (both on same page and cross-page)
+      if (href.startsWith("#")) {
+        const targetId = href.substring(1)
+        const targetElement = document.getElementById(targetId)
 
-      if (targetElement) {
+        if (targetElement) {
+          e.preventDefault()
+
+          const smoother = (window as any).ScrollSmoother?.get()
+          if (smoother) {
+            smoother.scrollTo(targetElement, true, "top top")
+          } else {
+            targetElement.scrollIntoView({ behavior: "smooth" })
+          }
+        }
+      }
+      // Handle cross-page hash links (e.g., /#services)
+      else if (href.includes("#")) {
+        const [path, hash] = href.split("#")
+        const targetId = hash
+        
         e.preventDefault()
 
-        const smoother = ScrollSmoother.get()
-        if (smoother) {
-          smoother.scrollTo(targetElement, true, "top top")
+        // If we're already on the target page, just scroll to the element
+        if (path === window.location.pathname || path === "/") {
+          const targetElement = document.getElementById(targetId)
+          if (targetElement) {
+            const smoother = (window as any).ScrollSmoother?.get()
+            if (smoother) {
+              smoother.scrollTo(targetElement, true, "top top")
+            } else {
+              targetElement.scrollIntoView({ behavior: "smooth" })
+            }
+          }
         } else {
-          targetElement.scrollIntoView({ behavior: "smooth" })
+          // Navigate to the page with hash
+          router.push(href)
         }
       }
     }
 
     document.addEventListener("click", handleAnchorClick)
     return () => document.removeEventListener("click", handleAnchorClick)
-  }, [])
+  }, [router])
 }

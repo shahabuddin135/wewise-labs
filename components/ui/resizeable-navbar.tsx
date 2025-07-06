@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import React, { useRef, useState } from "react";
 import { useTheme } from "next-themes";
+import Link from "next/link";
 
 interface NavbarProps {
   children: React.ReactNode;
@@ -148,23 +149,68 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
         className,
       )}
     >
-      {items.map((item, idx) => (
-        <a
-          onMouseEnter={() => setHovered(idx)}
-          onClick={onItemClick}
-          className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
-          key={`link-${idx}`}
-          href={item.link}
-        >
-          {hovered === idx && (
-            <motion.div
-              layoutId="hovered"
-              className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
-            />
-          )}
-          <span className="relative z-20">{item.name}</span>
-        </a>
-      ))}
+      {items.map((item, idx) => {
+        const isHashLink = item.link.startsWith('#');
+        const isExternalLink = item.link.startsWith('http');
+        
+        if (isHashLink) {
+          return (
+            <a
+              onMouseEnter={() => setHovered(idx)}
+              onClick={onItemClick}
+              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              key={`link-${idx}`}
+              href={item.link}
+            >
+              {hovered === idx && (
+                <motion.div
+                  layoutId="hovered"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                />
+              )}
+              <span className="relative z-20">{item.name}</span>
+            </a>
+          );
+        } else if (isExternalLink) {
+          return (
+            <a
+              onMouseEnter={() => setHovered(idx)}
+              onClick={onItemClick}
+              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              key={`link-${idx}`}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {hovered === idx && (
+                <motion.div
+                  layoutId="hovered"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                />
+              )}
+              <span className="relative z-20">{item.name}</span>
+            </a>
+          );
+        } else {
+          return (
+            <Link
+              onMouseEnter={() => setHovered(idx)}
+              onClick={onItemClick}
+              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              key={`link-${idx}`}
+              href={item.link}
+            >
+              {hovered === idx && (
+                <motion.div
+                  layoutId="hovered"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                />
+              )}
+              <span className="relative z-20">{item.name}</span>
+            </Link>
+          );
+        }
+      })}
     </motion.div>
   );
 };
