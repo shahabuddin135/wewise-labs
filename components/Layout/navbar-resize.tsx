@@ -28,24 +28,51 @@ export function ResizableNavbar() {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Check if user is on ideas page or any slug page
-    const isOnIdeasPage = pathname?.startsWith('/ideas');
+  const isOnIdeasPage = pathname?.startsWith('/ideas');
 
   const specialPages = [
-  "/ideas",
-  "/about",
-  "/careers",
-  "/sitemap",
-  "/terms-privacy",
-];
+    "/ideas",
+    "/about",
+    "/careers",
+    "/sitemap",
+    "/terms-privacy",
+  ];
 
-const isOnSpecialPage = specialPages.some((prefix) => pathname?.startsWith(prefix));
-  // Conditionally update nav links for ideas page
+  const isOnSpecialPage = specialPages.some((prefix) => pathname?.startsWith(prefix));
+
+  // Custom navigation handler
+  const handleNavClick = (link: string) => {
+    if (link.startsWith('#')) {
+      // Hash link - handle based on current page
+      if (pathname === '/') {
+        // On home page, just scroll
+        const targetElement = document.getElementById(link.substring(1));
+        if (targetElement) {
+          const smoother = (window as any).ScrollSmoother?.get();
+          if (smoother) {
+            smoother.scrollTo(targetElement, true, "top top");
+          } else {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      } else {
+        // On other pages, navigate to home with hash
+        router.push(`/${link}`);
+      }
+    } else {
+      // Regular page link
+      router.push(link);
+    }
+  };
+
+  // Conditionally update nav links for special pages
   const displayNavItems = isOnSpecialPage
     ? navItems.map(item => ({
         ...item,
-        link: `/${item.link}`, // e.g., "/#services"
+        link: item.link.startsWith('#') ? `/${item.link}` : item.link, // Only prefix hash links
       }))
     : navItems;
 
@@ -68,6 +95,17 @@ const isOnSpecialPage = specialPages.some((prefix) => pathname?.startsWith(prefi
           <NavItems 
             items={displayNavItems} 
             className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
+            onItemClick={(e) => {
+              const target = e.target as HTMLElement;
+              const anchor = target.closest("a");
+              if (anchor) {
+                e.preventDefault();
+                const href = anchor.getAttribute("href");
+                if (href) {
+                  handleNavClick(href);
+                }
+              }
+            }}
           />
           <div className="flex items-center gap-3 z-10">
             {!isOnIdeasPage && (
@@ -117,18 +155,20 @@ const isOnSpecialPage = specialPages.some((prefix) => pathname?.startsWith(prefi
             className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !rounded-none" : ""}
           >
             {displayNavItems.map((item, idx) => (
-              <Link
+              <button
                 key={`mobile-link-${idx}`}
-                href={item.link}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`relative ${
+                onClick={() => {
+                  handleNavClick(item.link);
+                  setIsMobileMenuOpen(false);
+                }}
+                className={`relative text-left w-full ${
                   isOnIdeasPage 
                     ? "!text-black dark:!text-white" 
                     : "text-neutral-600 dark:text-neutral-300"
                 }`}
               >
                 <span className="block">{item.name}</span>
-              </Link>
+              </button>
             ))}
           </MobileNavMenu>
         </MobileNav>

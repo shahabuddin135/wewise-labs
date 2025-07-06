@@ -4,6 +4,7 @@ import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico,Libre_Caslon_Tex
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import {ResizableNavbar} from "@/components/Layout/navbar-resize"
+import { ScrollHandler } from "@/lib/smooth-handler"
 // import { Footer } from "@/components/footer"
 
 
@@ -62,6 +63,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`dark:bg-gray-950 ${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ScrollHandler/>
         <ResizableNavbar/>
           {children}
         </ThemeProvider>
