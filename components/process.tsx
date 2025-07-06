@@ -3,7 +3,13 @@
 import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Briefcase, ClipboardList, Palette, Code2, CheckCircle2, Rocket } from "lucide-react"
+import Lottie from "lottie-react";
+import discoveryAnimation from "../public/lotties/Solution.json";
+import planningAnimation from "../public/lotties/planning.json";
+import designAnimation from "../public/lotties/design.json";
+import developmentAnimation from "../public/lotties/development.json";
+import testingAnimation from "../public/lotties/testing.json";
+import deploymentAnimation from "../public/lotties/deployment.json";
 
 // Register ScrollTrigger plugin
 if (typeof window !== "undefined") {
@@ -14,44 +20,44 @@ const steps = [
   {
     number: "01",
     title: "Discovery",
-    description: "Discover the business, goals, and requirements to create a tailored solution.",
-    icon: <Briefcase className="w-8 h-8 text-pink-400" />,
+    description: "Every great build begins with a smart discovery",
+    icon: <Lottie animationData={discoveryAnimation} className="w-20 h-20" loop={true} />,
     color: "text-pink-400 border-pink-200",
   },
   {
     number: "02",
     title: "Planning",
-    description: "Create roadmap and technical specifications for your project.",
-    icon: <ClipboardList className="w-8 h-8 text-purple-400" />,
+    description: "With insights in hand, we craft a roadmap that leads to success",
+    icon: <Lottie animationData={planningAnimation} className="w-20 h-20" loop={true}  />,
     color: "text-purple-400 border-purple-200",
   },
   {
     number: "03",
     title: "Design",
-    description: "Design intuitive and visually appealing interfaces for your application.",
-    icon: <Palette className="w-8 h-8 text-blue-400" />,
+    description: "We shape ideas into sleek, user-friendly designs that click",
+    icon: <Lottie animationData={designAnimation} className="w-20 h-20" loop={true} />,
     color: "text-blue-400 border-blue-200",
   },
   {
     number: "04",
     title: "Development",
-    description: "Developers bring the designs to life using modern technologies and best practices.",
-    icon: <Code2 className="w-8 h-8 text-cyan-400" />,
+    description: "Bringing designs to life with clean, scalable code",
+    icon: <Lottie animationData={developmentAnimation} className="w-20 h-20" loop={true}/>,
     color: "text-cyan-400 border-cyan-200",
   },
   {
     number: "05",
     title: "Testing",
-    description: "Test your application to ensure it's bug-free and performs optimally.",
-    icon: <CheckCircle2 className="w-8 h-8 text-green-400" />,
+    description: "We break it first, hunt down the bugs, so users never have to",
+    icon: <Lottie animationData={testingAnimation} className="w-20 h-20" loop={true} />,
     color: "text-green-400 border-green-200",
   },
   {
     number: "06",
     title: "Deployment",
-    description: "Deploy your application and provide ongoing support and maintenance.",
-    icon: <Rocket className="w-8 h-8 text-yellow-400" />,
-    color: "text-yellow-400 border-yellow-200",
+    description: "We launch it to the world, and stay supported.",
+    icon: <Lottie animationData={deploymentAnimation} className="w-20 h-20" loop={true}/>,
+    color: "text-yellow-400 border-amber-400",
   },
 ]
 
@@ -215,9 +221,11 @@ export function Process() {
   return (
     <section ref={sectionRef} id="process" className="py-24 mt-6 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
-        <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?</h2>
+        <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?<br/>
+          <span className="text-3xl md:text-[2rem] lg:text-[3rem] mb-8 mt-4 dark:text-white">From spark to ship</span>
+        </h2>
         <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
-         From spark to ship. <br/> We focus process that gets ideas from the whiteboard to the real world.
+          <br/> We focus process that gets ideas from the whiteboard to the real world.
         </p>
       </div>
       
@@ -227,7 +235,7 @@ export function Process() {
         {/* Timeline Bar */}
         <div
           ref={timelineRef}
-          className="absolute left-1/2 top-0 bottom-0 w-1 h-full -translate-x-1/2 bg-gradient-to-b from-pink-400 via-purple-400 to-yellow-400 z-0"
+          className="absolute left-1/2 top-0 bottom-0 w-1 h-full -translate-x-1/2 bg-gradient-to-b from-pink-400 via-purple-400 to-amber-600 z-0"
         />
         <div className="flex flex-col relative z-10">
           {steps.map((step, idx) => {
@@ -278,7 +286,7 @@ export function Process() {
       <div className="hidden lg:block relative w-full max-w-6xl mx-auto px-2">
         {/* Timeline Bar */}
         <div
-          className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-yellow-400 z-0 transform -translate-y-1/2"
+          className="absolute left-0 right-0 top-1/2 h-1 bg-gradient-to-r from-pink-400 via-purple-400 to-amber-600 z-0 transform -translate-y-1/2"
         />
         <div className="flex flex-wrap justify-between relative z-10">
           {steps.map((step, idx) => {
@@ -304,7 +312,7 @@ export function Process() {
                 </div>
                 {/* Bottom Content */}
                 {!isAbove && (
-                  <div className="flex flex-col items-center justify-center min-h-[180px] pt-[18rem]">
+                  <div className="flex flex-col items-center justify-center min-h-[180px] pt-[20rem]">
                     <div className="step-icon mb-2">{step.icon}</div>
                     <h3 className="step-title font-heading text-xl md:text-2xl lg:text-2xl font-bold mb-1 dark:text-white">{step.title}</h3>
                     <p className="step-description text-gray-600 dark:text-white text-base md:text-lg max-w-sm">{step.description}</p>
