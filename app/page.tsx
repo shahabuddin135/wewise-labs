@@ -32,8 +32,23 @@ export default function Home() {
       effects: true,
     })
 
+    // Store smoother globally for access in other components
+    ;(window as any).ScrollSmoother = ScrollSmoother
+
+    // Handle hash navigation after smoother is created
+    const hash = window.location.hash
+    if (hash) {
+      const targetElement = document.getElementById(hash.substring(1))
+      if (targetElement) {
+        setTimeout(() => {
+          smoother.scrollTo(targetElement, true, "top top")
+        }, 500)
+      }
+    }
+
     return () => {
       smoother.kill()
+      delete (window as any).ScrollSmoother
     }
   }, [])
 

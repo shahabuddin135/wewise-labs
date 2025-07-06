@@ -172,7 +172,7 @@ const ServicesComponent = () => {
   };
 
   return (
-    <section className="relative py-16 px-4 bg-gray-50 dark:bg-zinc-950 z-50 flex flex-col justify-center items-center overflow-hidden">
+    <section id="services" className="relative py-16 px-4 bg-gray-50 dark:bg-zinc-950 z-50 flex flex-col justify-center items-center overflow-hidden">
       {/* BG Glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full bg-blue-400 dark:bg-blue-900 opacity-40 blur-[120px] pointer-events-none z-0" />
       <div className="absolute left-1/2 top-[60%] -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] rounded-full bg-fuchsia-400 dark:bg-fuchsia-900 opacity-30 blur-[100px] pointer-events-none z-0" />
