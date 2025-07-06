@@ -7,7 +7,7 @@ import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import { ChevronRight, Shield, FileText, Mail, Calendar } from "lucide-react"
-import { Footer } from "@/components/footer"
+import { Footer } from "@/components/Layout/footer"
 
 export default function PrivacyPolicyPage() {
   const [activeSection, setActiveSection] = useState("privacy")

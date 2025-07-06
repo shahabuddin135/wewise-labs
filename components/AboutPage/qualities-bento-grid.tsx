@@ -5,7 +5,7 @@ const qualities = [
   {
     title: "Where Design Meets Dev, and SaaS Takes Off.",
     // subtitle: "Where Design Meets Dev, and SaaS Takes Off.",
-    image: "/pattern-randomized.png",
+    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753700/pattern-randomized_d49fc1.png",
     span: "col-span-2",
   },
   {
@@ -23,7 +23,7 @@ const qualities = [
   {
     title: "Build to go viral, without the bugs",
     // subtitle: "Know More About Your Destiny?",
-    image: "/gray-hexagon.jpg", 
+    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753705/gray-hexagon_tdag9w.jpg", 
     span: "col-span-2",
     textClass: "text-white text-3xl md:text-5xl", // Add this line
     subtitleClass: "text-white text-lg md:text-2xl",
@@ -32,7 +32,7 @@ const qualities = [
   {
     title: "Agile Execution",
     // subtitle:"We move fast, learn faster.",
-    image: "/hexagon-bg.jpg",
+    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753709/hexagon-bg_s9lm3z.jpg",
     textClass:"text-2xl",
     span: "md:col-span-2 lg:col-span-1",
 
@@ -40,14 +40,13 @@ const qualities = [
   {
     title: "Visual Consistency",
     // subtitle:"Pixels with Purpose. Code with Clarity.",
-    bgColor: "bg-[#867096]  ",
+    bgColor: "bg-[#867096]",
     textClass:"text-2xl"
-
   },
   {
     title: "Scalable Systems",
     // subtitle: "Speed. Scale. Success.",
-    image: "/pattern-randomized.png",
+    image: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753700/pattern-randomized_d49fc1.png",
     textClass:"text-2xl",
     span: "col-span-2 md:col-span-3 lg:col-span-1",
   },
@@ -61,7 +60,7 @@ const QualitiesBentoGrid = () => {
           We believe in working together closely, collaboratively, and wisely.<br/>
           From our clients to our team, we thrive on shared growth, smart problem-solving, and building tech that's not just great... but grounded, scalable, and forward-thinking.
       </h2> */}
-<h2 className="font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white text-center font-libre">How Creative We Are?</h2>
+    <h2 className="font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white text-center font-libre">How Creative We Are?</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px]">
         {qualities.map((item, index) => (
           <div
@@ -89,12 +88,12 @@ const QualitiesBentoGrid = () => {
               )} */}
               <h3 className={`text-3xl font-semibold text-black`}>{item.title}</h3>
             </div>
-
             <div className="absolute inset-0 bg-black/15 dark:bg-black/20 z-0" />
           </div>
         ))}
       </div>
     </section>
+
   );
 };
 

@@ -1,4 +1,4 @@
-import { Footer } from "@/components/footer"
+import { Footer } from "@/components/Layout/footer"
 import { SiteMapContent } from "@/components/site-map-content"
 
 export const metadata = {
