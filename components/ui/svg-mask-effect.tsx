@@ -30,15 +30,13 @@ export const MaskContainer = ({
       if (containerRef.current) {
         containerRef.current.removeEventListener(
           "mousemove",
-          updateMousePosition
+          updateMousePosition,
         );
       }
     };
   }, []);
 
-  const [windowWidth, setWindowWidth] = useState<number>(
-    typeof window !== "undefined" ? window.innerWidth : 0
-  );
+  const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0);
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
