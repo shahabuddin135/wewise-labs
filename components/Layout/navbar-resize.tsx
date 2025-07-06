@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "../ui/theme-button";
-import {usePathname } from "next/navigation";
+import {usePathname, useRouter } from "next/navigation";
 
 export function ResizableNavbar() {
   const navItems = [
