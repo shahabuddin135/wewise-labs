@@ -11,7 +11,8 @@ const qualities = [
   {
     title: "Passion",
     isButton: true,
-    bgColor : "bg-[#9cc4eb]"
+    bgColor : "bg-[#9cc4eb]",
+    span: "col-span-",
   },
   {
     title: "Dev Done Right.",
@@ -32,7 +33,8 @@ const qualities = [
     title: "Agile Execution",
     // subtitle:"We move fast, learn faster.",
     image: "/hexagon-bg.jpg",
-    textClass:"text-2xl"
+    textClass:"text-2xl",
+    span: "md:col-span-2 lg:col-span-1",
 
   },
   {
@@ -47,7 +49,7 @@ const qualities = [
     // subtitle: "Speed. Scale. Success.",
     image: "/pattern-randomized.png",
     textClass:"text-2xl",
-    span: "col-span-2",
+    span: "col-span-2 md:col-span-3 lg:col-span-1",
   },
 ];
 

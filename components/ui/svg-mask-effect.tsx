@@ -30,13 +30,15 @@ export const MaskContainer = ({
       if (containerRef.current) {
         containerRef.current.removeEventListener(
           "mousemove",
-          updateMousePosition,
+          updateMousePosition
         );
       }
     };
   }, []);
 
-  const [windowWidth, setWindowWidth] = useState<number>(typeof window !== "undefined" ? window.innerWidth : 0);
+  const [windowWidth, setWindowWidth] = useState<number>(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -50,7 +52,7 @@ export const MaskContainer = ({
   return (
     <motion.div
       ref={containerRef}
-      className={cn("relative h-screen", className)}
+      className={cn("relative min-h-screen w-full", className)}
       animate={{
         backgroundColor: isHovered ? "var(--slate-900)" : "var(--white)",
       }}

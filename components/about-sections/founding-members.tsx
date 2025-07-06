@@ -5,22 +5,17 @@ const FoundingMembers = () => {
   return (
     <section>
     <div
-     className="flex flex-col md:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto dark:bg-gray-950 dark:border dark:border-1 dark:border-white rounded-2xl justify-between shadow-md"
-    //  style={{
-    //   backgroundImage : "url('https://res.cloudinary.com/dqkt0g0he/image/upload/v1751746883/magicpattern-noise-1751746850158_xgpbb4.png')",
-    //   backgroundSize : "cover",
-    //   backgroundRepeat : "no-repeat"
-    //  }}
+     className="flex flex-col md:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-9 mx-4 sm:mx-8 lg:mx-auto dark:bg-gray-950 rounded-2xl justify-between "
      >
     
-    <div className="flex justify-center items-center p-6 md:p-8 w-full md:w-1/3">
+    <div className="flex justify-center items-center p-6 md: w-full md:w-1/2">
         {/* Light mode image */}
         <Image
           src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751722521/Team-light_goxqzj.png"
           alt="why-us"
           width={300}
           height={300}
-          className="w-[400px] h-[400px] object-cover block dark:hidden"
+          className="w-[400px] h-[400px] object-cover md:object-contain block dark:hidden"
         />
         {/* Dark mode image */}
         <Image
@@ -28,15 +23,15 @@ const FoundingMembers = () => {
           alt="why-us-dark"
           width={300}
           height={300}
-          className="w-[400px] h-[400px] object-cover hidden dark:block"
+          className="w-[400px] h-[400px] object-cover md:object-contain hidden dark:block"
         />
       </div>
       
-      <div className="flex flex-col gap-6 items-center  md:items-start p-6 md:p-8 w-full md:w-2/3">
-        <h1 className="text-5xl sm:text-6xl md:text-7xl mt-5 font-libre font-bold text-black dark:text-white">
+      <div className="flex flex-col gap-6 items-center md:items-start p-6 w-full md:w-1/2">
+        <h1 className="text-5xl text-center md:text-start sm:text-6xl md:text-5xl mt-5 font-libre font-bold text-black dark:text-white">
           Founding Members
         </h1>
-        <p className="flex justify-center font-semibold items-center text-xl sm:text-2xl md:text-3xl max-w-xl text-black dark:text-white">
+        <p className="flex justify-center font-semibold items-center text-xl sm:text-2xl md:text-2xl max-w-xl text-black dark:text-white">
         These humans contributed in the<br/> creation of WeWise Labs.        </p>
       
       <div>
