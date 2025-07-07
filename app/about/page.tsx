@@ -1,16 +1,26 @@
-import WhyWewise from '@/components/why-wewise'
-import OurMission from '../../components/our-mission'
-import OurVision from '../../components/our-vision'
-import { Team } from '@/components/team'
-import React from 'react'
+"use client";
+import { useTheme } from "next-themes";
+import { MaskContainer } from "@/components/ui/svg-mask-effect";
+import DarkContent from "@/components/AboutPage/dark-content";
+import LightContent from "@/components/AboutPage/light-content";
+import { Footer } from "@/components/Layout/footer";
 
 export default function AboutPage() {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
   return (
-    <section className="relative isolate py-24 px-4 md:px-8 overflow-hidden mt-20 flex flex-col items-center justify-center min-h-screen max-w-7xl mx-auto w-full">
-          <OurMission />
-          <OurVision />
-          <WhyWewise />
-          <Team />
+    <section>
+
+    <MaskContainer 
+        revealText=
+        {isDark ? <LightContent /> : <DarkContent />}
+        >
+         {isDark ? <DarkContent /> : <LightContent />}
+    </MaskContainer>
+    
+    <Footer/>
+    
     </section>
-  )
+  );
 }

@@ -3,7 +3,7 @@
 import Hero from "@/components/hero"
 import { Process } from "@/components/process"
 import { Contact } from "@/components/contact"
-import { Footer } from "@/components/footer"
+import { Footer } from "@/components/Layout/footer"
 import WhyChooseUs  from "@/components/why-choose-us"
 import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"

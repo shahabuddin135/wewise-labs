@@ -13,8 +13,8 @@ import {
 
 import { useState } from "react";
 import Link from "next/link";
-import { ModeToggle } from "./ui/theme-button";
-import { usePathname, useRouter } from "next/navigation";
+import { ModeToggle } from "../ui/theme-button";
+import {usePathname, useRouter } from "next/navigation";
 
 export function ResizableNavbar() {
   const navItems = [
