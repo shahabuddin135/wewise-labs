@@ -80,7 +80,7 @@ export const MaskContainer = ({
     <motion.div
       ref={containerRef}
       className={cn(
-        "relative min-h-screen w-full max-w-7xl overflow-hidden rounded-xl lg:rounded-2xl",
+        "relative min-h-screen w-full max-w-7xl mx-auto overflow-hidden rounded-xl lg:rounded-2xl",
         className
       )}
       animate={{
