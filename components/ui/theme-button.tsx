@@ -23,7 +23,9 @@ export function ModeToggle({ className = "" }: { className?: string }) {
         background: 'transparent',
         border: 'none',
         padding: 0,
-        cursor: 'pointer'
+        cursor: 'pointer',
+        lineHeight: 1, // Ensures no extra vertical space
+        verticalAlign: 'middle', // Aligns with text/buttons
       }}
     >
       <svg
@@ -43,7 +45,7 @@ export function ModeToggle({ className = "" }: { className?: string }) {
           <>
             <mask id={maskId}>
               <rect width="24" height="24" fill="white" />
-              <circle cx="16" cy="8" r="10" fill="black" />
+              <circle cx="16" cy="8" r="8" fill="black" />
             </mask>
             <circle
               cx="12"
@@ -51,9 +53,10 @@ export function ModeToggle({ className = "" }: { className?: string }) {
               r="10" // increased from 10 to 12
               fill="gray"
               mask={`url(#${maskId})`}
-              transform="rotate(-10 12 12)"
+              transform="rotate(-8 12 12)"
             />
           </>
+         
         )}
       </svg>
     </button>
