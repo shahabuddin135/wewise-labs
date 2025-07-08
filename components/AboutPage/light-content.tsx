@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export default function LightContent() {
   return (
@@ -161,29 +162,17 @@ export default function LightContent() {
                 className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
             row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1"
               >
-                <div className="absolute inset-0 z-0">
-                  <svg
-                    width="100%"
-                    height="100%"
-                    className="w-full h-full"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <defs>
-                      <pattern
-                        id="dots"
-                        x="0"
-                        y="0"
-                        width="20"
-                        height="20"
-                        patternUnits="userSpaceOnUse"
-                      >
-                        <circle cx="2" cy="2" r="2" fill="#fff" opacity="0.3" />
-                      </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#dots)" />
-                  </svg>
-                </div>
-                <span className="z-10 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-libre drop-shadow-lg">
+                {/* Dot background */}
+                <div
+                  className={cn(
+                    "absolute inset-0 z-0",
+                    "[background-size:20px_20px]",
+                    "[background-image:radial-gradient(#fff_1px,transparent_1px)]"
+                  )}
+                />
+                {/* Radial mask overlay for faded look */}
+                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-gray-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
+                <span className="z-10 font-kablammo text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-libre drop-shadow-lg">
                   ART
                 </span>
               </div>
@@ -209,18 +198,11 @@ export default function LightContent() {
                 className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-950
                 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3"
               >
-                {/* <Image
-                  src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922808/logo-dark-removebg-preview_gol7pn.png"
-                  alt="logo"
-                  width={130}
-                  height={130}
-                  className="object-cover"
-                /> */}
                 <video
                   src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751979582/0703_wc3i4o.mp4"
-                  width={120}
-                  height={120}
-                  className="object-contain"
+                  width={200}
+                  height={200}
+                  className="object-cover rounded-xl"
                   autoPlay
                   loop
                   muted
