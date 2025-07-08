@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { HeroHighlight } from "../ui/hero-highlight";
 
 export default function LightContent() {
   return (
@@ -158,24 +159,14 @@ export default function LightContent() {
           <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
             <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
               {/* ART with dots */}
-              <div
-                className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
+              <HeroHighlight
+                containerClassName="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
             row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1"
               >
-                {/* Dot background */}
-                <div
-                  className={cn(
-                    "absolute inset-0 z-0",
-                    "[background-size:20px_20px]",
-                    "[background-image:radial-gradient(#fff_1px,transparent_1px)]"
-                  )}
-                />
-                {/* Radial mask overlay for faded look */}
-                <div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-gray-950 [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-                <span className="z-10 font-kablammo text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-libre drop-shadow-lg">
+                <span className="z-10 font-kablammo text-6xl sm:text-7xl md:text-8xl font-extrabold text-white font-libre drop-shadow-lg">
                   ART
                 </span>
-              </div>
+              </HeroHighlight>
 
               {/* Creativity with wavy lines */}
               <div
@@ -199,10 +190,10 @@ export default function LightContent() {
                 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3"
               >
                 <video
-                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751979582/0703_wc3i4o.mp4"
+                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751988623/wewise_metalic_kgigth.mp4"
                   width={200}
                   height={200}
-                  className="object-cover rounded-xl"
+                  className="object-cover border-2 border-gray-950 rounded-2xl"
                   autoPlay
                   loop
                   muted
