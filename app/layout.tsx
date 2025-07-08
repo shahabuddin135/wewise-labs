@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico,Libre_Caslon_Text, Arizonia} from "next/font/google"
+import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico,Libre_Caslon_Text,Kablammo, Arizonia} from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import {ResizableNavbar} from "@/components/Layout/navbar-resize"
@@ -43,6 +43,19 @@ const Libre = Libre_Caslon_Text ({
   variable: "--font-libre-caslon",
   weight:["400"]
 })
+
+const pacifico = Pacifico({
+  subsets:["latin"],
+  variable: "--font-pacifico",
+  weight:["400"]
+})
+
+const kablammo = Kablammo({
+  subsets: ["latin"],
+  variable: "--font-Kablammo",
+  weight:["400"]
+})
+
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
@@ -61,7 +74,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-gray-950 ${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
+      <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable}  ${kablammo.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         <ScrollHandler/>
         <ResizableNavbar/>

@@ -354,7 +354,7 @@ export default function PrivacyPolicyPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4">
-                        <div className="bg-red-50 dark:bg-red-50 border border-red-200 dark:border-[#404040] p-4 rounded-lg">
+                        <div className="bg-red-50 dark:bg-[#171717] border border-red-200 dark:border-[#404040] p-4 rounded-lg">
                           <h4 className="font-semibold text-red-800 dark:text-red-900 mb-3">Prohibited Activities</h4>
                           <div className="space-y-2 text-sm text-red-700 dark:text-red-800">
                             <div className="flex items-start gap-2">

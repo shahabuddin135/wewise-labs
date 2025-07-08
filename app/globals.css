@@ -72,8 +72,15 @@
     font-family: var(--font-libre-caslon);
   }
 
-}
+  .font-pacifico{
+    font-family: var(--font-pacifico);
+  }
 
+  .font-kablammo{
+    font-family: var(--font-Kablammo);
+  }
+}
+--font-Kablammo
 /* Terminal styling */
 .terminal-cursor {
   display: inline-block;

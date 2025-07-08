@@ -95,7 +95,7 @@ export const MaskContainer = ({
       <motion.div
         className={cn(
           "absolute inset-0 z-10 flex items-center  text-6xl",
-          "bg-black dark:bg-white",
+          "bg-gray-950 dark:bg-gray-100",
           "[mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-position:center] [mask-mode:alpha] [mask-composite:exclude]"
         )}
         style={{
