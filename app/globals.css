@@ -72,6 +72,9 @@
     font-family: var(--font-libre-caslon);
   }
 
+  .font-pacifico{
+    font-family: var(--font-pacifico);
+  }
 }
 
 /* Terminal styling */

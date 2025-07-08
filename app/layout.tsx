@@ -43,6 +43,13 @@ const Libre = Libre_Caslon_Text ({
   variable: "--font-libre-caslon",
   weight:["400"]
 })
+
+const pacifico = Pacifico({
+  subsets:["latin"],
+  variable: "--font-pacifico",
+  weight:["400"]
+})
+
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
@@ -61,7 +68,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`dark:bg-gray-950 ${ptSansCaption.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
+      <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         <ScrollHandler/>
         <ResizableNavbar/>

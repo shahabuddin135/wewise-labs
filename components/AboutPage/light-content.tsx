@@ -139,6 +139,86 @@ export default function LightContent() {
           </div>
         </div>
       </section>
+
+       {/* bento */}
+       <section className="bg-gray-950 sm:w-full mx-auto">
+        <div className="flex justify-center items-center min-h-screen mt-10 ">
+          <div className="rounded-2xl bg-gray-100 p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:w-[950px] lg:h-[400px] flex items-center">
+            <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full sm:min-h-screen">
+              {/* ART with dots */}
+              <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
+                row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1">
+                <div className="absolute inset-0 z-0">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    className="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <defs>
+                      <pattern
+                        id="dots"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="2" cy="2" r="2" fill="#fff" opacity="0.3" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#dots)" />
+                  </svg>
+                </div>
+                <span className="z-10 text-3xl md:text-4xl lg:text-5xl font-extrabold text-white font-libre drop-shadow-lg">
+                  ART
+                </span>
+              </div>
+
+              {/* Creativity with wavy lines */}
+              <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
+                row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1  lg:col-span-4 lg:row-span-1 order-2 "
+                style={{
+                  backgroundImage: 'url("https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922282/WhatsApp_Image_2025-07-08_at_02.04.30_17d88f4d_gysrhu.jpg")',
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                  
+                }}
+              >
+                <span className="flex items-center justify-center z-10 text-xl sm:text-2xl md:text-2xl font-pacifico text-white font-cursive">
+                  Creativity
+                </span>
+              </div>
+
+              {/* Logo */}
+              <div className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-950
+                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3">
+                <Image
+                  src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922808/logo-dark-removebg-preview_gol7pn.png"
+                  alt="logo"
+                  width={130}
+                  height={130}
+                  className="object-cover"
+                />
+              </div>
+
+              {/* Mandala */}
+              <div className="relative border-2 border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
+                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 ">
+                <Image
+                  src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751920809/Vintage-Frame-Extended-5_htdnoz.svg"
+                  alt="mandala"
+                  width={130}
+                  height={130}
+                  className="object-contain"
+                />
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
