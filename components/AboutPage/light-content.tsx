@@ -46,7 +46,8 @@ export default function LightContent() {
               Our Good Mission
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-black">
-              WeWise Lab&apos;s mission is to build products that work & are affordable.
+              WeWise Lab&apos;s mission is to build products that work & are
+              affordable.
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
@@ -84,10 +85,18 @@ export default function LightContent() {
 
             <div className="w-full">
               <ul className="flex flex-col items-center sm:items-center lg:items-start divide-y divide-gray-400 dark:divide-gray-600 w-full mt-2 text-center lg:text-left">
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">Shahabuddin COO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">Darakhshan Imran CEO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">Saba Sarfaraz CMO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">Abeera Umair CFO</li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
+                  Shahabuddin COO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
+                  Darakhshan Imran CEO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
+                  Saba Sarfaraz CMO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
+                  Abeera Umair CFO
+                </li>
               </ul>
             </div>
           </div>
@@ -102,7 +111,8 @@ export default function LightContent() {
               Why Wewise?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-black">
-              It is not what we just say, <br className="hidden sm:block" /> it is what we do!
+              It is not what we just say, <br className="hidden sm:block" /> it
+              is what we do!
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
@@ -134,20 +144,23 @@ export default function LightContent() {
               Where on Earth?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl max-w-xl text-white">
-              WeWise Labs runs its operations <br className="hidden sm:block" /> remotely. We live in the air!
+              WeWise Labs runs its operations <br className="hidden sm:block" />{" "}
+              remotely. We live in the air!
             </p>
           </div>
         </div>
       </section>
 
-       {/* bento */}
-       <section className="bg-gray-950 sm:w-full mx-auto">
-       <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto mt-10">
-       <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
-       <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
-       {/* ART with dots */}
-              <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
-            row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1">
+      {/* bento */}
+      <section className="bg-gray-950 sm:w-full mx-auto">
+        <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-10">
+          <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
+            <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
+              {/* ART with dots */}
+              <div
+                className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
+            row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1"
+              >
                 <div className="absolute inset-0 z-0">
                   <svg
                     width="100%"
@@ -176,13 +189,14 @@ export default function LightContent() {
               </div>
 
               {/* Creativity with wavy lines */}
-              <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
+              <div
+                className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
                 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1  lg:col-span-4 lg:row-span-1 order-2 "
                 style={{
-                  backgroundImage: 'url("https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922282/WhatsApp_Image_2025-07-08_at_02.04.30_17d88f4d_gysrhu.jpg")',
+                  backgroundImage:
+                    'url("https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922282/WhatsApp_Image_2025-07-08_at_02.04.30_17d88f4d_gysrhu.jpg")',
                   backgroundSize: "cover",
                   backgroundRepeat: "no-repeat",
-                  
                 }}
               >
                 <span className="flex items-center justify-center z-10 text-xl sm:text-2xl md:text-2xl font-pacifico text-white font-cursive">
@@ -191,20 +205,34 @@ export default function LightContent() {
               </div>
 
               {/* Logo */}
-              <div className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-950
-                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3">
-                <Image
+              <div
+                className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-950
+                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3"
+              >
+                {/* <Image
                   src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751922808/logo-dark-removebg-preview_gol7pn.png"
                   alt="logo"
                   width={130}
                   height={130}
                   className="object-cover"
+                /> */}
+                <video
+                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751979582/0703_wc3i4o.mp4"
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                 />
               </div>
 
               {/* Mandala */}
-              <div className="relative border-2 border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
-                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 ">
+              <div
+                className="relative border-2 border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
+                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 "
+              >
                 <Image
                   src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751920809/Vintage-Frame-Extended-5_htdnoz.svg"
                   alt="mandala"
@@ -213,8 +241,6 @@ export default function LightContent() {
                   className="object-contain"
                 />
               </div>
-
-              
             </div>
           </div>
         </div>

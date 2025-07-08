@@ -46,7 +46,8 @@ export default function DarkContent() {
               Our Good Mission
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-white">
-              WeWise Lab&apos;s mission is to build products that work & are affordable.
+              WeWise Lab&apos;s mission is to build products that work & are
+              affordable.
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
@@ -84,10 +85,18 @@ export default function DarkContent() {
 
             <div className="w-full">
               <ul className="flex flex-col items-center sm:items-center lg:items-start divide-y divide-gray-400 dark:divide-gray-600 w-full mt-2 text-center lg:text-left">
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">Shahabuddin COO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">Darakhshan Imran CEO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">Saba Sarfaraz CMO</li>
-                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">Abeera Umair CFO</li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
+                  Shahabuddin COO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
+                  Darakhshan Imran CEO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
+                  Saba Sarfaraz CMO
+                </li>
+                <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
+                  Abeera Umair CFO
+                </li>
               </ul>
             </div>
           </div>
@@ -102,7 +111,8 @@ export default function DarkContent() {
               Why Wewise?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-white">
-              It is not what we just say, <br className="hidden sm:block" /> it is what we do!
+              It is not what we just say, <br className="hidden sm:block" /> it
+              is what we do!
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
@@ -134,89 +144,107 @@ export default function DarkContent() {
               Where on Earth?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl max-w-xl text-black">
-              WeWise Labs runs its operations <br className="hidden sm:block" /> remotely. We live in the air!
+              WeWise Labs runs its operations <br className="hidden sm:block" />{" "}
+              remotely. We live in the air!
             </p>
           </div>
         </div>
       </section>
 
-            {/* bento */}
-     <section className="bg-gray-100 sm:w-full mx-auto">
-      <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto mt-10">
-      <div className="rounded-2xl bg-gray-950 p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
-        <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
-          {/* ART with dots */}
-          <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100
-            row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1">
-            <div className="absolute inset-0 z-0">
-              <svg
-                width="100%"
-                height="100%"
-                className="w-full h-full"
-                xmlns="http://www.w3.org/2000/svg"
+      {/* bento */}
+      <section className="bg-gray-100 sm:w-full mx-auto">
+        <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-10">
+          <div className="rounded-2xl bg-gray-950 p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
+            <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
+              {/* ART with dots */}
+              <div
+                className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100
+            row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1"
               >
-                <defs>
-                  <pattern
-                    id="dots"
-                    x="0"
-                    y="0"
-                    width="20"
-                    height="20"
-                    patternUnits="userSpaceOnUse"
+                <div className="absolute inset-0 z-0">
+                  <svg
+                    width="100%"
+                    height="100%"
+                    className="w-full h-full"
+                    xmlns="http://www.w3.org/2000/svg"
                   >
-                    <circle cx="2" cy="2" r="2" fill="#000" opacity="0.7" />
-                  </pattern>
-                </defs>
-                <rect width="100%" height="100%" fill="url(#dots)" />
-              </svg>
-            </div>
-            <span className="z-10 text-3xl sm:text-4xl md:text-5xl font-extrabold text-black font-libre drop-shadow-lg">
-              ART
-            </span>
-          </div>
+                    <defs>
+                      <pattern
+                        id="dots"
+                        x="0"
+                        y="0"
+                        width="20"
+                        height="20"
+                        patternUnits="userSpaceOnUse"
+                      >
+                        <circle cx="2" cy="2" r="2" fill="#000" opacity="0.7" />
+                      </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#dots)" />
+                  </svg>
+                </div>
+                <span className="z-10 text-3xl sm:text-4xl md:text-5xl font-extrabold text-black font-libre drop-shadow-lg">
+                  ART
+                </span>
+              </div>
 
-          {/* Creativity with wavy lines */}
-          <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100
+              {/* Creativity with wavy lines */}
+              <div
+                className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-100
                 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1  lg:col-span-4 lg:row-span-1 order-2 "
-            style={{
-              backgroundImage: 'url("")',
-              backgroundSize: "cover",
-              backgroundRepeat: "no-repeat"
-            }}
-          >
-            <span className="z-10 text-xl md:text-2xl font-pacifico text-black">
-              Creativity
-            </span>
-          </div>
+                style={{
+                  backgroundImage:
+                    'url("https://res.cloudinary.com/dqkt0g0he/image/upload/v1751979368/path9367_ggzkv0.png")',
+                  backgroundSize: "cover",
+                  backgroundRepeat: "no-repeat",
+                }}
+              >
+                <span className="z-10 text-xl md:text-2xl font-pacifico text-black">
+                  Creativity
+                </span>
+              </div>
 
-          {/* Logo */}
-          <div className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
-                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3">
-            <Image
+              {/* Logo */}
+              <div
+                className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
+                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3"
+              >
+                {/* <Image
               src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1749757890/wewise-labs-logo_pfpin6.png"
               alt="logo"
               width={120}
               height={120}
               className="object-contain"
-            />
-          </div>
+            /> */}
+                <video
+                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751979582/0703_wc3i4o.mp4"
+                  width={120}
+                  height={120}
+                  className="object-contain"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
 
-          {/* Mandala */}
-          <div className="relative border-2 border-gray-100 rounded-2xl flex items-center justify-center bg-gray-950
-                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 ">
-            <Image
-              src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751921703/WhatsApp_Image_2025-07-08_at_01.54.56_75b59f83_hldijb.jpg"
-              alt="mandala"
-              width={130}
-              height={130}
-              className="object-contain"
-            />
+              {/* Mandala */}
+              <div
+                className="relative border-2 border-gray-100 rounded-2xl flex items-center justify-center bg-gray-950
+                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 "
+              >
+                <Image
+                  src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751921703/WhatsApp_Image_2025-07-08_at_01.54.56_75b59f83_hldijb.jpg"
+                  alt="mandala"
+                  width={130}
+                  height={130}
+                  className="object-contain"
+                />
+              </div>
+            </div>
           </div>
-        
         </div>
-      </div>
-    </div>
-      </section> 
+      </section>
     </div>
   );
 }
