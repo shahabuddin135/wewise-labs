@@ -142,12 +142,12 @@ export default function LightContent() {
 
        {/* bento */}
        <section className="bg-gray-950 sm:w-full mx-auto">
-        <div className="flex justify-center items-center min-h-screen mt-10 ">
-          <div className="rounded-2xl bg-gray-100 p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:w-[950px] lg:h-[400px] flex items-center">
-            <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full sm:min-h-screen">
-              {/* ART with dots */}
+       <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto mt-10">
+       <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
+       <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
+       {/* ART with dots */}
               <div className="relative border border-gray-950 overflow-hidden rounded-xl flex items-center justify-center bg-gray-950
-                row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1">
+            row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-3 lg:row-span-3 order-1">
                 <div className="absolute inset-0 z-0">
                   <svg
                     width="100%"
