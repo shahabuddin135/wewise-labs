@@ -94,10 +94,10 @@ export default function LightContent() {
                   Darakhshan Imran CEO
                 </li>
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
-                  Saba Sarfaraz CMO
+                  Abeera Umair CFO
                 </li>
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-white">
-                  Abeera Umair CFO
+                  Saba Sarfaraz CMO
                 </li>
               </ul>
             </div>
@@ -155,8 +155,8 @@ export default function LightContent() {
 
       {/* bento */}
       <section className="sm:w-full mx-auto">
-      <h1 className="flex justify-center items-center mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-white text-center mt-8">
-        Creativity, Art and Wewise
+        <h1 className="flex justify-center items-center mb-8 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-white text-center mt-8">
+          Creativity, Art and Wewise
         </h1>
         <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-16">
           <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">

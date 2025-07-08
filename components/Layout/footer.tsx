@@ -29,6 +29,7 @@ export function Footer() {
                 </p>
               </div>
               <div className="mt-10">
+              <h2 className="text-xl my-4 font-subheading font-semibold text-black dark:text-white">Socials</h2>
                 <div className="flex items-center gap-4">
                   <Image
                     src={isDark ?  "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997938/pngwing.com_21_b0sd3g.png" : "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997399/pngwing.com_20_ww0b73.png"}
