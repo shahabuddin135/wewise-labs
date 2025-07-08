@@ -612,20 +612,17 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         </span>
 
         {/* are!" */}
-        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56">
+        <span className="text-element text-[7rem] md:text-[10rem] lg:text-[12rem] font-bold bg-gradient-to-r from-teal-400 via-cyan-500 to-sky-500 dark:from-teal-300 dark:via-cyan-400 dark:to-sky-500 bg-clip-text text-transparent mr-56 md:pr-16">
           are!&quot;
         </span>
-        {/* Spacer to ensure last text is fully visible on md+ screens only */}
-        {/* <div
-          className="hidden md:inline-block"
-          style={{ width: "160vw" }}
-          aria-hidden="true"
-        ></div> */}
-        <div
-          className="inline-block"
-          style={{ width: isMobileOrTablet ? "140vw" : "180vw" }}
-          aria-hidden="true"
-        ></div>
+        {/* Spacer to ensure last text is fully visible on sm screens only */}
+        {isMobileOrTablet && (
+          <div
+            className="inline-block"
+            style={{ width: "160vw" }}
+            aria-hidden="true"
+          ></div>
+        )}
       </div>
     </div>
   )
