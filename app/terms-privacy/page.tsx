@@ -1,12 +1,12 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import TableOfContents from "@/components/PrivacyPage/TableOfContents";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
 import { ScrollArea } from "@/components/ui/scroll-area"
-import { ChevronRight, Shield, FileText, Mail, Calendar } from "lucide-react"
+import { Shield, FileText, Mail, Calendar } from "lucide-react"
 import { Footer } from "@/components/Layout/footer"
 
 export default function PrivacyPolicyPage() {
@@ -41,130 +41,17 @@ export default function PrivacyPolicyPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Table of Contents */}
-          <div className="lg:col-span-1">
-            <Card className="sticky top-8 dark:bg-[#171717] dark:border-[#262626]">
-              <CardHeader>
-                <CardTitle className="text-lg text-black dark:text-[#fafafa]">Contents</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <Button
-                  variant={activeSection === "privacy" ? "default" : "ghost"}
-                  className={`w-full justify-start ${
-                    activeSection === "privacy"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("privacy")}
-                >
-                  <Shield className={`h-4 w-4 mr-2 ${activeSection === "privacy" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "privacy" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Privacy Policy</span>
-                </Button>
-                <Button
-                  variant={activeSection === "information" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "information"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("information")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "information" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "information" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Information We Collect</span>
-                </Button>
-                <Button
-                  variant={activeSection === "usage" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "usage"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("usage")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "usage" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "usage" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>How We Use Your Info</span>
-                </Button>
-                <Button
-                  variant={activeSection === "rights" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "rights"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("rights")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "rights" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "rights" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Your Rights</span>
-                </Button>
-                <Button
-                  variant={activeSection === "security" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "security"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("security")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "security" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "security" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Data Security</span>
-                </Button>
-                <Button
-                  variant={activeSection === "terms" ? "default" : "ghost"}
-                  className={`w-full justify-start ${
-                    activeSection === "terms"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("terms")}
-                >
-                  <FileText className={`h-4 w-4 mr-2 ${activeSection === "terms" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "terms" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Terms & Conditions</span>
-                </Button>
-                <Button
-                  variant={activeSection === "ownership" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "ownership"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("ownership")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "ownership" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "ownership" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Content Ownership</span>
-                </Button>
-                <Button
-                  variant={activeSection === "acceptable" ? "default" : "ghost"}
-                  className={`w-full justify-start text-sm ${
-                    activeSection === "acceptable"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("acceptable")}
-                >
-                  <ChevronRight className={`h-3 w-3 mr-2 ${activeSection === "acceptable" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "acceptable" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Acceptable Use</span>
-                </Button>
-                <Button
-                  variant={activeSection === "contact" ? "default" : "ghost"}
-                  className={`w-full justify-start ${
-                    activeSection === "contact"
-                      ? "bg-black text-white dark:bg-white dark:text-black hover:bg-gray-200 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                      : "bg-transparent text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-black dark:hover:text-white"
-                  }`}
-                  onClick={() => scrollToSection("contact")}
-                >
-                  <Mail className={`h-4 w-4 mr-2 ${activeSection === "contact" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}`} />
-                  <span className={activeSection === "contact" ? "text-white dark:text-black hover:text-black dark:hover:text-white" : "text-black dark:text-white hover:text-black dark:hover:text-white"}>Contact Us</span>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <TableOfContents
+              activeSection={activeSection}
+              scrollToSection={scrollToSection}
+          />
 
           {/* Main Content */}
           <div className="lg:col-span-3">
             <ScrollArea className="h-full">
               <div className="space-y-8">
                 {/* Privacy Policy Section */}
-                <section id="privacy">
+                <section id="privacy" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
@@ -180,7 +67,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* Information We Collect */}
-                <section id="information">
+                <section id="information" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">Information We Collect</CardTitle>
@@ -206,7 +93,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* How We Use Your Information */}
-                <section id="usage">
+                <section id="usage" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">How We Use Your Information</CardTitle>
@@ -235,7 +122,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* Your Rights */}
-                <section id="rights">
+                <section id="rights" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">Your Rights</CardTitle>
@@ -282,7 +169,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* Data Security */}
-                <section id="security">
+                <section id="security" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">Data Security</CardTitle>
@@ -303,7 +190,7 @@ export default function PrivacyPolicyPage() {
                 <Separator className="my-8 dark:bg-[#404040]" />
 
                 {/* Terms and Conditions */}
-                <section id="terms">
+                <section id="terms" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
@@ -319,7 +206,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* Ownership of Content */}
-                <section id="ownership">
+                <section id="ownership" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">Ownership of Content</CardTitle>
@@ -343,7 +230,7 @@ export default function PrivacyPolicyPage() {
                 </section>
 
                 {/* Acceptable Use */}
-                <section id="acceptable">
+                <section id="acceptable" className="scroll-mt-28">
                   <Card className="dark:bg-[#171717] dark:border-[#262626]">
                     <CardHeader>
                       <CardTitle className="text-xl text-black dark:text-[#fafafa]">Acceptable Use</CardTitle>
@@ -445,7 +332,7 @@ export default function PrivacyPolicyPage() {
                 </Card>
 
                 {/* Contact Section */}
-                <section id="contact">
+                <section id="contact" className="scroll-mt-28">
                   <Card className="bg-primary/5 border-primary/20 dark:bg-[#1f1f1f] dark:border-[#404040]">
                     <CardHeader>
                       <div className="flex items-center gap-2">
