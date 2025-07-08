@@ -29,20 +29,38 @@ export function Footer() {
                 </p>
               </div>
               <div className="mt-10">
-              <h2 className="text-xl my-4 font-subheading font-semibold text-black dark:text-white">Socials</h2>
+                <h2 className="text-xl my-4 font-subheading font-semibold text-black dark:text-white">
+                  Socials
+                </h2>
                 <div className="flex items-center gap-4">
-                  <Link href="https://www.linkedin.com/company/wewise-labs/" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://www.linkedin.com/company/wewise-labs/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
-                      src={isDark ?  "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997938/pngwing.com_21_b0sd3g.png" : "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997399/pngwing.com_20_ww0b73.png"}
+                      src={
+                        isDark
+                          ? "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997938/pngwing.com_21_b0sd3g.png"
+                          : "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751997399/pngwing.com_20_ww0b73.png"
+                      }
                       alt="LinkedIn Logo"
                       width={40}
                       height={40}
                       className="mb-2 transition duration-200 ease-in-out hover:scale-110"
                     />
                   </Link>
-                  <Link href="https://www.instagram.com/wewiselabs" target="_blank" rel="noopener noreferrer">
+                  <Link
+                    href="https://www.instagram.com/wewiselabs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Image
-                      src={isDark ? "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751998387/pngwing.com__22___1_-removebg-preview_ensv0d.png" : "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751995039/pngwing.com_19_kzdlkg.png"}
+                      src={
+                        isDark
+                          ? "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751998387/pngwing.com__22___1_-removebg-preview_ensv0d.png"
+                          : "https://res.cloudinary.com/dqkt0g0he/image/upload/v1751995039/pngwing.com_19_kzdlkg.png"
+                      }
                       alt="Instagram Logo"
                       width={40}
                       height={40}
