@@ -5,7 +5,6 @@ import {
   NavItems,
   MobileNav,
   NavbarLogo,
-  NavbarButton,
   MobileNavHeader,
   MobileNavToggle,
   MobileNavMenu,
@@ -95,7 +94,7 @@ export function ResizableNavbar() {
           <NavItems 
             items={displayNavItems} 
             className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
-            onItemClick={(e) => {
+            onItemClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
               const target = e.target as HTMLElement;
               const anchor = target.closest("a");
               if (anchor) {
@@ -133,7 +132,7 @@ export function ResizableNavbar() {
                 <NavbarLogo />
               </Link>
             )}
-            <div className="flex items-center justify-center gap-3 sm:gap-4">
+            <div className="flex items-center justify-center gap-2 sm:gap-4">
             {!isOnIdeasPage && (
               <Link href="/ideas">
                 <button className="px-2 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-200 text-xs  font-semibold rounded-[5px]">
