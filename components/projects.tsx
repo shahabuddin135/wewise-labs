@@ -104,6 +104,14 @@ export function Projects() {
     return () => cancelAnimationFrame(raf)
   }, [])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % projects.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [projects.length]);
+
   return (
     <section id="projects" className="py-24 px-4 md:px-8 relative overflow-hidden">
       {/* Multi-blob Spotlight Effect */}
