@@ -3,9 +3,8 @@ import type { Metadata } from "next"
 import {Archivo, Nunito_Sans, PT_Sans_Caption, Ubuntu, Pacifico,Libre_Caslon_Text,Kablammo, Arizonia} from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import {ResizableNavbar} from "@/components/Layout/navbar-resize"
+import NavbarWrapper from "@/components/NavbarWrapper";
 import { ScrollHandler } from "@/lib/smooth-handler"
-// import { Footer } from "@/components/footer"
 
 
 const ptSansCaption = PT_Sans_Caption({
@@ -77,8 +76,8 @@ export default function RootLayout({
       <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable}  ${kablammo.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         <ScrollHandler/>
-        <ResizableNavbar/>
-          {children}
+        <NavbarWrapper />
+        {children}
         </ThemeProvider>
       </body>
     </html>

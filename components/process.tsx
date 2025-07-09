@@ -224,7 +224,7 @@ export function Process() {
         <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?<br/>
           <span className="text-3xl md:text-[2rem] lg:text-[3rem] mb-8 mt-4 dark:text-white">From spark to ship</span>
         </h2>
-        <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
+        <p className="w-[90%] text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 font-body font-semibold text-gray-600 dark:text-white max-w-2xl mx-auto">
           <br/> We focus process that gets ideas from the whiteboard to the real world.
         </p>
       </div>

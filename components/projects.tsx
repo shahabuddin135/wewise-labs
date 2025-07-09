@@ -114,77 +114,84 @@ export function Projects() {
 
   return (
     <section id="projects" className="py-24 px-4 md:px-8 relative overflow-hidden">
-      {/* Multi-blob Spotlight Effect */}
+      {/* Multi-blob Spotlight Effect - contained in internal div to prevent touching main section edges */}
       <div
         aria-hidden
         style={{
+          padding:"5rem",
           pointerEvents: "none",
           position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
+          top: "35%",
+          left: "50%",
+          transform: "translateX(-50%)",
+          width: "min(90vw, 1100px)",
+          height: "min(50vw, 400px)",
           zIndex: 1,
-          overflow: "hidden",
+          overflow: "visible",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
-        {/* Blob 1 */}
-        <div
-          style={{
-            position: "absolute",
-            left: `calc(${blobs[0].x}% - 300px)`,
-            top: `calc(${blobs[0].y}% - 300px)`,
-            width: 600, 
-            height: 600, 
-            borderRadius: "50%",
-            background:
-              theme === "dark"
-                ? "radial-gradient(circle at 300px 300px, rgba(80,80,255,0.25), transparent 70%)"
-                : "radial-gradient(circle at 300px 300px, rgba(0,120,255,0.18), transparent 70%)",
-            filter: "blur(48px)", // increased blur for larger size
-            transition: "background 0.3s",
-            zIndex: 2,
-            mixBlendMode: "lighten",
-          }}
-        />
-        {/* Blob 2 */}
-        <div
-          style={{
-            position: "absolute",
-            left: `calc(${blobs[1].x}% - 270px)`,
-            top: `calc(${blobs[1].y}% - 270px)`,
-            width: 540, 
-            height: 540, 
-            borderRadius: "50%",
-            background:
-              theme === "dark"
-                ? "radial-gradient(circle at 270px 270px, rgba(255,80,200,0.18), transparent 70%)"
-                : "radial-gradient(circle at 270px 270px, rgba(255,0,120,0.13), transparent 70%)",
-            filter: "blur(54px)", // increased blur for larger size
-            transition: "background 0.3s",
-            zIndex: 2,
-            mixBlendMode: "lighten",
-          }}
-        />
-        {/* Blob 3 */}
-        <div
-          style={{
-            position: "absolute",
-            left: `calc(${blobs[2].x}% - 240px)`,
-            top: `calc(${blobs[2].y}% - 240px)`,
-            width: 480, 
-            height: 480, 
-            borderRadius: "50%",
-            background:
-              theme === "dark"
-                ? "radial-gradient(circle at 240px 240px, rgba(80,255,180,0.13), transparent 70%)"
-                : "radial-gradient(circle at 240px 240px, rgba(0,255,180,0.10), transparent 70%)",
-            filter: "blur(48px)", // increased blur for larger size
-            transition: "background 0.3s",
-            zIndex: 2,
-            mixBlendMode: "lighten",
-          }}
-        />
+        <div style={{position: "relative", width: "100%", height: "100%"}}>
+          {/* Blob 1 */}
+          <div
+            style={{
+              position: "absolute",
+              left: `calc(${blobs[0].x}% - 300px)`,
+              top: `calc(${blobs[0].y}% - 300px)`,
+              width: 600, 
+              height: 600, 
+              borderRadius: "50%",
+              background:
+                theme === "dark"
+                  ? "radial-gradient(circle at 300px 300px, rgba(80,80,255,0.25), transparent 70%)"
+                  : "radial-gradient(circle at 300px 300px, rgba(0,120,255,0.18), transparent 70%)",
+              filter: "blur(48px)",
+              transition: "background 0.3s",
+              zIndex: 2,
+              mixBlendMode: "lighten",
+            }}
+          />
+          {/* Blob 2 */}
+          <div
+            style={{
+              position: "absolute",
+              left: `calc(${blobs[1].x}% - 270px)`,
+              top: `calc(${blobs[1].y}% - 270px)`,
+              width: 540, 
+              height: 540, 
+              borderRadius: "50%",
+              background:
+                theme === "dark"
+                  ? "radial-gradient(circle at 270px 270px, rgba(255,80,200,0.18), transparent 70%)"
+                  : "radial-gradient(circle at 270px 270px, rgba(255,0,120,0.13), transparent 70%)",
+              filter: "blur(54px)",
+              transition: "background 0.3s",
+              zIndex: 2,
+              mixBlendMode: "lighten",
+            }}
+          />
+          {/* Blob 3 */}
+          <div
+            style={{
+              position: "absolute",
+              left: `calc(${blobs[2].x}% - 240px)`,
+              top: `calc(${blobs[2].y}% - 240px)`,
+              width: 480, 
+              height: 480, 
+              borderRadius: "50%",
+              background:
+                theme === "dark"
+                  ? "radial-gradient(circle at 240px 240px, rgba(80,255,180,0.13), transparent 70%)"
+                  : "radial-gradient(circle at 240px 240px, rgba(0,255,180,0.10), transparent 70%)",
+              filter: "blur(48px)",
+              transition: "background 0.3s",
+              zIndex: 2,
+              mixBlendMode: "lighten",
+            }}
+          />
+        </div>
       </div>
       <div className="max-w-7xl mx-auto">
         <motion.div
