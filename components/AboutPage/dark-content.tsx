@@ -88,16 +88,16 @@ export default function DarkContent() {
             <div className="w-full">
               <ul className="flex flex-col items-center sm:items-center lg:items-start divide-y divide-gray-400 dark:divide-gray-600 w-full mt-2 text-center lg:text-left">
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
-                  Shahabuddin COO
+                  Shahabuddin 
                 </li>
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
-                  Darakhshan Imran CEO
+                  Darakhshan Imran 
                 </li>
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
-                  Abeera Umair CFO
+                  Abeera Umair 
                 </li>
                 <li className="py-2 font-semibold text-lg sm:text-xl md:text-2xl text-black">
-                  Saba Sarfaraz CMO
+                  Saba Sarfaraz 
                 </li>
               </ul>
             </div>
@@ -182,7 +182,7 @@ export default function DarkContent() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <span className="z-10 text-xl md:text-2xl font-pacifico text-black">
+                <span className="z-10 text-5xl sm:text-4xl font-pacifico text-black">
                   Creativity
                 </span>
               </div>
@@ -190,7 +190,7 @@ export default function DarkContent() {
               {/* Logo */}
               <div
                 className="relative border border-gray-950 rounded-xl flex items-center justify-center bg-gray-100
-                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3"
+                row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3 py-2"
               >
                 <video
                   src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751988623/wewise_metalic_kgigth.mp4"
@@ -207,7 +207,7 @@ export default function DarkContent() {
               {/* Mandala */}
               <div
                 className="relative border-2 border-gray-100 rounded-2xl flex items-center justify-center bg-gray-950
-                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 "
+                row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-4 py-2 "
               >
                 <Image
                   src="https://res.cloudinary.com/dqkt0g0he/image/upload/v1751921703/WhatsApp_Image_2025-07-08_at_01.54.56_75b59f83_hldijb.jpg"
