@@ -29,7 +29,7 @@ export function Footer() {
                 </p>
               </div>
               <div className="mt-10">
-                <h2 className="text-xl my-4 font-subheading font-semibold text-black dark:text-white">
+                <h2 className="mb-4 font-subheading font-semibold text-black dark:text-white">
                   Socials
                 </h2>
                 <div className="flex items-center gap-4">
@@ -86,7 +86,7 @@ export function Footer() {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    href="#services"
+                    href="/#services"
                     className="text-gray-600 dark:text-white hover:text-black dark:hover:text-white transition-colors text-sm"
                   >
                     {item}
@@ -113,7 +113,7 @@ export function Footer() {
               ))}
               <li>
                 <Link
-                  href="/team"
+                  href="/about#team"
                   className="text-gray-600 dark:text-white hover:text-black dark:hover:text-white transition-colors text-sm"
                 >
                   Meet Our Team

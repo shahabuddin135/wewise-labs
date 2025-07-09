@@ -42,7 +42,7 @@ const projects = [
       dark: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png"
     },
     tags: ["Next.js", "TypeScript", "Tailwind", "API Integration"],
-    link: "https://certificate-builder-ten.vercel.app/"
+    projectLink: "https://certificate-builder-ten.vercel.app/"
 
   },
 ]
@@ -103,6 +103,14 @@ export function Projects() {
     animate()
     return () => cancelAnimationFrame(raf)
   }, [])
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % projects.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [projects.length]);
 
   return (
     <section id="projects" className="py-24 px-4 md:px-8 relative overflow-hidden">

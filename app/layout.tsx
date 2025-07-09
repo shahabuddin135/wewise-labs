@@ -59,9 +59,9 @@ const kablammo = Kablammo({
 export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
-  generator: 'v0.dev',
+  generator: 'Wewise Labs',
   icons: {
-    icon: "/favicon.png", // Use a leading slash for public assets
+    icon: "/favicon.ico", // Use a leading slash for public assets
   },
 }
 
