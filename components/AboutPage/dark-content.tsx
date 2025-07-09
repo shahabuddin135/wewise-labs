@@ -155,10 +155,10 @@ export default function DarkContent() {
 
       {/* bento */}
       <section className="sm:w-full mx-auto">
-        <h1 className="flex justify-center items-center text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-black mt-8">
+        <h1 className="flex justify-center items-center mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-black">
           Creativity, Art and Wewise
         </h1>
-        <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-16">
+        <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-12 md:my-16">
           <div className="rounded-2xl bg-gray-950 p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
             <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
               {/* ART with dots */}
