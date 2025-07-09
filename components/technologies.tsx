@@ -150,7 +150,7 @@ export default function TechStackMarquee() {
       {/* Background glow effect in the middle - different for light and dark modes */}
         <div className="absolute inset-0 flex items-center justify-center ">
         {/* Light mode glow */}
-        <div className="absolute top-[25%] left-[45%] w-[18rem] h-[18rem] bg-blue-400/50 dark:bg-blue-500/30 rounded-full blur-[90px] animate-blob animation-delay-2000 dark:hidden"></div>
+        <div className="absolute w-48 h-12 sm:w-[350px] sm:h-[110px] bg-[#4bb2e5]  rounded-full blur-3xl  dark:hidden"></div>
         {/* <div className="absolute w-[160px] h-[80px] sm:w-[365px] sm:h-[150px] bg-rose-400 sm:bg-rose-500/80 rounded-full blur-[60px] sm:blur-[80px] dark:hidden"></div> */}
        
         {/* Dark mode glow */}
@@ -175,7 +175,7 @@ export default function TechStackMarquee() {
 
       {/* Center highlight region - theme aware */}
       {/* <div className="pointer-events-none absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[25rem] dark:bg-gradient-to-r dark:from-transparent via-gray-700/5 to-transparent dark:via-white/5 "></div> */}
-      <div className="pointer-events-none absolute inset-y-0 left-1/2 transform -translate-x-1/2 w-[28rem] h-[150px] bg-gradient-to-r from-transparent via-gray-200/10 to-transparent dark:via-white/5"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-1/2 sm:transform -translate-x-1/2 w-[28rem] h-[150px] bg-gradient-to-r from-transparent via-gray-200/10 to-transparent dark:via-white/5"></div>
     </div>
   )
 }

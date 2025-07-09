@@ -20,7 +20,7 @@ export function ResizableNavbar() {
     { name: "Services", link: "#services" },
     { name: "Why Us", link: "#why-choose-us" },
     { name: "Process", link: "#process" },
-    { name:"About", link:"about"},
+    { name: "About", link: "/about" }, // <-- add slash here
     { name: "Projects", link: "#projects" },
     { name: "Contact", link: "#contact" },
   ];
