@@ -371,13 +371,16 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   return (
     <div
       ref={containerRef}
-      className={`relative h-screen overflow-hidden bg-gray-50 dark:bg-gray-950 ${className}`}
+      className={`relative h-[110dvh] overflow-hidden bg-white dark:bg-gray-950 ${className}`}
     >
       {/* Background Glow Blobs */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10">
-        <div className="absolute top-[20%] left-[10%] w-[40rem] h-[40rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
-        <div className="absolute top-[40%] left-[50%] w-[30rem] h-[30rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-[10%] right-[20%] w-[35rem] h-[35rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+        {/* Much smaller blobs (50% smaller than original) */}
+        <div className="absolute top-[20%] left-[10%] w-[16rem] h-[16rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
+        <div className="absolute top-[40%] left-[50%] w-[10.5rem] h-[10.5rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-[15%] right-[20%] w-[12.25rem] h-[12.25rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+        {/* New blob in vacant space, not near top or bottom */}
+        <div className="absolute top-[60%] left-[30%] w-[9rem] h-[9rem] bg-green-400/30 dark:bg-green-600/20 rounded-full filter blur-3xl animate-blob animation-delay-3000"></div>
       </div>
 
       <div ref={scrollRef} className="flex items-center h-full whitespace-nowrap px-8">

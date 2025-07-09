@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import Image from 'next/image'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft, Copy } from 'lucide-react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { client } from '@/sanity/lib/client'
@@ -13,6 +13,7 @@ const IdeaDetail = () => {
   const slug = params.slug
   const [idea, setIdea] = useState<any>(null)
   const [loading, setLoading] = useState(true)
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const fetchIdea = async () => {
@@ -44,6 +45,12 @@ const IdeaDetail = () => {
       fetchIdea()
     }
   }, [slug])
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   if (loading) {
     return (
@@ -168,11 +175,12 @@ const IdeaDetail = () => {
 
             {/* Action Buttons */}
             <div className='space-y-3 sm:space-y-4'>
-              <button className="bg-black dark:bg-white text-white dark:text-black p-2 w-full hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white active:opacity-50 text-sm sm:text-base font-medium transition-colors duration-200">
-                Steal This Idea
-              </button>
-              <button className="bg-black dark:bg-white text-white dark:text-black p-2 w-full hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white active:opacity-50 text-sm sm:text-base font-medium transition-colors duration-200">
-                Share Idea
+              <button
+                className="flex items-center justify-center gap-2 bg-black dark:bg-white text-white dark:text-black p-2 w-full hover:bg-white dark:hover:bg-black hover:text-black dark:hover:text-white active:opacity-50 text-sm sm:text-base font-medium transition-colors duration-200"
+                onClick={handleShare}
+              >
+                <Copy className="w-5 h-5" />
+                {copied ? "Link Copied!" : "Share Idea"}
               </button>
             </div>
           </div>
