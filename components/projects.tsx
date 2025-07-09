@@ -216,7 +216,7 @@ export function Projects() {
                 </div>
 
                 <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-black text-white hover:bg-gray-800 px-6">
-                  <Link href = {projects[activeIndex].projectLink || "https://www.techverse51.com"}>View Project</Link>
+                  <Link href = {projects[activeIndex].projectLink} target="_blank">View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
