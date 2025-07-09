@@ -65,7 +65,7 @@ export default function LightContent() {
       </section>
 
       {/* <FoundingMembers/> */}
-      <section className="w-full">
+      <section id="team" className="w-full">
         <div className="flex flex-col lg:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-4 sm:mt-6 md:mt-9 mx-4 sm:mx-6 md:mx-8 lg:mx-auto bg-gray-950 rounded-xl lg:rounded-2xl gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8 lg:justify-between">
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-2 lg:order-1">
             <Image
@@ -193,7 +193,7 @@ export default function LightContent() {
                 row-span-1 md:col-span-1 md:row-span-1 lg:col-span-2 lg:row-span-2 order-3 py-2"
               >
                 <video
-                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1751988623/wewise_metalic_kgigth.mp4"
+                  src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1752071539/metallic_logo_blalck_muted_tkj7mu.mp4"
                   width={200}
                   height={200}
                   className="object-cover border-2 border-gray-950 rounded-2xl"
