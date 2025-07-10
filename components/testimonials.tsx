@@ -24,8 +24,7 @@ export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0)
   const intervalRef = useRef<NodeJS.Timeout | null>(null)
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: false, amount: 0.5 })
-
+  
   // Fetch testimonials from Sanity
   useEffect(() => {
     client.fetch(

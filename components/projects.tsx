@@ -56,7 +56,6 @@ export function Projects() {
     { x: 40, y: 60 },
   ])
   const ref = useRef<HTMLDivElement>(null)
-  const isInView = useInView(ref, { once: true, amount: 0.2 })
   const {theme} = useTheme()
 
   // Animate spotlight position in a loop
@@ -110,7 +109,7 @@ export function Projects() {
     }, 3000);
 
     return () => clearInterval(interval);
-  }, [projects.length]);
+  }, []);
 
   return (
     <section id="projects" className="py-24 px-4 md:px-8 relative overflow-hidden">
