@@ -8,10 +8,24 @@ import { useEffect, useState } from 'react'
 import { client } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
 
+interface Idea {
+  title: string;
+  slug: string;
+  imgUrl: string;
+  shortDescription: string;
+  longDescription?: any;
+  category?: string;
+  tags?: string[];
+  publishedAt?: string;
+  author?: string;
+  inspiration?: string;
+  featured?: boolean;
+}
+
 const IdeaDetail = () => {
   const params = useParams()
   const slug = params.slug
-  const [idea, setIdea] = useState<any>(null)
+  const [idea, setIdea] = useState<Idea | null>(null)
   const [loading, setLoading] = useState(true)
   const [copied, setCopied] = useState(false);
 
