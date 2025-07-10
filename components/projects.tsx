@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState, useRef } from "react"
-import { motion, AnimatePresence, useInView } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {useTheme} from "next-themes"
@@ -49,7 +49,6 @@ const projects = [
 
 export function Projects() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [spotPos, setSpotPos] = useState({ x: 50, y: 50 })
   const [blobs, setBlobs] = useState([
     { x: 50, y: 50 },
     { x: 60, y: 40 },
@@ -60,16 +59,9 @@ export function Projects() {
 
   // Animate spotlight position in a loop
   useEffect(() => {
-    let frame = 0
     let raf: number
     const animate = () => {
       // Circular path animation
-      const radius = 30
-      const speed = 0.008 // smaller is slower
-      const x = 50 + radius * Math.cos(frame * speed)
-      const y = 50 + radius * Math.sin(frame * speed)
-      setSpotPos({ x, y })
-      frame++
       raf = requestAnimationFrame(animate)
     }
     animate()
@@ -78,8 +70,8 @@ export function Projects() {
 
   // Animate three blobs in a loop
   useEffect(() => {
-    let frame = 0
-    let raf: number
+    let frame = 0;
+    let raf: number;
     const animate = () => {
       // Each blob moves in a different circle
       setBlobs([
@@ -95,13 +87,13 @@ export function Projects() {
           x: 50 + 24 * Math.cos(frame * 0.011 - 2),
           y: 50 + 24 * Math.sin(frame * 0.011 - 2),
         },
-      ])
-      frame++
-      raf = requestAnimationFrame(animate)
-    }
-    animate()
-    return () => cancelAnimationFrame(raf)
-  }, [])
+      ]);
+      frame++;
+      raf = requestAnimationFrame(animate);
+    };
+    animate();
+    return () => cancelAnimationFrame(raf);
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

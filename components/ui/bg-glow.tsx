@@ -6,7 +6,7 @@ const SVG_SIZE = 96 // Medium size for better fit
 const SVG_SHAPES = [
   // SVG 1
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-1" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_236_1049)">
         <path
           fillRule="evenodd"
@@ -35,7 +35,7 @@ const SVG_SHAPES = [
   ),
   // SVG 2
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-2" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_238_1284)">
         <path
           fillRule="evenodd"
@@ -64,7 +64,7 @@ const SVG_SHAPES = [
   ),
   // SVG 3
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-3" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_238_1269)">
         <path
           fillRule="evenodd"
@@ -93,7 +93,7 @@ const SVG_SHAPES = [
   ),
   // SVG 4
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-4" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_231_793)">
         <path
           fillRule="evenodd"
@@ -122,7 +122,7 @@ const SVG_SHAPES = [
   ),
   // SVG 5
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-5" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_234_943)">
         <path
           fillRule="evenodd"
@@ -151,7 +151,7 @@ const SVG_SHAPES = [
   ),
   // SVG 6
   (
-    <svg width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg key="svg-6" width={SVG_SIZE} height={SVG_SIZE} viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_234_920)">
         <path
           fillRule="evenodd"
@@ -186,6 +186,8 @@ export default function BgGlowBouncingSVGs({ className = "", blobIndex }: { clas
   const animationFrame = useRef<number | null>(null)
   const positions = useRef<{ x: number; y: number; dx: number; dy: number }[]>([])
 
+  // The effect below is intentionally run only once on mount, so exhaustive-deps is disabled
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
