@@ -164,7 +164,7 @@ const ServicesComponent = () => {
     const service = services.find(s => s.id.toString() === id);
     if (!service) return <div />;
     return (
-      // @ts-ignore
+      // @ts-expect-error
       <Hexagon className="service-hexagon group">
         {renderServiceContent(service, index)}
       </Hexagon>

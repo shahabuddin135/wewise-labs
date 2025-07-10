@@ -1,63 +1,73 @@
-"use client"
+"use client";
 
-import { useEffect } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+declare global {
+  interface Window {
+    ScrollSmoother?: {
+      get: () => {
+        scrollTo: (el: Element, smooth: boolean, position: string) => void;
+      };
+    };
+  }
+}
 
 export function useSmoothScroll() {
-  const router = useRouter()
+  const router = useRouter();
 
   useEffect(() => {
     const handleAnchorClick = (e: MouseEvent) => {
-      const target = e.target as HTMLElement
-      const anchor = target.closest("a")
+      const target = e.target as HTMLElement;
+      const anchor = target.closest("a");
 
-      if (!anchor) return
+      if (!anchor) return;
 
-      const href = anchor.getAttribute("href")
-      if (!href) return
+      const href = anchor.getAttribute("href");
+      if (!href) return;
 
       // Handle hash links (both on same page and cross-page)
       if (href.startsWith("#")) {
-        const targetId = href.substring(1)
-        const targetElement = document.getElementById(targetId)
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
 
         if (targetElement) {
-          e.preventDefault()
+          e.preventDefault();
 
-          const smoother = (window as any).ScrollSmoother?.get()
+          const smoother = (window as Window).ScrollSmoother?.get();
           if (smoother) {
-            smoother.scrollTo(targetElement, true, "top top")
+            smoother.scrollTo(targetElement, true, "top top");
           } else {
-            targetElement.scrollIntoView({ behavior: "smooth" })
+            targetElement.scrollIntoView({ behavior: "smooth" });
           }
         }
       }
       // Handle cross-page hash links (e.g., /#services)
       else if (href.includes("#")) {
-        const [path, hash] = href.split("#")
-        const targetId = hash
-        
-        e.preventDefault()
+        const [path, hash] = href.split("#");
+        const targetId = hash;
+
+        e.preventDefault();
 
         // If we're already on the target page, just scroll to the element
         if (path === window.location.pathname || path === "/") {
-          const targetElement = document.getElementById(targetId)
+          const targetElement = document.getElementById(targetId);
           if (targetElement) {
-            const smoother = (window as any).ScrollSmoother?.get()
+            const smoother = (window as Window).ScrollSmoother?.get();
             if (smoother) {
-              smoother.scrollTo(targetElement, true, "top top")
+              smoother.scrollTo(targetElement, true, "top top");
             } else {
-              targetElement.scrollIntoView({ behavior: "smooth" })
+              targetElement.scrollIntoView({ behavior: "smooth" });
             }
           }
         } else {
           // Navigate to the page with hash
-          router.push(href)
+          router.push(href);
         }
       }
-    }
+    };
 
-    document.addEventListener("click", handleAnchorClick)
-    return () => document.removeEventListener("click", handleAnchorClick)
-  }, [router])
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
+  }, [router]);
 }

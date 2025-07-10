@@ -15,6 +15,14 @@ import Link from "next/link";
 import { ModeToggle } from "../ui/theme-button";
 import {usePathname, useRouter } from "next/navigation";
 
+declare global {
+  interface Window {
+    ScrollSmoother?: {
+      get: () => { scrollTo: (el: Element, smooth: boolean, position: string) => void }
+    }
+  }
+}
+
 export function ResizableNavbar() {
   const navItems = [
     { name: "Services", link: "#services" },
@@ -50,7 +58,7 @@ export function ResizableNavbar() {
         // On home page, just scroll
         const targetElement = document.getElementById(link.substring(1));
         if (targetElement) {
-          const smoother = (window as any).ScrollSmoother?.get();
+          const smoother = (window as Window).ScrollSmoother?.get();
           if (smoother) {
             smoother.scrollTo(targetElement, true, "top top");
           } else {
