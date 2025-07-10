@@ -5,7 +5,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import NavbarWrapper from "@/components/NavbarWrapper";
 import { ScrollHandler } from "@/lib/smooth-handler"
-
+import ThemeFavicon from "@/components/theme-favicon";
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ["latin"],
@@ -59,12 +59,7 @@ export const metadata: Metadata = {
   title: "Wewise Labs | SaaS & Web Development Services",
   description: "We build exceptional SaaS applications and provide professional web development services.",
   generator: 'Wewise Labs',
-  icons: {
-    icon: "/favicon.ico", // Use a leading slash for public assets
-  },
 }
-
-
 
 export default function RootLayout({
   children,
@@ -72,11 +67,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
+      <head>
+        {/* You can keep a default favicon as a fallback */}
+        <link rel="icon" href="/favicon-light.ico" />
+      </head>
       <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable}  ${kablammo.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
         <ScrollHandler/>
         <NavbarWrapper />
+        <ThemeFavicon />
         {children}
         </ThemeProvider>
       </body>
