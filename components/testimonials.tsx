@@ -175,8 +175,7 @@ export function Testimonials() {
         title,
         company,
         testimonial,
-        image,
-        publishedAt
+        image
       }`
     ).then((data) => {
       setTestimonials(data)
@@ -263,11 +262,7 @@ export function Testimonials() {
                     {[t.title, t.company].filter(Boolean).join(", ")}
                   </p>
                 )}
-                {t.publishedAt && (
-                  <span className="text-xs text-gray-400 dark:text-gray-300 mt-1">
-                    {new Date(t.publishedAt).toLocaleDateString()}
-                  </span>
-                )}
+                
               </div>
             </motion.div>
           </AnimatePresence>
