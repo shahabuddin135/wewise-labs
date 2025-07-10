@@ -32,12 +32,7 @@ export default defineType({
       title: 'Image',
       type: 'image',
       options: { hotspot: true },
-    }),
-    defineField({
-      name: 'publishedAt',
-      title: 'Published at',
-      type: 'datetime',
-    }),
+    })
   ],
   preview: {
     select: {
