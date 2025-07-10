@@ -33,7 +33,7 @@ export default function Home() {
     })
 
     // Store smoother globally for access in other components
-    ;(window as any).ScrollSmoother = ScrollSmoother
+    ;(window as unknown as { ScrollSmoother: typeof ScrollSmoother }).ScrollSmoother = ScrollSmoother
 
     // Handle hash navigation after smoother is created
     const hash = window.location.hash
@@ -48,7 +48,7 @@ export default function Home() {
 
     return () => {
       smoother.kill()
-      delete (window as any).ScrollSmoother
+      delete (window as unknown as { ScrollSmoother?: typeof ScrollSmoother }).ScrollSmoother
     }
   }, [])
 

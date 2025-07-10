@@ -17,8 +17,11 @@ const NotFound = () => {
         404
       </LineShadowText>
     </h1>
+    <p className="mt-4 text-lg text-muted-foreground">
+        The page you&apos;re looking for doesn&apos;t exist or has been moved.
+      </p>
     <p className='text-2xl font-bold text-center mt-10 text-black dark:text-white'>Looks 
-     like you've ventured off the map, but don't worry, here  <br/>  is the{' '}
+     like you&apos;ve ventured off the map, but don&apos;t worry, here  <br/>  is the{' '}
      <span className='text-blue-500'>
     <Link href='/sitemap'>
          sitemap

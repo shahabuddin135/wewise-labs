@@ -219,7 +219,7 @@ export default function PrivacyPolicyPage() {
                         laws.
                       </p>
                       <p className="text-muted-foreground dark:text-[#d4d4d4] leading-relaxed">
-                        WeWise Labs retains all rights, title, and interest in our website's content. You are not
+                        WeWise Labs retains all rights, title, and interest in our website&apos;s content. You are not
                         permitted to copy, reproduce, distribute, or create derivative works from any portion of the
                         site for any commercial purpose without our prior written permission. We may allow personal,
                         non-commercial use of content (such as downloading a page for personal reference), but this does
@@ -262,7 +262,7 @@ export default function PrivacyPolicyPage() {
                               <span className="font-medium">•</span>
                               <span>
                                 <strong>Reverse Engineering:</strong> Attempt to reverse engineer, decompile, or
-                                disassemble any of the website's software or underlying technology.
+                                disassemble any of the website&apos;s software or underlying technology.
                               </span>
                             </div>
                             <div className="flex items-start gap-2">
@@ -300,7 +300,7 @@ export default function PrivacyPolicyPage() {
                     <div>
                       <h4 className="font-semibold mb-2 text-black dark:text-[#fafafa]">Use at Your Own Risk</h4>
                       <p className="text-muted-foreground text-sm leading-relaxed dark:text-[#d4d4d4]">
-                        WeWise Labs provides this website and its content on an "as is" and "as available" basis. While
+                        WeWise Labs provides this website and its content on &quot;as is&quot; and &quot;as available&quot; basis. While
                         we strive to keep information up-to-date and accurate, we make no express or implied warranties
                         or guarantees about the completeness, accuracy, reliability, or availability of the site.
                       </p>

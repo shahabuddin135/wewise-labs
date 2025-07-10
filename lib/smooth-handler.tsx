@@ -3,6 +3,14 @@
 import { useEffect, useRef } from "react"
 import { usePathname } from "next/navigation"
 
+declare global {
+  interface Window {
+    ScrollSmoother?: {
+      get: () => { scrollTo: (el: Element, smooth: boolean, position: string) => void }
+    }
+  }
+}
+
 export function ScrollHandler() {
   const pathname = usePathname()
   const hasScrolledRef = useRef(false)
@@ -21,7 +29,7 @@ export function ScrollHandler() {
           hasScrolledRef.current = true
 
           setTimeout(() => {
-            const smoother = (window as any).ScrollSmoother?.get()
+            const smoother = (window as Window).ScrollSmoother?.get()
             if (smoother) {
               smoother.scrollTo(el, true, "top top")
             } else {

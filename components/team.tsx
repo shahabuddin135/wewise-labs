@@ -4,7 +4,6 @@ import { useRef } from "react"
 import { motion, useInView } from "framer-motion"
 import Link from "next/link"
 import { useTheme } from "next-themes"
-import BgGlowBouncingSVGs from "./ui/bg-glow"
 
 const team = [
   {

@@ -70,7 +70,7 @@ export default function NavbarWrapper() {
   };
 
   // Only open navbar on explicit click/tap, not on drag
-  const handleClick = (e: React.MouseEvent | React.TouchEvent) => {
+  const handleClick = () => {
     if (dragMoved.current) {
       dragMoved.current = false;
       return;
