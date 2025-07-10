@@ -48,10 +48,10 @@ export const AnimatedTestimonials = ({
   };
   return (
     <div className="mx-auto max-w-xl px-8 py-10 font-sans antialiased md:max-w-6xl md:px-8">
-      <div className="flex flex-col md:flex-row gap-8 md:gap-40">
+      <div className="flex flex-col md:flex-row gap-8 md:gap-24 lg:gap-40">
         {/* Image Section */}
         <div className="flex-1">
-          <div className="relative h-[24rem] w-full">
+          <div className="relative h-[24rem] w-full ">
             <AnimatePresence>
               {reasons.map((reason, index) => (
                 <motion.div
@@ -154,7 +154,7 @@ export const AnimatedTestimonials = ({
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-6 pt-6 md:mt-3">
+          <div className="flex gap-6 pt-6 lg:mt-3">
             <button
               onClick={handlePrev}
               className="group/button flex h-9 w-9 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-700"
