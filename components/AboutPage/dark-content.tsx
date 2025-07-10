@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { cn } from "@/lib/utils";
 import { HeroHighlight } from "../ui/hero-highlight";
 
 export default function DarkContent() {

@@ -26,8 +26,8 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         if (!mounted) return
 
-        const gsap: typeof import("gsap").default = gsapModule.default
-        const ScrollTrigger: typeof import("gsap/ScrollTrigger").default = scrollTriggerModule.default
+        const gsap = gsapModule.gsap || gsapModule.default
+        const ScrollTrigger = scrollTriggerModule.ScrollTrigger || scrollTriggerModule.default
 
         if (!gsap || typeof gsap.registerPlugin !== "function") {
           throw new Error("GSAP failed to load properly")
@@ -38,7 +38,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         ;(window as any).ScrollTrigger = ScrollTrigger
 
         setIsGSAPLoaded(true)
-      } catch (err: unknown) {
+      } catch (err) {
         console.error("Failed to load GSAP:", err)
         setError(err instanceof Error ? err.message : "Failed to load GSAP")
       }
@@ -65,8 +65,8 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   useLayoutEffect(() => {
     if (!isGSAPLoaded || !containerRef.current || !scrollRef.current) return
 
-    const gsap: typeof import("gsap").default = (window as any).gsap
-    const ScrollTrigger: typeof import("gsap/ScrollTrigger").default = (window as any).ScrollTrigger
+    const gsap = (window as any).gsap
+    const ScrollTrigger = (window as any).ScrollTrigger
 
     if (!gsap || !ScrollTrigger) return
 
@@ -83,7 +83,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
     if (totalWidth <= viewportWidth) return
 
-    let mainScrollTween: gsap.core.Tween | null = null
+    let mainScrollTween: any
 
     try {
       // Main horizontal scroll animation
@@ -123,7 +123,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
           ease: "back.out(1.7)",
           scrollTrigger: {
             trigger: el,
-            containerAnimation: mainScrollTween!,
+            containerAnimation: mainScrollTween,
             start: "left 90%",
             end: "left 10%",
             toggleActions: "play none none reverse",
@@ -163,7 +163,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               ease: "elastic.out(1, 0.5)",
               scrollTrigger: {
                 trigger: el,
-                containerAnimation: mainScrollTween!,
+                containerAnimation: mainScrollTween,
                 start: "left 80%",
                 toggleActions: "play none none reverse",
               },
@@ -197,7 +197,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
                 ease: "bounce.out",
                 scrollTrigger: {
                   trigger: el,
-                  containerAnimation: mainScrollTween!,
+                  containerAnimation: mainScrollTween,
                   start: "left 85%",
                   toggleActions: "play none none reverse",
                 },
@@ -221,7 +221,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               ease: "power2.out",
               scrollTrigger: {
                 trigger: el,
-                containerAnimation: mainScrollTween!,
+                containerAnimation: mainScrollTween,
                 start: "left 75%",
                 toggleActions: "play none none reverse",
               },
@@ -246,7 +246,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               ease: "power3.out",
               scrollTrigger: {
                 trigger: el,
-                containerAnimation: mainScrollTween!,
+                containerAnimation: mainScrollTween,
                 start: "left 70%",
                 toggleActions: "play none none reverse",
               },
@@ -270,7 +270,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               ease: "power2.out",
               scrollTrigger: {
                 trigger: el,
-                containerAnimation: mainScrollTween!,
+                containerAnimation: mainScrollTween,
                 start: "left 90%",
                 toggleActions: "play none none reverse",
               },
@@ -294,7 +294,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               ease: "back.out(1.7)",
               scrollTrigger: {
                 trigger: el,
-                containerAnimation: mainScrollTween!,
+                containerAnimation: mainScrollTween,
                 start: "left 80%",
                 toggleActions: "play none none reverse",
               },
@@ -321,7 +321,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
           gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" })
         })
       })
-    } catch (err: unknown) {
+    } catch (err) {
       console.error("Animation setup failed:", err)
       setError("Animation setup failed")
     }
@@ -329,9 +329,9 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
     // Cleanup function
     return () => {
       try {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill())
         if (mainScrollTween) mainScrollTween.kill()
-      } catch (err: unknown) {
+      } catch (err) {
         console.error("Cleanup failed:", err)
       }
     }
