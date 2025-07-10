@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import Lottie from "lottie-react";
-import discoveryAnimation from "../public/lotties/Solution.json";
+import discoveryAnimation from "../public/lotties/solution.json";
 import planningAnimation from "../public/lotties/planning.json";
 import designAnimation from "../public/lotties/design.json";
 import developmentAnimation from "../public/lotties/development.json";
