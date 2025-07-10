@@ -7,13 +7,14 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { client } from '@/sanity/lib/client'
 import { PortableText } from '@portabletext/react'
+import type { PortableTextBlock } from '@portabletext/types'
 
 interface Idea {
   title: string;
   slug: string;
   imgUrl: string;
   shortDescription: string;
-  longDescription?: any;
+  longDescription?: PortableTextBlock[];
   category?: string;
   tags?: string[];
   publishedAt?: string;

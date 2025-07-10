@@ -6,6 +6,7 @@ import { Quote } from "lucide-react"
 import BgGlowBouncingSVGs from "../components/ui/bg-glow"
 import { client } from "@/sanity/lib/client"
 import { urlFor } from "@/sanity/lib/image"
+import type { SanityImageSource } from "@sanity/image-url/lib/types/types"
 import Image from "next/image"
 
 interface Testimonial {
@@ -14,7 +15,7 @@ interface Testimonial {
   title?: string;
   company?: string;
   testimonial: string;
-  image?: any;
+  image?: SanityImageSource;
   publishedAt?: string;
 }
 
