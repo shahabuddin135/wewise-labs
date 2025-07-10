@@ -26,19 +26,19 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         if (!mounted) return
 
-        const gsap = gsapModule.gsap || gsapModule.default
-        const ScrollTrigger = scrollTriggerModule.ScrollTrigger || scrollTriggerModule.default
+        const gsap = gsapModule.default
+        const ScrollTrigger = scrollTriggerModule.default
 
         if (!gsap || typeof gsap.registerPlugin !== "function") {
           throw new Error("GSAP failed to load properly")
         }
 
         gsap.registerPlugin(ScrollTrigger)
-        ;(window as any).gsap = gsap
-        ;(window as any).ScrollTrigger = ScrollTrigger
+        ;(window as unknown as { gsap: typeof import("gsap"); ScrollTrigger: typeof import("gsap/ScrollTrigger") }).gsap = gsap
+        ;(window as unknown as { gsap: typeof import("gsap"); ScrollTrigger: typeof import("gsap/ScrollTrigger") }).ScrollTrigger = ScrollTrigger
 
         setIsGSAPLoaded(true)
-      } catch (err) {
+      } catch (err: unknown) {
         console.error("Failed to load GSAP:", err)
         setError(err instanceof Error ? err.message : "Failed to load GSAP")
       }
@@ -65,8 +65,8 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   useLayoutEffect(() => {
     if (!isGSAPLoaded || !containerRef.current || !scrollRef.current) return
 
-    const gsap = (window as any).gsap
-    const ScrollTrigger = (window as any).ScrollTrigger
+    const gsap = (window as unknown as { gsap: typeof import("gsap") }).gsap
+    const ScrollTrigger = (window as unknown as { ScrollTrigger: typeof import("gsap/ScrollTrigger") }).ScrollTrigger
 
     if (!gsap || !ScrollTrigger) return
 
@@ -83,7 +83,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
     if (totalWidth <= viewportWidth) return
 
-    let mainScrollTween: any
+    let mainScrollTween: gsap.core.Tween | null = null
 
     try {
       // Main horizontal scroll animation
@@ -321,7 +321,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
           gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" })
         })
       })
-    } catch (err) {
+    } catch (err: unknown) {
       console.error("Animation setup failed:", err)
       setError("Animation setup failed")
     }
@@ -329,9 +329,9 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
     // Cleanup function
     return () => {
       try {
-        ScrollTrigger.getAll().forEach((trigger: any) => trigger.kill())
+        ScrollTrigger.getAll().forEach((trigger: gsap.core.Tween | gsap.core.Timeline) => (trigger as any).kill())
         if (mainScrollTween) mainScrollTween.kill()
-      } catch (err) {
+      } catch (err: unknown) {
         console.error("Cleanup failed:", err)
       }
     }

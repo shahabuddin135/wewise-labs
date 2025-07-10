@@ -8,6 +8,18 @@ import React, { useState, useEffect } from 'react'
 import { client } from '@/sanity/lib/client'
 import { Search, Filter, X } from 'lucide-react'
 
+interface Idea {
+  title: string;
+  slug: string;
+  imgUrl: string;
+  shortDescription: string;
+  category?: string;
+  publishedAt?: string;
+  tags?: string[];
+  author?: string;
+  featured?: boolean;
+}
+
 // Fetch ideas from Sanity
 async function getIdeas() {
   const ideas = await client.fetch(`
@@ -27,8 +39,8 @@ async function getIdeas() {
 }
 
 const Ideas = () => {
-  const [ideas, setIdeas] = useState<any[]>([])
-  const [filteredIdeas, setFilteredIdeas] = useState<any[]>([])
+  const [ideas, setIdeas] = useState<Idea[]>([])
+  const [filteredIdeas, setFilteredIdeas] = useState<Idea[]>([])
   const [searchTerm, setSearchTerm] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('all')
   const [selectedTags, setSelectedTags] = useState<string[]>([])
@@ -178,7 +190,7 @@ const Ideas = () => {
                 {categories.map((category) => (
                   <button
                     key={category}
-                    onClick={() => setSelectedCategory(category)}
+                    onClick={() => setSelectedCategory(category || 'all')}
                     className={`px-2 sm:px-3 py-1 border-2 text-xs sm:text-sm transition-colors ${
                       selectedCategory === category
                         ? 'bg-black dark:bg-white text-white dark:text-black'
@@ -225,7 +237,7 @@ const Ideas = () => {
 
       {/* Ideas Grid */}
       <section className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 w-full max-w-6xl my-6 sm:mt-8 md:my-14 gap-4 sm:gap-6'>
-        {filteredIdeas.map((idea: any, index: number) => (
+        {filteredIdeas.map((idea, index) => (
           <Link href={`/ideas/${idea.slug}`} key={index}>
             <div className='border-2 border-black dark:border-white p-3 sm:p-4 md:p-5 cursor-pointer transition-transform duration-200 h-[500px] sm:h-[550px] md:h-[600px] flex flex-col relative'>
               {/* Featured Tag */}
