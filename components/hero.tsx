@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useRef, useEffect, useCallback, useState } from "react"
+import { useRef, useEffect, useCallback } from "react"
 import { gsap } from "gsap"
 import { InertiaPlugin } from "gsap/InertiaPlugin"
 import { createRoot } from "react-dom/client"
@@ -240,7 +240,7 @@ const item: Variants = {
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const videoRef = useRef<HTMLVideoElement>(null)
+
 
   // Animation state
   const mousePos = useRef({ x: 0, y: 0 })
@@ -253,7 +253,7 @@ export default function Hero() {
     if (!containerRef.current) return
 
     // Create and append all shapes
-    const shapes = ShapeComponents.map((ShapeComponent, i) => {
+    const shapes = ShapeComponents.map((ShapeComponent) => {
       const shape = document.createElement("div")
       shape.className = "flair absolute pointer-events-none will-change-transform"
       shape.style.width = "120px"
