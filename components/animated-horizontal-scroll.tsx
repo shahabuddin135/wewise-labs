@@ -6,6 +6,13 @@ interface AnimatedHorizontalScrollProps {
   className?: string
 }
 
+declare global {
+  interface Window {
+    gsap?: typeof import("gsap").default
+    ScrollTrigger?: typeof import("gsap/ScrollTrigger").default
+  }
+}
+
 export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHorizontalScrollProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
@@ -34,8 +41,8 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         }
 
         gsap.registerPlugin(ScrollTrigger)
-        ;(window as any).gsap = gsap
-        ;(window as any).ScrollTrigger = ScrollTrigger
+        ;(window as Window).gsap = gsap
+        ;(window as Window).ScrollTrigger = ScrollTrigger
 
         setIsGSAPLoaded(true)
       } catch (err: unknown) {
@@ -65,10 +72,13 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
   useLayoutEffect(() => {
     if (!isGSAPLoaded || !containerRef.current || !scrollRef.current) return
 
-    const gsap: typeof import("gsap").default = (window as any).gsap
-    const ScrollTrigger: typeof import("gsap/ScrollTrigger").default = (window as any).ScrollTrigger
-
+    const gsap = (window as Window).gsap
+    const ScrollTrigger = (window as Window).ScrollTrigger
     if (!gsap || !ScrollTrigger) return
+    // TypeScript: after this check, gsap and ScrollTrigger are defined
+    // Use type assertions for the rest of the function
+    const gsapInstance = gsap as typeof import("gsap").default
+    const ScrollTriggerInstance = ScrollTrigger as typeof import("gsap/ScrollTrigger").default
 
     const container = containerRef.current
     const scrollContainer = scrollRef.current
@@ -83,11 +93,11 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
     if (totalWidth <= viewportWidth) return
 
-    let mainScrollTween: gsap.core.Tween | null = null
+    let mainScrollTween: ReturnType<typeof gsapInstance.to> | null = null
 
     try {
       // Main horizontal scroll animation
-      mainScrollTween = gsap.to(scrollContainer, {
+      mainScrollTween = gsapInstance.to(scrollContainer, {
         x: () => -(totalWidth - viewportWidth),
         ease: "none",
         scrollTrigger: {
@@ -106,7 +116,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         const el = element as HTMLElement
 
         // Initial state
-        gsap.set(el, {
+        gsapInstance.set(el, {
           opacity: 0,
           y: 100,
           rotation: -10,
@@ -114,7 +124,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         })
 
         // Animate in
-        gsap.to(el, {
+        gsapInstance.to(el, {
           opacity: 1,
           y: 0,
           rotation: 0,
@@ -131,7 +141,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         })
 
         // Add floating animation
-        gsap.to(el, {
+        gsapInstance.to(el, {
           y: -20,
           duration: 2 + Math.random() * 2,
           ease: "sine.inOut",
@@ -147,7 +157,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
         const animationType = index % 6 // 6 different animation types
 
         // Initial state
-        gsap.set(el, {
+        gsapInstance.set(el, {
           opacity: 0,
           scale: 0,
           rotation: Math.random() * 360,
@@ -155,7 +165,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         switch (animationType) {
           case 0: // Pop and bounce
-            gsap.to(el, {
+            gsapInstance.to(el, {
               opacity: 1,
               scale: 1,
               rotation: 0,
@@ -169,7 +179,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             })
             // Continuous bounce
-            gsap.to(el, {
+            gsapInstance.to(el, {
               y: -30,
               duration: 1.5,
               ease: "sine.inOut",
@@ -180,7 +190,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
             break
 
           case 1: // Roll down
-            gsap.fromTo(
+            gsapInstance.fromTo(
               el,
               {
                 y: -200,
@@ -204,7 +214,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             )
             // Gentle rotation
-            gsap.to(el, {
+            gsapInstance.to(el, {
               rotation: 360,
               duration: 8,
               ease: "none",
@@ -213,7 +223,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
             break
 
           case 2: // Up and down wave
-            gsap.to(el, {
+            gsapInstance.to(el, {
               opacity: 1,
               scale: 1,
               rotation: 0,
@@ -227,7 +237,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             })
             // Wave motion
-            gsap.to(el, {
+            gsapInstance.to(el, {
               y: -50,
               duration: 2,
               ease: "sine.inOut",
@@ -238,7 +248,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
             break
 
           case 3: // Moving along (left behind)
-            gsap.to(el, {
+            gsapInstance.to(el, {
               opacity: 1,
               scale: 1,
               rotation: 0,
@@ -252,7 +262,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             })
             // Slower horizontal movement (left behind effect)
-            gsap.to(el, {
+            gsapInstance.to(el, {
               x: -100,
               duration: 4,
               ease: "power1.inOut",
@@ -262,7 +272,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
             break
 
           case 4: // Passing through
-            gsap.to(el, {
+            gsapInstance.to(el, {
               opacity: 1,
               scale: 1,
               rotation: 0,
@@ -276,7 +286,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             })
             // Fast passing motion
-            gsap.to(el, {
+            gsapInstance.to(el, {
               x: 200,
               duration: 3,
               ease: "power2.inOut",
@@ -287,7 +297,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
             break
 
           case 5: // Spiral motion
-            gsap.to(el, {
+            gsapInstance.to(el, {
               opacity: 1,
               scale: 1,
               duration: 1,
@@ -300,7 +310,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
               },
             })
             // Spiral animation
-            gsap.to(el, {
+            gsapInstance.to(el, {
               rotation: 360,
               x: 30,
               y: -30,
@@ -314,11 +324,11 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
 
         // Add hover effect
         el.addEventListener("mouseenter", () => {
-          gsap.to(el, { scale: 1.2, duration: 0.3, ease: "power2.out" })
+          gsapInstance.to(el, { scale: 1.2, duration: 0.3, ease: "power2.out" })
         })
 
         el.addEventListener("mouseleave", () => {
-          gsap.to(el, { scale: 1, duration: 0.3, ease: "power2.out" })
+          gsapInstance.to(el, { scale: 1, duration: 0.3, ease: "power2.out" })
         })
       })
     } catch (err: unknown) {
@@ -329,7 +339,7 @@ export default function AnimatedHorizontalScroll({ className = "" }: AnimatedHor
     // Cleanup function
     return () => {
       try {
-        ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+        ScrollTriggerInstance.getAll().forEach((trigger) => trigger.kill())
         if (mainScrollTween) mainScrollTween.kill()
       } catch (err: unknown) {
         console.error("Cleanup failed:", err)
