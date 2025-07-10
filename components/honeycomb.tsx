@@ -164,7 +164,7 @@ const ServicesComponent = () => {
     const service = services.find(s => s.id.toString() === id);
     if (!service) return <div />;
     return (
-      // @ts-expect-error
+      // @ts-expect-error Hexagon type is not compatible with children, but usage is intentional
       <Hexagon className="service-hexagon group">
         {renderServiceContent(service, index)}
       </Hexagon>

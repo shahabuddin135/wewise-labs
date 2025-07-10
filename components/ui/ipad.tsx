@@ -22,7 +22,7 @@ export default function SleekIPadVideo() {
         <div className="w-full h-full rounded-[20px] overflow-hidden">
         <video
             ref={videoRef}
-            src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1749929916/Animated-web-screens-_remix_kgl1k0.mp4"
+            src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1752150907/wewise_tablet_video_vwxstl.mp4"
             className="w-full h-[94%] md:h-[92%] rounded-[20px] object-cover object-top"
             autoPlay
             loop

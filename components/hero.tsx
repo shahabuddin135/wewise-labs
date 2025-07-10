@@ -249,73 +249,6 @@ export default function Hero() {
   const index = useRef(0)
   const gap = 150
 
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    // Create and append all shapes
-    const shapes = ShapeComponents.map((ShapeComponent) => {
-      const shape = document.createElement("div")
-      shape.className = "flair absolute pointer-events-none will-change-transform"
-      shape.style.width = "120px"
-      shape.style.opacity = "0"
-      containerRef.current?.appendChild(shape)
-
-      // Render the SVG component
-      const root = createRoot(shape)
-      root.render(<ShapeComponent />)
-
-      return shape
-    })
-
-    // Mouse move handler
-    const handleMouseMove = (e: MouseEvent) => {
-      mousePos.current = {
-        x: e.clientX,
-        y: e.clientY
-      }
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
-
-    // Animation ticker
-    const ticker = gsap.ticker.add(() => {
-      const travelDistance = Math.hypot(
-        lastMousePos.current.x - mousePos.current.x,
-        lastMousePos.current.y - mousePos.current.y
-      )
-
-      // Interpolate cached mouse position
-      cachedMousePos.current.x = gsap.utils.interpolate(
-        cachedMousePos.current.x || mousePos.current.x,
-        mousePos.current.x,
-        0.1
-      )
-      cachedMousePos.current.y = gsap.utils.interpolate(
-        cachedMousePos.current.y || mousePos.current.y,
-        mousePos.current.y,
-        0.1
-      )
-
-      if (travelDistance > gap) {
-        animateShape()
-        lastMousePos.current = { ...mousePos.current }
-      }
-    })
-
-    // Cleanup
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-      gsap.ticker.remove(ticker)
-      shapes.forEach(shape => {
-        const root = (shape as any)._reactRootContainer
-        if (root) {
-          root.unmount()
-        }
-        shape.remove()
-      })
-    }
-  }, [])
-
   const animateShape = useCallback(() => {
     const wrappedIndex = index.current % ShapeComponents.length
     const shape = containerRef.current?.children[wrappedIndex] as HTMLElement
@@ -364,6 +297,73 @@ export default function Hero() {
 
     index.current++
   }, [])
+
+  useEffect(() => {
+    if (!containerRef.current) return
+
+    // Create and append all shapes
+    const shapes = ShapeComponents.map((ShapeComponent) => {
+      const shape = document.createElement("div")
+      shape.className = "flair absolute pointer-events-none will-change-transform"
+      shape.style.width = "120px"
+      shape.style.opacity = "0"
+      containerRef.current?.appendChild(shape)
+
+      // Render the SVG component
+      const root = createRoot(shape)
+      root.render(<ShapeComponent />)
+
+      return shape
+    },[animateShape])
+
+    // Mouse move handler
+    const handleMouseMove = (e: MouseEvent) => {
+      mousePos.current = {
+        x: e.clientX,
+        y: e.clientY
+      }
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+
+    // Animation ticker
+    const ticker = gsap.ticker.add(() => {
+      const travelDistance = Math.hypot(
+        lastMousePos.current.x - mousePos.current.x,
+        lastMousePos.current.y - mousePos.current.y
+      )
+
+      // Interpolate cached mouse position
+      cachedMousePos.current.x = gsap.utils.interpolate(
+        cachedMousePos.current.x || mousePos.current.x,
+        mousePos.current.x,
+        0.1
+      )
+      cachedMousePos.current.y = gsap.utils.interpolate(
+        cachedMousePos.current.y || mousePos.current.y,
+        mousePos.current.y,
+        0.1
+      )
+
+      if (travelDistance > gap) {
+        animateShape()
+        lastMousePos.current = { ...mousePos.current }
+      }
+    })
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+      gsap.ticker.remove(ticker)
+      shapes.forEach(shape => {
+        const root = (shape as unknown as { _reactRootContainer?: unknown })._reactRootContainer
+        if (root && typeof (root as { unmount?: unknown }).unmount === 'function') {
+          (root as { unmount: () => void }).unmount()
+        }
+        shape.remove()
+      })
+    }
+  }, [animateShape])
 
   // --- Your hero section code starts here ---
   return (
