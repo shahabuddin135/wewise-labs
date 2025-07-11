@@ -112,8 +112,8 @@ export default function LightContent() {
               Why Wewise?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-black">
-              It is not what we just say, <br className="hidden sm:block" /> it
-              is what we do!
+              We believe in doing what we say, <br className="hidden sm:block" />
+              every step of the way!
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
@@ -157,7 +157,7 @@ export default function LightContent() {
         <h1 className="flex justify-center items-center mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-white">
           Creativity, Art and Wewise
         </h1>
-        <div className="flex justify-center items-center sm:w-full lg:min-h-screen mx-auto my-12 md:my-16">
+        <div className="flex justify-center items-center sm:w-full mx-auto my-12 md:my-20">
           <div className="rounded-2xl bg-gray-100  p-2 sm:p-4 w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl lg:h-[350px] my-auto flex items-center">
             <div className="grid grid-cols-1 grid-rows-4 sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-2 md:grid-rows-4 lg:grid-cols-7 lg:grid-rows-3 gap-2 w-full h-full">
               {/* ART with dots */}
