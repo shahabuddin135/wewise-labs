@@ -48,8 +48,8 @@ export const AnimatedTestimonials = ({
     <div className="mx-auto max-w-xl px-8 py-10 font-sans antialiased md:max-w-6xl md:px-8">
       <div className="flex flex-col md:flex-row gap-20 md:gap-32">
         {/* Image Section */}
-        <div className="flex-1">
-          <div className="relative h-[24rem] w-[24rem] lg:w-full">
+        <div className="flex-1 flex items-center justify-center">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square h-64 sm:h-80 md:h-96 lg:h-[24rem]">
             <AnimatePresence>
               {reasons.map((reason, index) => (
                 <motion.div
@@ -82,17 +82,18 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom"
                 >
-                  <div className="h-full w-full rounded-3xl bg-gray-100 dark:bg-[#cbcaca] border-2 border-gray-200 dark:border-transparent flex items-center justify-center">
+                  <div className="h-full w-full rounded-3xl bg-gray-100 dark:bg-[#cbcaca] border-2 border-gray-200  flex items-center justify-center overflow-hidden">
                     {typeof reason.icon === 'string' && reason.icon ? (
                       <Image 
                         src={reason.icon}
                         alt={reason.title}
-                        width={500}
-                        height={400}
-                        className="object-cover w-full h-full rounded-3xl "
+                        fill
+                        className="object-cover w-full h-full rounded-3xl border-2 border-gray-200"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        priority={isActive(index)}
                       />
                     ) : React.isValidElement(reason.icon) ? (
-                      <span className="text-7xl text-neutral-500 dark:text-neutral-400">
+                      <span className="text-5xl sm:text-6xl md:text-7xl text-neutral-500 dark:text-neutral-400">
                         {reason.icon}
                       </span>
                     ) : null}
@@ -103,7 +104,7 @@ export const AnimatedTestimonials = ({
           </div>
         </div>
         {/* Text Section */}
-        <div className="flex-1 flex flex-col gap-28">
+        <div className="flex-1 flex flex-col gap-28 items-center text-center md:items-start md:text-left">
           <motion.div
             key={active}
             initial={{

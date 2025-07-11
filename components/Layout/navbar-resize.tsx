@@ -84,7 +84,7 @@ export function ResizableNavbar() {
     : navItems;
 
   return (
-    <div className="relative w-full ">
+    <div className="relative w-full z-50">
       <Navbar>
         {/* Desktop Navigation */}
         <NavBody 

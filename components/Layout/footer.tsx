@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link"
-import Image from "next/image";
 import { useTheme } from "next-themes";
 
 export function Footer() {
@@ -155,7 +154,7 @@ export function Footer() {
               {["Process", "Contact"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`#${item.toLowerCase()}`}
+                    href={`/#${item.toLowerCase()}`}
                     className="text-gray-600 dark:text-white hover:text-black dark:hover:text-white transition-colors text-sm"
                   >
                     {item}
