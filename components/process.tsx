@@ -219,7 +219,7 @@ export function Process() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="process" className="py-24 mt-6 bg-white dark:bg-gray-950">
+    <section ref={sectionRef} id="process" className="pb-24 mt-10 bg-white dark:bg-gray-950">
       <div ref={headerRef} className="mb-16 text-center">
         <h2 className="font-heading font-bold text-5xl md:text-[5rem] lg:text-[6rem] mb-10 mt-4 dark:text-white">HOW WE DO IT?<br/>
           <span className="text-3xl md:text-[2rem] lg:text-[3rem] mb-8 mt-4 dark:text-white">From spark to ship</span>

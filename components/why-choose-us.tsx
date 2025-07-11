@@ -35,7 +35,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-choose-us" className="bg-white dark:bg-black py-20 px-4">
+    <section id="why-choose-us" className="bg-white dark:bg-black pt-20 px-4">
       <div className="text-center mb-12">
         <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] text-center font-heading font-bold dark:text-white mb-10 mt-4">
           Why WeWise? <br/> <span className="text-3xl md:text-[2rem] lg:text-[3rem] mb-8 mt-4 dark:text-white">Because We Don’t Miss</span> 
