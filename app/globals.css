@@ -272,6 +272,9 @@
   .animation-delay-2000 {
     animation-delay: 2s;
   }
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
   .animation-delay-4000 {
     animation-delay: 4s;
   }
@@ -291,6 +294,11 @@
     transform: translate(0px, 0px) scale(1);
   }
 }
+
+/* .animate-blob {
+  animation: blob 8s infinite ease-in-out;
+} */
+
 
 /* Force-hide video controls */
 video::-webkit-media-controls {
