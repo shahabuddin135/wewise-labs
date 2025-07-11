@@ -80,7 +80,7 @@ export const MaskContainer = ({
     <motion.div
       ref={containerRef}
       className={cn(
-        "relative min-h-screen w-full max-w-7xl mx-auto overflow-hidden rounded-xl lg:rounded-2xl",
+        "relative min-h-screen w-full max-w-full mx-auto overflow-hidden rounded-xl lg:rounded-2xl",
         className
       )}
       animate={{
@@ -94,7 +94,7 @@ export const MaskContainer = ({
       {/* Masked Reveal Layer */}
       <motion.div
         className={cn(
-          "absolute inset-0 z-10 flex items-center  text-6xl",
+          "absolute inset-0 z-10 flex items-center text-6xl",
           "bg-gray-950 dark:bg-gray-100",
           "[mask-image:url(/mask.svg)] [mask-repeat:no-repeat] [mask-position:center] [mask-mode:alpha] [mask-composite:exclude]"
         )}
@@ -113,7 +113,7 @@ export const MaskContainer = ({
         onMouseEnter={() => !isTouchDevice && setIsHovered(true)}
         onMouseLeave={() => !isTouchDevice && setIsHovered(false)}
       >
-        <div className="relative z-20 max-w-7xl text-center text-4xl font-bold text-white dark:text-black">
+        <div className="relative z-20 max-w-full mx-auto text-center text-4xl font-bold text-white dark:text-black">
           {children}
         </div>
       </motion.div>
