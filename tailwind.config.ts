@@ -110,6 +110,10 @@ const config = {
         marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
+      safelist: [
+        'animate-marquee',
+        'animate-marquee-vertical',
+      ],
     },
   },
   plugins: [require("tailwindcss-animate")],

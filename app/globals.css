@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* @import "tailwindcss"; */
 
 @layer base {
   :root {
@@ -80,7 +81,23 @@
     font-family: var(--font-Kablammo);
   }
 }
---font-Kablammo
+
+/* Removed stray --font-Kablammo and all @theme inline blocks. Added correct animation for infinite moving card. */
+:root {
+  --animation-duration: 40s;
+  --animation-direction: forwards;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.animate-scroll {
+  animation: scroll var(--animation-duration) var(--animation-direction) linear infinite;
+}
+
 /* Terminal styling */
 .terminal-cursor {
   display: inline-block;
@@ -124,6 +141,7 @@
   animation-delay: 0.4s;
 }
 
+
 @keyframes pulse {
 
   0%,
@@ -140,8 +158,7 @@
   }
 }
 
-@theme inline {
-  @keyframes shine {
+@keyframes shine {
     0% {
       background-position: 0% 0%;
     }
@@ -233,7 +250,23 @@
     background-position: 100% -100%;
     }
   }
-}
+  @keyframes marquee {
+  from {
+    transform: translateX(0);
+    }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+  @keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+    }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
 
 @layer utilities {
   .animation-delay-2000 {
