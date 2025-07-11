@@ -87,7 +87,7 @@ export const Navbar = ({ children, className }: NavbarProps) => {
         }}
         transition={{ duration: 0.25 }}
         className={cn(
-          "fixed inset-x-0 top-0 z-40 w-full",
+          "fixed inset-x-0 top-0 z-50 w-full",
           className,
           shrink ? "py-1" : "py-2"
         )}
