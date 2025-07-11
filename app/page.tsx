@@ -9,6 +9,7 @@ import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
 import { Testimonials } from "@/components/testimonials"
 import AnimatedHorizontalScroll from "@/components/animated-horizontal-scroll"
+import CreativeScroll from "../components/creative-scroll"
 import { useEffect } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -74,10 +75,13 @@ export default function Home() {
 
         <WhyChooseUs />
 
-        <section>
+        <section className="hidden lg:block">
           <AnimatedHorizontalScroll />
         </section>
-
+        
+        <section className="block lg:hidden ">
+          <CreativeScroll/>
+        </section>
         <Process />
 
         <Technologies />
