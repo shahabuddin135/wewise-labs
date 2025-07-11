@@ -146,7 +146,7 @@ const TechIcon = ({ name, icon }: { name: string; icon: React.ReactNode }) => {
 
 export default function TechStackMarquee() {
   return (
-    <div className="relative w-full h-[30rem] md:h-[50rem] sm:h-[36rem] py-20 bg-white/5 dark:bg-gray-950 overflow-hidden flex justify-center items-center">
+    <div className="relative w-full h-[20rem] md:h-[30rem] sm:h-[36rem] py-20 bg-white/5 dark:bg-gray-950 overflow-hidden flex justify-center items-center">
       {/* Background glow effect in the middle - different for light and dark modes */}
         <div className="absolute inset-0 flex items-center justify-center ">
         {/* Light mode glow */}
