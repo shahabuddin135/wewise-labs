@@ -22,8 +22,8 @@ const projects = [
   },
   {
     title: "Coloriqo",
-    category: "SaaS Application",
-    description: "AI powered SaaS Applocation that make easy to extract colors and generate pallettes.",
+    category: "AI SaaS Application",
+    description: "AI powered SaaS Application that make easy to extract colors and generate palettes.",
     imageUrl: {
 
       light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749749476/coloriqo-w_bl1lwx.png",
@@ -34,8 +34,8 @@ const projects = [
   },
   {
     title: "Certificate Builder",
-    category: "SaaS Application",
-    description: "A fully customizable SaaS application. Generate unlimited certificates on a single click and make the task hassle free.",
+    category: "AI SaaS Application",
+    description: "A fully customizable AI powered SaaS Application. Generate unlimited certificates on a single click and make the task hassle free.",
     imageUrl: {
 
       light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1749878931/certificate-builder-w_md6jgk.png",
@@ -209,8 +209,8 @@ export function Projects() {
               className="grid grid-cols-1 md:grid-cols-2 gap-6 px-3 items-center"
             >
               <div className="order-2 md:order-1 px-5">
-                <span className="font-subheading text-lg sm:text-xl md:text-3xl text-gray-500 dark:text-gray-100 mb-4 block">{projects[activeIndex].category}</span>
-                <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold mb-6 dark:text-white">{projects[activeIndex].title}</h2>
+                <span className="font-subheading text-lg sm:text-xl md:text-3xl text-gray-500 dark:text-gray-100 mb-4 block bg-gray-200 dark:bg-gray-700 px-6 py-2 max-w-fit rounded-full">{projects[activeIndex].category}</span>
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-5xl font-bold my-6 dark:text-white">{projects[activeIndex].title}</h2>
                 <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-100 text-wrap mb-8">{projects[activeIndex].description}</p>
 
                 <div className="flex flex-wrap gap-4 mb-10">
@@ -227,7 +227,7 @@ export function Projects() {
                 </Button>
               </div>
 
-              <div className="order-1 md:order-2 relative">
+              <div className="order-1 md:order-2 relative ">
                 <div className="aspect-[4/3] overflow-hidden rounded-lg">
                   <Image
                       src={typeof projects[activeIndex].imageUrl === "string"?
