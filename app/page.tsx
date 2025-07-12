@@ -77,9 +77,14 @@ export default function Home() {
         <WhyChooseUs />
 
         {isMobileOrTablet ? (
+          <section>
           <HorizontalScrollFramer/>
+          </section>
+  
         ) : (
+          <section>
           <AnimatedHorizontalScroll />
+          </section>
         )}
 
         <Process />

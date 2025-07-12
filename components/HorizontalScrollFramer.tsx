@@ -317,7 +317,7 @@ export default function HorizontalScrollFramer() {
 
           <div
             className="inline-block align-top"
-            style={{ width: '300vw', height: 0 }}
+            style={{ width: '100vw', height: 0 }}
             aria-hidden="true"
           ></div>
         </motion.div>
