@@ -47,7 +47,7 @@ export default function LightContent() {
               Our Good Mission
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-black">
-              WeWise Lab&apos;s mission is to build products that work & are
+              WeWise Lab&apos;s mission is to build products that work with AI & are
               affordable.
             </p>
           </div>

@@ -47,8 +47,8 @@ export default function DarkContent() {
               Our Good Mission
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-white">
-              WeWise Lab&apos;s mission is to build products that work & are
-              affordable.
+            WeWise Lab&apos;s mission is to build products that work with AI & are
+            affordable.
             </p>
           </div>
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-1 lg:order-2">
