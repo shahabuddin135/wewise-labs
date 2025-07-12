@@ -17,10 +17,12 @@ import { VelocityScroll } from "@/components/magicui/scroll-based-velocity"
 import { useSmoothScroll } from "@/lib/smooth-scroll"
 import { useTheme } from "next-themes"
 import ServicesComponent from "@/components/honeycomb"
-
+import HorizontalScrollFramer from "@/components/HorizontalScrollFramer"
+import { useMediaQuery } from "react-responsive"
 
 export default function Home() {
   const { theme } = useTheme()
+  const isMobileOrTablet = useMediaQuery({ maxWidth: 1023 })
   useSmoothScroll()
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
@@ -74,9 +76,16 @@ export default function Home() {
 
         <WhyChooseUs />
 
-        <section>
+        {isMobileOrTablet ? (
+          <section>
+          <HorizontalScrollFramer/>
+          </section>
+  
+        ) : (
+          <section>
           <AnimatedHorizontalScroll />
-        </section>
+          </section>
+        )}
 
         <Process />
 
