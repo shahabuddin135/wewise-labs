@@ -248,14 +248,16 @@ export default function HorizontalScrollFramer() {
   return (
     <section
       ref={containerRef}
-      className="relative h-[900vh] overflow-visible w-screen bg-white dark:bg-gray-950"
+      className="relative h-[900dvh] overflow-visible w-screen bg-white dark:bg-gray-950"
     >
+      <div className="sticky top-0 h-screen ">
       {/* Background Glow Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-10">
         <div className="absolute top-[20%] left-[10%] w-[12rem] h-[12rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
         <div className="absolute top-[40%] left-[50%] w-[8rem] h-[8rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
         <div className="absolute bottom-[15%] right-[20%] w-[10rem] h-[10rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
         <div className="absolute top-[60%] left-[30%] w-[7rem] h-[7rem] bg-green-400/30 dark:bg-green-600/20 rounded-full filter blur-3xl animate-blob animation-delay-3000"></div>
+      </div>
       </div>
       <div className="sticky top-0 h-screen overflow-hidden">
         <motion.div
