@@ -269,7 +269,7 @@ const ServicesComponent = () => {
         ) : (
           <div className="w-full flex justify-center pr-4">
             <Honeycomb
-              columns={2}
+              columns={width <= 375 ? 1 : 2}
               size={size}
               items={servicesSubset.map(s => s.id.toString())}
               renderItem={renderCell}
@@ -309,3 +309,4 @@ export default ServicesComponent;
         //   transform: scale(1.1);
         //   z-index: 10;
         // }
+
