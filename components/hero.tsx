@@ -390,15 +390,10 @@ export default function Hero() {
         <motion.div variants={container} initial="hidden" animate="show" className="w-full">
           <motion.div variants={item} className="mb-2">
             <h1 className="font-subheading inline-block rounded-full bg-black dark:bg-white text-white dark:text-black px-4 py-1.5 text-sm md:text-lg mb-4ee">
-              Web Development & SaaS Experts
+              Web Development & AI SaaS Experts
             </h1>
           </motion.div>
-          {/* <motion.p
-            variants={item}
-            className="font-body text-xl md:text-[1.25rem] lg:text-[1.5rem] leading-8 text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto"
-          >
-            Wewise Labs transforms ideas into smooth, high-impact SaaS products and websites that actually help your business grow and your users stick around.
-          </motion.p> */}
+        
           <motion.h1
             variants={item}
             className="font-subheading text-5xl md:text-[5rem] lg:text-[7rem] font-bold tracking-tight leading-[1.5] mb-8"

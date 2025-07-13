@@ -56,8 +56,8 @@ const kablammo = Kablammo({
 })
 
 export const metadata: Metadata = {
-  title: "Wewise Labs | SaaS & Web Development Services",
-  description: "We build exceptional SaaS applications and provide professional web development services.",
+  title: "Wewise Labs | AI SaaS & Web Development Services" ,
+  description: "We build exceptional AI powered SaaS applications and provide professional web development services.",
   generator: 'Wewise Labs',
 }
 
