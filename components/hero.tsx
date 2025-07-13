@@ -390,15 +390,10 @@ export default function Hero() {
         <motion.div variants={container} initial="hidden" animate="show" className="w-full">
           <motion.div variants={item} className="mb-2">
             <h1 className="font-subheading inline-block rounded-full bg-black dark:bg-white text-white dark:text-black px-4 py-1.5 text-sm md:text-lg mb-4ee">
-              Web Development & SaaS Experts
+              Web Development & AI SaaS Experts
             </h1>
           </motion.div>
-          {/* <motion.p
-            variants={item}
-            className="font-body text-xl md:text-[1.25rem] lg:text-[1.5rem] leading-8 text-gray-700 dark:text-gray-300 mb-8 max-w-4xl mx-auto"
-          >
-            Wewise Labs transforms ideas into smooth, high-impact SaaS products and websites that actually help your business grow and your users stick around.
-          </motion.p> */}
+        
           <motion.h1
             variants={item}
             className="font-subheading text-5xl md:text-[5rem] lg:text-[7rem] font-bold tracking-tight leading-[1.5] mb-8"
@@ -413,7 +408,7 @@ export default function Hero() {
             variants={item}
             className="font-body text-xl md:text-[1.25rem] lg:text-[1.5rem] leading-8 text-gray-700 dark:text-gray-300 mb-8 max-w-5xl mx-auto"
           >
-            Wewise Labs transforms ideas into smooth, high-impact SaaS products and websites that actually help your business grow and your users stick around.
+            Wewise Labs transforms ideas into smooth, high-impact AI powered SaaS products and websites that actually help your business grow and your users stick around.
           </motion.p>
 
           <motion.div variants={item} className="flex flex-col sm:flex-row gap-4 justify-center mt-18">
@@ -438,30 +433,6 @@ export default function Hero() {
           </motion.div>
 
           <IPad/>
-
-          {/* <motion.div
-            variants={item}
-            style={{
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.2), 0 8px 30px rgba(0, 0, 0, 0.15)",
-            }}
-            className="max-w-5xl mt-16 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-lg"
-          >
-            <div className="h-full w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4">
-              <video
-                ref={videoRef}
-                src="https://res.cloudinary.com/dqkt0g0he/video/upload/v1749929916/Animated-web-screens-_remix_kgl1k0.mp4"
-                aria-label="hero"
-                height={400}
-                width={1400}
-                className="mx-auto rounded-2xl object-contain object-left-top"
-                draggable={false}
-                autoPlay
-                loop
-                muted
-                playsInline
-              />
-            </div>
-          </motion.div> */}
         </motion.div>
       </div>
     </div>
