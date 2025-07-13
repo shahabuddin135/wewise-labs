@@ -35,7 +35,7 @@ const ServicesComponent = () => {
     {
       id: 1,
       title: 'Web Development',
-      description: 'Custom websites and web apps',
+      description: 'Custom websites and web applications',
       icon: ({ className }) => (
         <DotLottieReact
           src="https://lottie.host/68b4d231-e7ac-4dc6-91ce-a60d829e96a9/bgYNO13dbL.lottie"
@@ -51,7 +51,7 @@ const ServicesComponent = () => {
       description: 'User interface and experience design',
       icon: ({ className }) => (
         <DotLottieReact
-          src="https://lottie.host/503f2baa-26d2-4159-a1f8-5b29b1153098/8Mz3nBUI33.lottie"
+          src="https://lottie.host/05e62f36-1b7e-4681-a921-2a9084afa534/or2lZkcjBS.lottie"
           loop
           autoplay
           className={className}
@@ -124,36 +124,36 @@ const ServicesComponent = () => {
         />
       )
     },
-    {
-      id: 8,
-      title: 'UI/UX Design',
-      description: 'User interface and experience design',
-      // icon: Palette,
-    },
-    {
-      id: 9,
-      title: 'Performance',
-      description: 'Speed optimization and monitoring',
-      // icon: Zap,
-    },
-    {
-      id: 10,
-      title: 'DevOps',
-      description: 'Deployment and automation',
-      // icon: Settings,
-    },
-    {
-      id: 11,
-      title: 'Consulting',
-      description: 'Technical consultation and strategy',
-      // icon: Users,
-    },
-    {
-      id: 12,
-      title: 'SEO Services',
-      description: 'Search engine optimization',
-      // icon: Search,
-    },
+    // {
+    //   id: 8,
+    //   title: 'UI/UX Design',
+    //   description: 'User interface and experience design',
+    //   // icon: Palette,
+    // },
+    // {
+    //   id: 9,
+    //   title: 'Performance',
+    //   description: 'Speed optimization and monitoring',
+    //   // icon: Zap,
+    // },
+    // {
+    //   id: 10,
+    //   title: 'DevOps',
+    //   description: 'Deployment and automation',
+    //   // icon: Settings,
+    // },
+    // {
+    //   id: 11,
+    //   title: 'Consulting',
+    //   description: 'Technical consultation and strategy',
+    //   // icon: Users,
+    // },
+    // {
+    //   id: 12,
+    //   title: 'SEO Services',
+    //   description: 'Search engine optimization',
+    //   // icon: Search,
+    // },
   ];
 
   const [width, setWidth] = useState(0);
@@ -171,22 +171,14 @@ const ServicesComponent = () => {
   if (width < 640) {
     size = 90; // mobile
     marginTop = '-70px';
+  } else if (width < 425){
+    size = 50; //xs screen
+    marginTop = '-50px';
   } else if (width < 1024) {
     size = 160; // tablet
     marginTop = '-75px';
   }
 
-  // Color palette for SVG icons
-  // const iconColors = [
-  //   'text-pink-500',
-  //   'text-blue-500',
-  //   'text-green-500',
-  //   'text-yellow-500',
-  //   'text-purple-500',
-  //   'text-fuchsia-500',
-  //   'text-cyan-500',
-    
-  // ];
 
   const renderServiceContent = (service: Service, idx: number) => {
     const IconComponent = service.icon;
@@ -209,7 +201,7 @@ const ServicesComponent = () => {
         <h3 className=" sm:text-lg text-sm font-extrabold text-center mb-1 transition-all duration-300">
           {service.title}
         </h3>
-        <p className="text-xs sm:text-lg text-[10px] text-center opacity-90 leading-tight transition-all duration-300">
+        <p className="text-xs sm:text-lg text-[10px] text-center pb-3 opacity-90 leading-tight transition-all duration-300">
           {service.description}
         </p>
       </div>
@@ -239,7 +231,7 @@ const ServicesComponent = () => {
           <h2 className="text-5xl md:text-[5rem] lg:text-[6rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">
             What We Build <br/> <span className="text-3xl md:text-[2rem] lg:text-[3rem] font-bold text-gray-900 dark:text-white mb-10 mt-4">We Build to Win</span>
           </h2>
-          <p className="px-2 sm:px-0 text-lg md:text-[1rem] lg:text-[1.35rem] leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">            
+          <p className="px-2 sm:px-0 text-lg md:text-[1.35rem] lg:text-[1.35rem] leading-8 text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">            
              WeWise isn&apos;t just coding for fun. We build products that solve, scale, and stick. Here&apos;s what we bring to your table.
           </p> 
         </div>
