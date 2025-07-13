@@ -2,26 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { Honeycomb, Hexagon } from 'react-honeycomb';
-import Lottie from "lottie-react";
-import ecomyAnimation from "../public/lotties/ecomy.json";
-import restapiAnimation from "../public/lotties/api.json";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-// import {
-//   Code,
-//   Smartphone,
-//   Globe,
-//   Database,
-//   Shield,
-//   BarChart3,
-//   Cloud,
-//   Palette,
-//   Zap,
-//   Settings,
-//   Users,
-//   Search,
-//   Sparkles
-// } from 'lucide-react';
+
 
 interface Service {
   id: number;
@@ -182,7 +165,7 @@ const ServicesComponent = () => {
 
   const renderServiceContent = (service: Service, idx: number) => {
     const IconComponent = service.icon;
-    // const iconColor = iconColors[idx % iconColors.length];
+   
     return (
       <div
         className={`
@@ -194,7 +177,7 @@ const ServicesComponent = () => {
           text-gray-900 dark:text-white
           
         `}
-        //group-hover:scale-105 group-hover:shadow-2xl
+      
         style={{ minHeight: 150 }}
       >
         {IconComponent && <IconComponent className="h-15 sm:h-30 sm:-mt-4 sm:mb-2" />}
