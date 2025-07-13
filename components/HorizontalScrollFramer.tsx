@@ -286,7 +286,7 @@ export default function HorizontalScrollFramer() {
             { type: "text", content: "say:", gradient: "from-cyan-500 via-teal-500 to-green-500" },
             { type: "text", content: "\"Creative", gradient: "from-rose-400 via-pink-500 to-red-600" },
             { type: "text", content: "we", gradient: "from-pink-500 via-red-500 to-orange-500" },
-            { type: "text", content: "are!\"", gradient: "from-teal-400 via-cyan-500 to-sky-500" },
+            { type: "text", content: "are!\"", gradient: "from-teal-400 via-cyan-500 to-sky-500 pr-52" },
           ].map((item, index) => {
             if (item.type === "text") {
               return (

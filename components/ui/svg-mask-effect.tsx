@@ -50,6 +50,36 @@ export const MaskContainer = ({
     if (!isTouchDevice && container) {
       container.addEventListener("mousemove", updateMousePosition);
     }
+    // Touch event handlers for mobile drag-to-reveal
+    if (isTouchDevice && container) {
+      const updateTouchPosition = (e: TouchEvent) => {
+        if (!containerRef.current) return;
+        const rect = containerRef.current.getBoundingClientRect();
+        const touch = e.touches[0];
+        setMousePosition({
+          x: touch.clientX - rect.left,
+          y: touch.clientY - rect.top,
+        });
+      };
+      const handleTouchStart = (e: TouchEvent) => {
+        setIsHovered(true);
+        updateTouchPosition(e);
+      };
+      const handleTouchMove = (e: TouchEvent) => {
+        updateTouchPosition(e);
+      };
+      const handleTouchEnd = () => {
+        setIsHovered(false);
+      };
+      container.addEventListener("touchstart", handleTouchStart);
+      container.addEventListener("touchmove", handleTouchMove);
+      container.addEventListener("touchend", handleTouchEnd);
+      return () => {
+        container.removeEventListener("touchstart", handleTouchStart);
+        container.removeEventListener("touchmove", handleTouchMove);
+        container.removeEventListener("touchend", handleTouchEnd);
+      };
+    }
     return () => {
       container?.removeEventListener("mousemove", updateMousePosition);
     };

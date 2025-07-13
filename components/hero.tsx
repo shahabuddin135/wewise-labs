@@ -433,6 +433,7 @@ export default function Hero() {
           </motion.div>
 
           <IPad/>
+
         </motion.div>
       </div>
     </div>
