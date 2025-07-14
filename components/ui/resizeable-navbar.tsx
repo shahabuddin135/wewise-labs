@@ -24,9 +24,11 @@ interface NavItemsProps {
   items: {
     name: string;
     link: string;
+    type?: string;
   }[];
   className?: string;
   onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  activePath?: string;
 }
 interface MobileNavProps {
   children: React.ReactNode;
@@ -138,7 +140,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, activePath }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -152,13 +154,26 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       {items.map((item, idx) => {
         const isHashLink = item.link.startsWith('#');
         const isExternalLink = item.link.startsWith('http');
-        
+        const isActive = item.type === 'about' && activePath && activePath.startsWith(item.link);
+        // About button style (like IDEAS)
+        const aboutButtonClass = item.type === 'about'
+          ? cn(
+              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition",
+              isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
+            )
+          : "";
+        const pageLinkClass = item.type === 'page'
+          ? cn(
+              "border-2 border-orange-400 dark:border-orange-300 bg-orange-50 dark:bg-orange-900 text-orange-700 dark:text-orange-200 font-semibold",
+              isActive && "bg-orange-400 dark:bg-orange-300 text-white dark:text-black border-orange-500 dark:border-orange-400 shadow-lg"
+            )
+          : "";
         if (isHashLink) {
           return (
             <a
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
             >
@@ -176,7 +191,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             <a
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
               target="_blank"
@@ -191,19 +206,31 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               <span className="relative z-20">{item.name}</span>
             </a>
           );
+        } else if (item.type === 'about') {
+          return (
+            <Link
+              onMouseEnter={() => setHovered(idx)}
+              onClick={onItemClick}
+              className={cn(aboutButtonClass, "relative")}
+              key={`link-${idx}`}
+              href={item.link}
+            >
+              <span className="relative z-20">{item.name}</span>
+            </Link>
+          );
         } else {
           return (
             <Link
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
             >
-              {hovered === idx && (
+              {(hovered === idx || isActive) && (
                 <motion.div
                   layoutId="hovered"
-                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                  className="absolute inset-0 h-full w-full rounded-full bg-orange-100 dark:bg-orange-800"
                 />
               )}
               <span className="relative z-20">{item.name}</span>

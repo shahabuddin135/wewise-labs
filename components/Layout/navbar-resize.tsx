@@ -25,12 +25,12 @@ declare global {
 
 export function ResizableNavbar() {
   const navItems = [
-    { name: "Services", link: "#services" },
-    { name: "Why Us", link: "#why-choose-us" },
-    { name: "Process", link: "#process" },
-    { name: "About", link: "/about" }, // <-- add slash here
-    { name: "Projects", link: "#projects" },
-    { name: "Contact", link: "#contact" },
+    { name: "Services", link: "#services", type: "section" },
+    { name: "Why Us", link: "#why-choose-us", type: "section" },
+    { name: "Process", link: "#process", type: "section" },
+    { name: "Projects", link: "#projects", type: "section" },
+    { name: "Contact", link: "#contact", type: "section" },
+    { name: "About", link: "/about", type: "about" }, // moved to last, type 'about' for special styling
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -102,6 +102,7 @@ export function ResizableNavbar() {
           <NavItems 
             items={displayNavItems} 
             className={isOnIdeasPage ? "!text-black dark:!text-white" : ""}
+            activePath={pathname}
             onItemClick={(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
               const target = e.target as HTMLElement;
               const anchor = target.closest("a");
