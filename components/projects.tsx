@@ -50,8 +50,8 @@ const projects = [
     category: "Developer Tools",
     description: "A clean API documentation portal that provides developers with easy access to API endpoints. Features include copyable API URLs, links to JSON views, Sanity upload, and documentation, all within a beautifully styled interface.",
     imageUrl: {
-      light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752518198/333shots_so_bxiuho.png",
-      dark: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752518198/333shots_so_bxiuho.png"
+      light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752522238/112shots_so_rq0pkz.png",
+      dark: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752522238/112shots_so_rq0pkz.png"
     },
     tags: ["Next.js", "TypeScript", "Tailwind", "Sanity", "API Docs", "Developer Portal"],
     projectLink: "https://e-commerce-api-henna-alpha.vercel.app/"
