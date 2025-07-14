@@ -113,7 +113,7 @@ const techStack = [
 
 export function Technologies() {
   return (
-    <section className="py-10 px-4 md:px-8 bg-white w-full items-center mx-auto  dark:bg-gray-950 dark:text-white">
+    <section id="technologies" className="py-10 px-4 md:px-8 bg-white w-full items-center mx-auto  dark:bg-gray-950 dark:text-white">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-center text-5xl md:text-[5rem] lg:text-[6rem] font-heading font-bold mb-10 mt-6 ">What&apos;s Under Our Hood </h2>
         <p className="text-lg md:text-[1rem] lg:text-[1.5rem] leading-8 text-gray-600 mb-10 max-w-2xl mx-auto font-body font-semibold text-center  dark:bg-gray-950 dark:text-white">
