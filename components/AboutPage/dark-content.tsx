@@ -33,7 +33,7 @@ export default function DarkContent() {
               What Do We Do?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl max-w-xl text-black">
-              WeWise Labs is a SaaS & Web development expert.
+              WeWise Labs is a AI powered SaaS & Web development expert.
             </p>
           </div>
         </div>
