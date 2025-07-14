@@ -153,8 +153,8 @@ export default function DarkContent() {
       </section>
 
       {/* bento */}
-      <section className="sm:w-full mx-auto">
-        <h1 className="flex justify-center items-center mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-black">
+      <section className="w-full mx-auto">
+        <h1 className="flex justify-center items-center text-center leading-snug  mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-black">
           Creativity, Art and Wewise
         </h1>
         <div className="flex justify-center items-center sm:w-full mx-auto my-12 md:my-20">
