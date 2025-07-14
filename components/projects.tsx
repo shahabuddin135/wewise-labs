@@ -50,8 +50,8 @@ const projects = [
     category: "Developer Tools",
     description: "A clean API documentation portal that provides developers with easy access to API endpoints. Features include copyable API URLs, links to JSON views, Sanity upload, and documentation, all within a beautifully styled interface.",
     imageUrl: {
-      light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752511721/763shots_so-removebg-preview_zfz48a.png",
-      dark: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752511721/763shots_so-removebg-preview_zfz48a.png"
+      light: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752518198/333shots_so_bxiuho.png",
+      dark: "https://res.cloudinary.com/dqkt0g0he/image/upload/v1752518198/333shots_so_bxiuho.png"
     },
     tags: ["Next.js", "TypeScript", "Tailwind", "Sanity", "API Docs", "Developer Portal"],
     projectLink: "https://e-commerce-api-henna-alpha.vercel.app/"
@@ -109,7 +109,7 @@ export function Projects() {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % projects.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
