@@ -232,7 +232,7 @@ export function Projects() {
                   ))}
                 </div>
 
-                <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-gray-200 dark:bg-gray-500 text-black hover:text-white hover:bg-gray-900 px-6">
+                <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-gray-200 dark:bg-gray-900 text-black dark:text-white hover:text-white hover:bg-gray-900  hover:dark:bg-gray-900 px-6">
                   <Link href = {projects[activeIndex].projectLink} target="_blank">View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
