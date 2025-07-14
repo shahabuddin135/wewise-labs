@@ -347,13 +347,13 @@ export default function PrivacyPolicyPage() {
                     <CardContent>
                       <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                          <Badge variant="secondary" className="dark:bg-[#262626] dark:text-[#fafafa]">Privacy</Badge>
-                          <span className="text-sm text-black dark:text-[#fafafa]">privacy@wewiselabs.com</span>
+                          <Badge variant="secondary" className="dark:bg-[#262626] dark:text-[#fafafa]">Email</Badge>
+                          <span className="text-sm text-black dark:text-[#fafafa]">wewiselabs@gmail.com</span>
                         </div>
-                        <div className="flex items-center gap-3">
+                        {/* <div className="flex items-center gap-3">
                           <Badge variant="secondary" className="dark:bg-[#262626] dark:text-[#fafafa]">General</Badge>
                           <span className="text-sm text-black dark:text-[#fafafa]">info@wewiselabs.com</span>
-                        </div>
+                        </div> */}
                         <p className="text-sm text-muted-foreground dark:text-[#d4d4d4]">
                           We value our users and will do our best to address your inquiries promptly and professionally.
                         </p>

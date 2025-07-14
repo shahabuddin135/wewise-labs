@@ -162,13 +162,13 @@ export const NavItems = ({ items, className, onItemClick, activePath }: NavItems
         // About button style (like IDEAS)
         const aboutButtonClass = item.type === 'about'
           ? cn(
-              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition",
+              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition hover:opacity-80 active:opacity-60",
               isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
             )
           : "";
         const pageLinkClass = item.type === 'page'
           ? cn(
-              "border-2 border-gray-400 dark:border-gray-300 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 font-semibold",
+              "border-2 border-gray-400 dark:border-gray-300 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 font-semibold transition hover:opacity-80 active:opacity-60",
               isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
             )
           : "";
