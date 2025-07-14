@@ -215,13 +215,13 @@ export function Projects() {
 
                 <div className="flex flex-wrap gap-4 mb-10">
                   {projects[activeIndex].tags.map((tag, index) => (
-                    <span key={index} className="font-body font-semibold bg-gray-100 px-3 py-1 rounded-full text-sm md:text-lg">
+                    <span key={index} className="font-body font-semibold bg-gray-900 dark:bg-gray-100 text-white dark:text-black  px-3 py-1 rounded-full text-sm md:text-lg">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-black text-white hover:bg-gray-800 px-6">
+                <Button className="text-sm md:text-lg font-subheading tracking-wider border dark:border-white rounded-full bg-gray-200 dark:bg-gray-500 text-black hover:text-white hover:bg-gray-900 px-6">
                   <Link href = {projects[activeIndex].projectLink} target="_blank">View Project</Link>
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
