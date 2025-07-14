@@ -173,6 +173,9 @@ importers:
       react-resizable-panels:
         specifier: ^2.1.7
         version: 2.1.9(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      react-responsive:
+        specifier: ^10.0.1
+        version: 10.0.1(react@19.1.0)
       recharts:
         specifier: 2.15.0
         version: 2.15.0(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3599,6 +3602,9 @@ packages:
     resolution: {integrity: sha512-FyyrDHZKEjXDpNJYvVsV960FiqQyXc/LlYmsxl2BcdMb2WPx0OGRVgTg55rPSyLSNMqP52R9r8geSp7apN3Ofg==}
     engines: {node: '>=4'}
 
+  css-mediaquery@0.1.2:
+    resolution: {integrity: sha512-COtn4EROW5dBGlE/4PiKnh6rZpAPxDeFLaEEwt4i10jpDMFt2EhQGS79QmmrO+iKCHv0PU/HrOWEhijFd1x99Q==}
+
   css-select@5.2.2:
     resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
 
@@ -4503,6 +4509,9 @@ packages:
   humanize-list@1.0.1:
     resolution: {integrity: sha512-4+p3fCRF21oUqxhK0yZ6yaSP/H5/wZumc7q1fH99RkW7Q13aAxDeP78BKjoR+6y+kaHqKF/JWuQhsNuuI2NKtA==}
 
+  hyphenate-style-name@1.1.0:
+    resolution: {integrity: sha512-WDC/ui2VVRrz3jOVi+XtjqkDjiVjTtFaAGiW37k6b+ohyQ5wYDOGkvCZa8+H0nx3gyvv0+BST9xuOgIyGQ00gw==}
+
   i18next@23.16.8:
     resolution: {integrity: sha512-06r/TitrM88Mg5FdUXAKL96dJMzgqLE5dv3ryBAra4KCwD9mJ4ndOTS95ZuymIGoE+2hzfdaMak2X11/es7ZWg==}
 
@@ -5043,6 +5052,9 @@ packages:
   map-obj@4.3.0:
     resolution: {integrity: sha512-hdN1wVrZbb29eBGiGjJbeP8JbKjq1urkHJ/LIP/NY48MZ1QVXUsQBV1G1zvYFHn1XE06cwjBsOI2K3Ulnj1YXQ==}
     engines: {node: '>=8'}
+
+  matchmediaquery@0.4.2:
+    resolution: {integrity: sha512-wrZpoT50ehYOudhDjt/YvUJc6eUzcdFPdmbizfgvswCKNHD1/OBOHYJpHie+HXpu6bSkEGieFMYk6VuutaiRfA==}
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -5769,6 +5781,12 @@ packages:
       react: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
       react-dom: ^16.14.0 || ^17.0.0 || ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
+  react-responsive@10.0.1:
+    resolution: {integrity: sha512-OM5/cRvbtUWEX8le8RCT8scA8y2OPtb0Q/IViEyCEM5FBN8lRrkUOZnu87I88A6njxDldvxG+rLBxWiA7/UM9g==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8.0'
+
   react-rx@4.1.30:
     resolution: {integrity: sha512-O5+9CDr+yYqmPNb0Ddc6/wdc4EGpfZnZaK4h5Kf6d6ruleVb++usLUW39PmZowUH2bYCF7QnW5Gl0vLNVIlT0A==}
     peerDependencies:
@@ -6060,6 +6078,9 @@ packages:
   shallow-clone@3.0.1:
     resolution: {integrity: sha512-/6KqX+GVUdqPuPPd2LxDDxzX6CAbjJehAAOKlNpqqUpAqPM6HeL8f+o3a+JsyGjn2lv0WY8UsTgUJjU9Ok55NA==}
     engines: {node: '>=8'}
+
+  shallow-equal@3.1.0:
+    resolution: {integrity: sha512-pfVOw8QZIXpMbhBWvzBISicvToTiM5WBF1EeAUZDDSb5Dt29yl4AYbyywbJFSEsRUMr7gJaxqCdr4L3tQf9wVg==}
 
   shallow-equals@1.0.0:
     resolution: {integrity: sha512-xd/FKcdmfmMbyYCca3QTVEJtqUOGuajNzvAX6nt8dXILwjAIEkfHc4hI8/JMGApAmb7VeULO0Q30NTxnbH/15g==}
@@ -10758,6 +10779,8 @@ snapshots:
 
   css-color-keywords@1.0.0: {}
 
+  css-mediaquery@0.1.2: {}
+
   css-select@5.2.2:
     dependencies:
       boolbase: 1.0.0
@@ -11858,6 +11881,8 @@ snapshots:
 
   humanize-list@1.0.1: {}
 
+  hyphenate-style-name@1.1.0: {}
+
   i18next@23.16.8:
     dependencies:
       '@babel/runtime': 7.27.6
@@ -12374,6 +12399,10 @@ snapshots:
   map-obj@1.0.1: {}
 
   map-obj@4.3.0: {}
+
+  matchmediaquery@0.4.2:
+    dependencies:
+      css-mediaquery: 0.1.2
 
   math-intrinsics@1.1.0: {}
 
@@ -13088,6 +13117,14 @@ snapshots:
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
 
+  react-responsive@10.0.1(react@19.1.0):
+    dependencies:
+      hyphenate-style-name: 1.1.0
+      matchmediaquery: 0.4.2
+      prop-types: 15.8.1
+      react: 19.1.0
+      shallow-equal: 3.1.0
+
   react-rx@4.1.30(react@19.1.0)(rxjs@7.8.2):
     dependencies:
       observable-callback: 1.0.3(rxjs@7.8.2)
@@ -13601,6 +13638,8 @@ snapshots:
   shallow-clone@3.0.1:
     dependencies:
       kind-of: 6.0.3
+
+  shallow-equal@3.1.0: {}
 
   shallow-equals@1.0.0: {}
 
