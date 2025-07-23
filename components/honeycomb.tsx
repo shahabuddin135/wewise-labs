@@ -107,36 +107,6 @@ const ServicesComponent = () => {
         />
       )
     },
-    // {
-    //   id: 8,
-    //   title: 'UI/UX Design',
-    //   description: 'User interface and experience design',
-    //   // icon: Palette,
-    // },
-    // {
-    //   id: 9,
-    //   title: 'Performance',
-    //   description: 'Speed optimization and monitoring',
-    //   // icon: Zap,
-    // },
-    // {
-    //   id: 10,
-    //   title: 'DevOps',
-    //   description: 'Deployment and automation',
-    //   // icon: Settings,
-    // },
-    // {
-    //   id: 11,
-    //   title: 'Consulting',
-    //   description: 'Technical consultation and strategy',
-    //   // icon: Users,
-    // },
-    // {
-    //   id: 12,
-    //   title: 'SEO Services',
-    //   description: 'Search engine optimization',
-    //   // icon: Search,
-    // },
   ];
 
   const [width, setWidth] = useState(0);

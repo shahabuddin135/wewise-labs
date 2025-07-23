@@ -5,9 +5,14 @@ import { motion, MotionStyle, Transition } from "motion/react";
 
 interface BorderBeamProps {
   /**
-   * The size of the border beam.
+   * The size of the border beam (diameter of the button).
    */
   size?: number;
+  /**
+   * The thickness of the animated border band in pixels.
+   * @default 8
+   */
+  thickness?: number;
   /**
    * The duration of the border beam.
    */
@@ -49,6 +54,7 @@ interface BorderBeamProps {
 export const BorderBeam = ({
   className,
   size = 50,
+  thickness = 8,
   delay = 0,
   duration = 6,
   colorFrom = "#ffaa40",
@@ -62,14 +68,15 @@ export const BorderBeam = ({
     <div className="pointer-events-none absolute inset-0 rounded-[inherit] border border-transparent [mask-clip:padding-box,border-box] [mask-composite:intersect] [mask-image:linear-gradient(transparent,transparent),linear-gradient(#000,#000)]">
       <motion.div
         className={cn(
-          "absolute aspect-square",
+          "absolute",
           "bg-gradient-to-l from-[var(--color-from)] via-[var(--color-to)] to-transparent",
           className,
         )}
         style={
           {
-            width: size,
-            offsetPath: `rect(0 auto auto 0 round ${size}px)`,
+            width: thickness,
+            height: thickness,
+            offsetPath: `rect(0 auto auto 0 round ${size}px)` ,
             "--color-from": colorFrom,
             "--color-to": colorTo,
             ...style,
