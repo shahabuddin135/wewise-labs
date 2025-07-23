@@ -23,8 +23,8 @@ export function Footer() {
                   Wewise Labs
                 </Link>
                 <p className="font-subheading text-gray-600 max-w-xs dark:text-white">
-                  We build exceptional SaaS applications and provide
-                  professional web development services.
+                  We build exceptional AI Powered SaaS applications and provide
+                  professional Web Development services.
                 </p>
               </div>
               <div className="mt-10">

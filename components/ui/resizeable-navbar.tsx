@@ -44,6 +44,10 @@ interface MobileNavMenuProps {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
+  /**
+   * If true, disables the gray border for the ideas page.
+   */
+  isOnIdeasPage?: boolean;
 }
 
 export const Navbar = ({ children, className }: NavbarProps) => {
@@ -158,14 +162,14 @@ export const NavItems = ({ items, className, onItemClick, activePath }: NavItems
         // About button style (like IDEAS)
         const aboutButtonClass = item.type === 'about'
           ? cn(
-              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition",
+              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition hover:opacity-80 active:opacity-60",
               isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
             )
           : "";
         const pageLinkClass = item.type === 'page'
           ? cn(
-              "border-2 border-orange-400 dark:border-orange-300 bg-orange-50 dark:bg-orange-900 text-orange-700 dark:text-orange-200 font-semibold",
-              isActive && "bg-orange-400 dark:bg-orange-300 text-white dark:text-black border-orange-500 dark:border-orange-400 shadow-lg"
+              "border-2 border-gray-400 dark:border-gray-300 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 font-semibold transition hover:opacity-80 active:opacity-60",
+              isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
             )
           : "";
         if (isHashLink) {
@@ -230,7 +234,7 @@ export const NavItems = ({ items, className, onItemClick, activePath }: NavItems
               {(hovered === idx || isActive) && (
                 <motion.div
                   layoutId="hovered"
-                  className="absolute inset-0 h-full w-full rounded-full bg-orange-100 dark:bg-orange-800"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-200 dark:bg-neutral-800"
                 />
               )}
               <span className="relative z-20">{item.name}</span>
@@ -295,6 +299,7 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
+  isOnIdeasPage = false,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -304,7 +309,8 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-20 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-800",
+            "absolute inset-x-0 top-20 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            !isOnIdeasPage && "dark:border border-gray-200/50",
             className,
           )}
         >
