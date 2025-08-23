@@ -258,8 +258,3 @@ const ServicesComponent = () => {
 
 export default ServicesComponent;
 
- // .service-hexagon:hover > div {
-        //   transform: scale(1.1);
-        //   z-index: 10;
-        // }
-
