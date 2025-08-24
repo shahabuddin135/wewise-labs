@@ -7,6 +7,7 @@ import NavbarWrapper from "@/components/NavbarWrapper";
 import { ScrollHandler } from "@/lib/smooth-handler"
 import ThemeFavicon from "@/components/theme-favicon";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
+import { Analytics } from '@vercel/analytics/next';
 
 const ptSansCaption = PT_Sans_Caption({
   subsets: ["latin"],
@@ -79,6 +80,7 @@ export default function RootLayout({
         <NavbarWrapper />
         <ThemeFavicon />
         {children}
+        <Analytics />
         <ScrollToTopButton minScrollY={600} />
         </ThemeProvider>
       </body>
