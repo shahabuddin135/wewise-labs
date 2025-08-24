@@ -73,6 +73,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Google Search Console  */}
+      <meta name="google-site-verification" content="YDycmmSr_H-ujffIEZO9u7BZ48NUmYHo_GL1oEUCj_A" />
+
         {/* You can keep a default favicon as a fallback */}
         <link rel="icon" href="/favicon-light.ico" />
        
