@@ -75,18 +75,19 @@ export default function RootLayout({
       <head>
         {/* You can keep a default favicon as a fallback */}
         <link rel="icon" href="/favicon-light.ico" />
+       
         {/* Google tag (gtag.js)  */}
-<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
-<script
-  dangerouslySetInnerHTML={{
-    __html: `
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments)}
-  gtag('js', new Date());
-  gtag('config', GA_MEASUREMENT_ID );
-`
-  }}
-  />
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
+        <script
+           dangerouslySetInnerHTML={{
+               __html: `
+               window.dataLayer = window.dataLayer || [];
+               function gtag(){dataLayer.push(arguments)}
+               gtag('js', new Date());
+               gtag('config', GA_MEASUREMENT_ID );
+              `
+           }}
+         />
       </head>
       <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable}  ${kablammo.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
