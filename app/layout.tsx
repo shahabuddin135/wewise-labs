@@ -63,6 +63,8 @@ export const metadata: Metadata = {
   generator: 'Wewise Labs',
 }
 
+export const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || '';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -74,18 +76,17 @@ export default function RootLayout({
         {/* You can keep a default favicon as a fallback */}
         <link rel="icon" href="/favicon-light.ico" />
         {/* Google tag (gtag.js)  */}
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-38ZTL2VF2B"></script>
+<script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}></script>
 <script
   dangerouslySetInnerHTML={{
     __html: `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments)}
   gtag('js', new Date());
-  gtag('config', 'G-38ZTL2VF2B');
+  gtag('config', GA_MEASUREMENT_ID );
 `
   }}
   />
-
       </head>
       <body className={`dark:bg-gray-950 ${ptSansCaption.variable}  ${pacifico.variable}  ${kablammo.variable} ${archivo.variable} ${nunito.variable} ${ubuntu.variable} ${arizonia.variable} ${Libre.variable} font-sans bg-white text-black antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
