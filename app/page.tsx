@@ -78,7 +78,7 @@ export default function Home() {
 
         {isMobileOrTablet ? (
           <section id="horizontal-section">
-          <HorizontalScrollFramer/>
+          {/* <HorizontalScrollFramer/> */}
           </section>
   
         ) : (
