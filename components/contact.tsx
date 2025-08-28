@@ -294,7 +294,7 @@ export function Contact() {
       simulateTyping(() => {
         addToHistory("system", "Direct contact information:")
         addToHistory("system", "✉️ Email: wewiselabs@gmail.com")
-        addToHistory("system", "🌐 Website: https://wewiselabs.com")
+        addToHistory("system", "🌐 Website: https://www.wewiselabs.com/")
         addToHistory("system", "Feel free to reach out to us directly!")        
       })
     } else {
