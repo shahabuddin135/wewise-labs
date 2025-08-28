@@ -77,6 +77,7 @@ export default function RootLayout({
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-38ZTL2VF2B"
           strategy="beforeInteractive"
+          id="ga4-inline"
 
         />
         <Script
@@ -85,7 +86,7 @@ export default function RootLayout({
              window.dataLayer = window.dataLayer || [];
              function gtag(){dataLayer.push(arguments)}
              gtag('js', new Date());
-             gtag('config','G-38ZTL2VF2B' );
+             gtag('config','G-38ZTL2VF2B',{ send_page_view: false });
              `,
           }}
         />
@@ -93,7 +94,7 @@ export default function RootLayout({
         {/* You can keep a default favicon as a fallback */}
         <link rel="icon" href="/favicon-light.ico" />
         {/* Google Tag Manager */}
-        <Script id="gtm-init" strategy="beforeInteractive"
+        <Script id="gtm-loader" strategy="beforeInteractive"
         >
           {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
