@@ -6,12 +6,13 @@ import { Button } from "@/components/ui/button"
 import { ChevronRight, Minimize2, Maximize2} from "lucide-react"
 import Link from "next/link"
 
-type FormField = "name" | "email" | "email-confirm" | "message" | "submitting" | "submitted" | "error"
+type FormField = "name" | "email" | "email-confirm" | "message" | "platform" | "submitting" | "submitted" | "error"
 
 interface FormState {
   name: string
   email: string
   message: string
+  platform: string
 }
 
 export function Contact() {
@@ -19,6 +20,7 @@ export function Contact() {
     name: "",
     email: "",
     message: "",
+    platform: "",
   })
   const [currentField, setCurrentField] = useState<FormField>("name")
   const [terminalHistory, setTerminalHistory] = useState<Array<{ type: string; content: string }>>([
@@ -73,6 +75,7 @@ export function Contact() {
           name: data.name,
           email: data.email,
           message: data.message,
+          platform: data.platform,
           _subject: `New contact form submission from ${data.name}`,
           _replyto: data.email,
         }),
@@ -119,29 +122,39 @@ export function Contact() {
         setCurrentField("email")
       })
     } else if (currentField === "email") {
-      if (!formState.email.trim()) {
-        simulateTyping(() => {
-          addToHistory("error", "Email cannot be empty. Please enter your email:")
-        })
-        return
-      }
-      
+       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+     
+       
+       if (!formState.email.trim()) {
+         simulateTyping(() => {
+           addToHistory("error", "Email cannot be empty. Please enter your email:")
+          })
+          return
+        }
+        
+        if (!emailRegex.test(formState.email.trim())) {
+         simulateTyping(() => {
+           addToHistory("error", "Invalid email format. Please enter a valid email address:")
+         })
+         return;
+       }
       addToHistory("user", formState.email)
       simulateTyping(() => {
         addToHistory("system", `Email entered: ${formState.email}`)
         addToHistory("system", "Is this email address correct? (yes/no)")
         setCurrentField("email-confirm")
       })
-    } else if (currentField === "email-confirm") {
+    } 
+    else if (currentField === "email-confirm") {
       const confirmation = formState.message.toLowerCase().trim()
       addToHistory("user", confirmation)
 
 
       if (confirmation === "yes" || confirmation === "y") {
         simulateTyping(() => {
-          addToHistory("system", "Great! Now please enter your message:")
-          setCurrentField("message")
-          setFormState({ ...formState, message: "" })
+          addToHistory("system", "Great! Now please enter how do you know about us:")
+          setCurrentField("platform")
+          setFormState({ ...formState, platform: "" })
         })
       } else if (confirmation === "no" || confirmation === "n") {
         simulateTyping(() => {
@@ -155,7 +168,23 @@ export function Contact() {
           addToHistory("system", `Is this email correct: ${formState.email}? (yes/no)`)
         })
       }
-    } else if (currentField === "message") {
+    }
+    else if (currentField === "platform") {
+      if (!formState.platform.trim()) {
+        simulateTyping(() => {
+          addToHistory("error", "Platform name cannot be empty. Please enter the platform name:")
+        })
+        return
+      }
+     addToHistory("user", formState.platform)
+  simulateTyping(() => {
+    addToHistory("system", `Thanks! You mentioned: ${formState.platform}`)
+    addToHistory("system", "Now please enter your message:")
+    setCurrentField("message")
+    setFormState({ ...formState, message: "" })
+  })
+}
+     else if (currentField === "message") {
       if (!formState.message.trim()) {
         simulateTyping(() => {
           addToHistory("error", "Message cannot be empty. Please enter your message:")
@@ -176,9 +205,9 @@ export function Contact() {
         const result = await submitToFormspree(formState)
 
         if (result.success) {
-          addToHistory("success", "✓ Message sent successfully!")
-          addToHistory("system", "We'll get back to you within 48 hours.")
-          addToHistory("system", "Type 'reset' to send another message or 'exit' to close.")
+          addToHistory("success", "Your message has been successfully sent!");
+          addToHistory("system", "Our team will get back to you within 24–48 hours.");
+          addToHistory("system", "Type 'reset' to send another message or 'exit' to close the terminal.");
           setCurrentField("submitted")
           setFormState({ ...formState, message: "" })
         } else {
@@ -193,7 +222,7 @@ export function Contact() {
         }
       }, 2000)
     }
-  }
+}
 
   const handleCommandSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -203,7 +232,7 @@ export function Contact() {
 
     if (command === "reset") {
       simulateTyping(() => {
-        setFormState({ name: "", email: "", message: "" })
+        setFormState({ name: "", email: "", message: "" ,platform: ""})
         setSubmissionError(null)
         setTerminalHistory([
           { type: "system", content: "Welcome to Wewise Labs Terminal. Please enter your information to get in touch." },
@@ -264,8 +293,9 @@ export function Contact() {
     } else if (command === "contact") {
       simulateTyping(() => {
         addToHistory("system", "Direct contact information:")
-        addToHistory("system", "🌐 Website: https://wewiselabs@gmail.com")
-        
+        addToHistory("system", "✉️ Email: wewiselabs@gmail.com")
+        addToHistory("system", "🌐 Website: https://wewiselabs.com")
+        addToHistory("system", "Feel free to reach out to us directly!")        
       })
     } else {
       simulateTyping(() => {
@@ -287,29 +317,31 @@ export function Contact() {
         return "Type 'yes' or 'no'..."
       case "message":
         return "Enter your message..."
+      case "platform":
+        return "Enter platform name..." 
       default:
         return "Type a command..."
     }
   }
 
-  const getCurrentInputValue = () => {
-    if (currentField === "email-confirm" || (currentField !== "name" && currentField !== "email")) {
-      return formState.message
-    }
-    return formState[currentField as keyof FormState]
-  }
+const getCurrentInputName = () => {
+  if (currentField === "email") return "email";
+  if (currentField === "name") return "name";
+  if (currentField === "platform") return "platform";     // <-- bind to platform here
+  if (currentField === "email-confirm" || currentField === "message") return "message";
+  return "message"; // for command mode
+};
 
-  const getCurrentInputName = () => {
-    if (currentField === "email-confirm" || (currentField !== "name" && currentField !== "email")) {
-      return "message"
-    }
-    return currentField
-  }
+const getCurrentInputValue = () => {
+  if (currentField === "email") return formState.email;
+  if (currentField === "name") return formState.name;
+  if (currentField === "platform") return formState.platform;  // <-- read platform here
+  if (currentField === "email-confirm" || currentField === "message") return formState.message;
+  return formState.message;
+};
 
-  const getCurrentInputType = () => {
-    if (currentField === "email") return "email"
-    return "text"
-  }
+const getCurrentInputType = () => (currentField === "email" ? "email" : "text");
+
 
   return (
     <section id="contact" className="py-16 md:py-20 lg:py-24 px-4 md:px-8 dark:bg-gray-950 z-50">
