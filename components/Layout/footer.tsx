@@ -128,10 +128,10 @@ export function Footer() {
             </h3>
             <ul className="space-y-2">
               {[
-                "SaaS Development",
+                "AI SaaS Development",
                 "Web Applications",
-                "Frontend",
-                "Backend",
+                "E-Commerce",
+                "Agentic Solutions",
                 "Consultation",
               ].map((item) => (
                 <li key={item}>
