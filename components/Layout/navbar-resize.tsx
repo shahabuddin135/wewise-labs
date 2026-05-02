@@ -13,7 +13,8 @@ import {
 import { useState } from "react";
 import Link from "next/link";
 import { ModeToggle } from "../ui/theme-button";
-import {usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { Layers, FlaskConical } from "lucide-react";
 
 declare global {
   interface Window {
@@ -28,9 +29,27 @@ export function ResizableNavbar() {
     { name: "Services", link: "#services", type: "section" },
     { name: "Why Us", link: "#why-choose-us", type: "section" },
     { name: "Process", link: "#process", type: "section" },
-    { name: "Projects", link: "#projects", type: "section" },
+    {
+      name: "Our Work",
+      link: "",
+      type: "dropdown",
+      dropdownItems: [
+        {
+          name: "Client's Projects",
+          link: "#projects",
+          icon: <Layers size={16} />,
+          description: "Web apps we've built for our clients",
+        },
+        {
+          name: "Lab's Products",
+          link: "#wewise-products",
+          icon: <FlaskConical size={16} />,
+          description: "AI tools & SaaS from Wewise Labs",
+        },
+      ],
+    },
     { name: "Contact", link: "#contact", type: "section" },
-    { name: "About", link: "/about", type: "about" }, // moved to last, type 'about' for special styling
+    { name: "About", link: "/about", type: "about" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -79,7 +98,11 @@ export function ResizableNavbar() {
   const displayNavItems = isOnSpecialPage
     ? navItems.map(item => ({
         ...item,
-        link: item.link.startsWith('#') ? `/${item.link}` : item.link, // Only prefix hash links
+        link: item.link.startsWith('#') ? `/${item.link}` : item.link,
+        dropdownItems: item.dropdownItems?.map(sub => ({
+          ...sub,
+          link: sub.link.startsWith('#') ? `/${sub.link}` : sub.link,
+        })),
       }))
     : navItems;
 
@@ -162,22 +185,42 @@ export function ResizableNavbar() {
             onClose={() => setIsMobileMenuOpen(false)}
             className={isOnIdeasPage ? "!border-2 !border-black dark:!border-white !bg-white dark:!bg-neutral-950 !rounded-none" : ""}
           >
-            {displayNavItems.map((item, idx) => (
-              <button
-                key={`mobile-link-${idx}`}
-                onClick={() => {
-                  handleNavClick(item.link);
-                  setIsMobileMenuOpen(false);
-                }}
-                className={`relative text-left w-full ${
-                  isOnIdeasPage 
-                    ? "!text-black dark:!text-white" 
-                    : "text-neutral-600 dark:text-neutral-300"
-                }`}
-              >
-                <span className="block">{item.name}</span>
-              </button>
-            ))}
+            {displayNavItems.map((item, idx) => {
+              if (item.type === 'dropdown' && item.dropdownItems) {
+                return (
+                  <div key={`mobile-dropdown-${idx}`} className="w-full">
+                    <span className="block text-[11px] font-semibold uppercase tracking-widest text-neutral-400 dark:text-neutral-500 mb-2">
+                      {item.name}
+                    </span>
+                    {item.dropdownItems.map((sub, si) => (
+                      <button
+                        key={`mobile-sub-${si}`}
+                        onClick={() => { handleNavClick(sub.link); setIsMobileMenuOpen(false); }}
+                        className={`flex items-center gap-2.5 w-full text-left py-1.5 pl-1 ${
+                          isOnIdeasPage ? "!text-black dark:!text-white" : "text-neutral-600 dark:text-neutral-300"
+                        }`}
+                      >
+                        <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gray-100 dark:bg-neutral-800 text-neutral-600 dark:text-neutral-300 shrink-0">
+                          {sub.icon}
+                        </span>
+                        <span>{sub.name}</span>
+                      </button>
+                    ))}
+                  </div>
+                );
+              }
+              return (
+                <button
+                  key={`mobile-link-${idx}`}
+                  onClick={() => { handleNavClick(item.link); setIsMobileMenuOpen(false); }}
+                  className={`relative text-left w-full ${
+                    isOnIdeasPage ? "!text-black dark:!text-white" : "text-neutral-600 dark:text-neutral-300"
+                  }`}
+                >
+                  <span className="block">{item.name}</span>
+                </button>
+              );
+            })}
           </MobileNavMenu>
         </MobileNav>
       </Navbar>

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Layout/footer"
 import WhyChooseUs  from "@/components/why-choose-us"
 import { Technologies } from "@/components/technologies"
 import { Projects } from "@/components/projects"
+import { WeWiseProducts } from "@/components/wewise-products"
 import { Testimonials } from "@/components/testimonials"
 import AnimatedHorizontalScroll from "@/components/animated-horizontal-scroll"
 import { useEffect } from "react"
@@ -92,6 +93,8 @@ export default function Home() {
         <Technologies />
 
         <Projects />
+
+        <WeWiseProducts />
 
         <Testimonials />
 
