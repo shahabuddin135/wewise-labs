@@ -10,8 +10,10 @@ const Careers = () => {
   const isDark = theme === 'dark';
 
   return (
-    <div className='flex flex-col justify-center items-center h-screen'>
+    <div className='h-full w-full '>
  
+    <div className='h-screen flex flex-col justify-center items-center'>
+
      <Image
         src={isDark ? 'https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753736/Coming_Soon_4_acgpfp.png' : 'https://res.cloudinary.com/dqkt0g0he/image/upload/v1751753736/Coming_Soon_1_ncvkzg.png'}
         alt='Coming Soon'
@@ -21,6 +23,7 @@ const Careers = () => {
         className='mt-6'
       />
       <h2 className="text-3xl text-center md:text-5xl font-heading font-bold mb-6 dark:text-white">Coming Soon!</h2>
+        </div>
       <Footer/>
 
     </div>

@@ -250,16 +250,14 @@ export default function HorizontalScrollFramer() {
       ref={containerRef}
       className="relative h-[900dvh] overflow-visible w-screen bg-white dark:bg-gray-950"
     >
-      <div className="sticky top-0 h-screen ">
-      {/* Background Glow Blobs */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-10">
-        <div className="absolute top-[20%] left-[10%] w-[12rem] h-[12rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
-        <div className="absolute top-[40%] left-[50%] w-[8rem] h-[8rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute bottom-[15%] right-[20%] w-[10rem] h-[10rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
-        <div className="absolute top-[60%] left-[30%] w-[7rem] h-[7rem] bg-green-400/30 dark:bg-green-600/20 rounded-full filter blur-3xl animate-blob animation-delay-3000"></div>
-      </div>
-      </div>
-      <div className="sticky top-0 h-screen overflow-hidden">
+      <div className="sticky top-0 h-screen px-10 overflow-hidden">
+        {/* Background Glow Blobs */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-10">
+          <div className="absolute top-[20%] left-[10%] w-[12rem] h-[12rem] bg-pink-500/30 dark:bg-pink-500/20 rounded-full filter blur-3xl animate-blob"></div>
+          <div className="absolute top-[40%] left-[50%] w-[8rem] h-[8rem] bg-blue-500/30 dark:bg-blue-500/20 rounded-full filter blur-3xl animate-blob animation-delay-2000"></div>
+          <div className="absolute bottom-[15%] right-[20%] w-[10rem] h-[10rem] bg-purple-500/30 dark:bg-purple-500/20 rounded-full filter blur-3xl animate-blob animation-delay-4000"></div>
+          <div className="absolute top-[60%] left-[30%] w-[7rem] h-[7rem] bg-green-400/30 dark:bg-green-600/20 rounded-full filter blur-3xl animate-blob animation-delay-3000"></div>
+        </div>
         <motion.div
           ref={scrollRef}
           style={{
@@ -267,10 +265,10 @@ export default function HorizontalScrollFramer() {
             scrollbarWidth: "none",
             msOverflowStyle: "none"
           }}
-          className="flex h-full items-center whitespace-nowrap px-8"
+          className="flex h-full items-center whitespace-nowrap"
         >
           {[
-            { type: "text", content: "At", gradient: "from-sky-500 via-blue-600 to-indigo-600" },
+            { type: "text", content: "At", gradient: "from-sky-500 via-blue-600 to-indigo-600", padding: "pl-20" },
             { type: "shape", src: 0 },
             { type: "text", content: "wewise,", gradient: "from-pink-500 via-purple-500 to-blue-500" },
             { type: "shape", src: 1 },
@@ -286,7 +284,7 @@ export default function HorizontalScrollFramer() {
             { type: "text", content: "say:", gradient: "from-cyan-500 via-teal-500 to-green-500" },
             { type: "text", content: "\"Creative", gradient: "from-rose-400 via-pink-500 to-red-600" },
             { type: "text", content: "we", gradient: "from-pink-500 via-red-500 to-orange-500" },
-            { type: "text", content: "are!\"", gradient: "from-teal-400 via-cyan-500 to-sky-500" },
+            { type: "text", content: "are!\"", gradient: "from-teal-400 via-cyan-500 to-sky-500 pr-52" },
           ].map((item, index) => {
             if (item.type === "text") {
               return (
@@ -296,7 +294,7 @@ export default function HorizontalScrollFramer() {
                   initial="initial"
                   animate="animate"
                   transition={{ delay: index * 0.1 }}
-                  className={`text-element text-[7rem] lg:text-[9rem] font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mr-8 will-change-transform`}
+                  className={`text-element text-[7rem] lg:text-[9rem] font-bold bg-gradient-to-r ${item.gradient} bg-clip-text text-transparent mr-8 will-change-transform ${item.padding || ""}`}
                 >
                   {item.content}
                 </motion.span>
@@ -321,7 +319,13 @@ export default function HorizontalScrollFramer() {
             className="inline-block align-top"
             style={{ width: '100vw', height: 0 }}
             aria-hidden="true"
-          ></div>
+          ></div> 
+          
+          <div
+            className="inline-block align-bottom"
+            style={{ width: '100vw', height: 0 }}
+            aria-hidden="true"
+          ></div> 
         </motion.div>
       </div>
     </section>

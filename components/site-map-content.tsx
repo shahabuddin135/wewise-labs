@@ -60,7 +60,7 @@ const siteMapData: TreeNode[] = [
         children: [
           {
             id: "saas",
-            name: "SaaS Development",
+            name: " AI SaaS Development",
             icon: <Code className="h-4 w-4" />,
             url: "/#services",
           },
@@ -127,16 +127,13 @@ const siteMapData: TreeNode[] = [
         id: "mission",
         name: "Our Mission",
         icon: <FileText className="h-4 w-4" />,
-      },
-      {
-        id: "vision",
-        name: "Our Vision",
-        icon: <FileText className="h-4 w-4" />,
+        url: "/about#our-good-mission",
       },
       {
         id: "team-full",
         name: "Team",
         icon: <Users className="h-4 w-4" />,
+        url: "/about#founding-members",
       },
     ],
   },
@@ -151,20 +148,20 @@ const siteMapData: TreeNode[] = [
     name: "Ideas",
     icon: <LightbulbIcon className="h-4 w-4" />,
     url: "/ideas",
-   children: [
-      {
-        id: "idea-details",
-        name: "Ideas/Blog",
-        icon: <Pen className="h-4 w-4" />,
-        isNew: true,
-        },
-    ],
+  //  children: [
+  //     {
+  //       id: "idea-details",
+  //       name: "Ideas/Blog",
+  //       icon: <Pen className="h-4 w-4" />,
+  //       isNew: true,
+  //       },
+  //   ],
   },
   {
     id: "privacypolicy",
     name: "Privacy Policy",
     icon: <Shield className="h-4 w-4" />,
-    url: "/ideas",
+    url: "/terms-privacy",
   }
 ]
 
@@ -201,7 +198,9 @@ interface TreeItemProps {
 function TreeItem({ item, level }: TreeItemProps) {
   const [isOpen, setIsOpen] = React.useState(level === 0)
 
-  const handleToggle = () => {
+  const handleToggle = (e: React.MouseEvent) => {
+    // Prevent toggle if clicking a link
+    if ((e.target as HTMLElement).closest('a')) return;
     if (item.children?.length) {
       setIsOpen(!isOpen)
     }
@@ -214,7 +213,6 @@ function TreeItem({ item, level }: TreeItemProps) {
           "flex items-center py-2 px-2 rounded-md hover:bg-gray-200 hover:text-gray-700 cursor-pointer group",
           item.url && "transition-colors",
         )}
-
         onClick={handleToggle}
       >
         {item.children?.length ? (
@@ -226,7 +224,7 @@ function TreeItem({ item, level }: TreeItemProps) {
         )}
         <span className="mr-2 shrink-0 text-gray-500 dark:text-gray-200 group-hover:text-neutral-700 ">{item.icon}</span>
         {item.url ? (
-          <Link href={item.url} className="flex-grow hover:underline">
+          <Link href={item.url} className="flex-grow hover:underline" onClick={e => e.stopPropagation()}>
             {item.name}
           </Link>
         ) : (

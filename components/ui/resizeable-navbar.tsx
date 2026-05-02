@@ -24,9 +24,11 @@ interface NavItemsProps {
   items: {
     name: string;
     link: string;
+    type?: string;
   }[];
   className?: string;
   onItemClick?: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => void;
+  activePath?: string;
 }
 interface MobileNavProps {
   children: React.ReactNode;
@@ -42,6 +44,10 @@ interface MobileNavMenuProps {
   className?: string;
   isOpen: boolean;
   onClose: () => void;
+  /**
+   * If true, disables the gray border for the ideas page.
+   */
+  isOnIdeasPage?: boolean;
 }
 
 export const Navbar = ({ children, className }: NavbarProps) => {
@@ -138,7 +144,7 @@ export const NavBody = ({ children, className, visible }: NavBodyProps) => {
   );
 };
 
-export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
+export const NavItems = ({ items, className, onItemClick, activePath }: NavItemsProps) => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
@@ -152,13 +158,26 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
       {items.map((item, idx) => {
         const isHashLink = item.link.startsWith('#');
         const isExternalLink = item.link.startsWith('http');
-        
+        const isActive = item.type === 'about' && activePath && activePath.startsWith(item.link);
+        // About button style (like IDEAS)
+        const aboutButtonClass = item.type === 'about'
+          ? cn(
+              "px-3 py-1 border-2 border-gray-400 dark:border-gray-300 text-neutral-600 dark:text-neutral-300 text-sm font-semibold rounded-full transition hover:opacity-80 active:opacity-60",
+              isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
+            )
+          : "";
+        const pageLinkClass = item.type === 'page'
+          ? cn(
+              "border-2 border-gray-400 dark:border-gray-300 bg-white dark:bg-neutral-900 text-neutral-700 dark:text-neutral-200 font-semibold transition hover:opacity-80 active:opacity-60",
+              isActive && "bg-gray-200 dark:bg-gray-700 border-black dark:border-white text-black dark:text-white"
+            )
+          : "";
         if (isHashLink) {
           return (
             <a
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
             >
@@ -176,7 +195,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
             <a
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
               target="_blank"
@@ -191,19 +210,31 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
               <span className="relative z-20">{item.name}</span>
             </a>
           );
+        } else if (item.type === 'about') {
+          return (
+            <Link
+              onMouseEnter={() => setHovered(idx)}
+              onClick={onItemClick}
+              className={cn(aboutButtonClass, "relative")}
+              key={`link-${idx}`}
+              href={item.link}
+            >
+              <span className="relative z-20">{item.name}</span>
+            </Link>
+          );
         } else {
           return (
             <Link
               onMouseEnter={() => setHovered(idx)}
               onClick={onItemClick}
-              className="relative px-4 py-2 text-neutral-600 dark:text-neutral-300"
+              className={cn("relative px-4 py-2 text-neutral-600 dark:text-neutral-300", pageLinkClass)}
               key={`link-${idx}`}
               href={item.link}
             >
-              {hovered === idx && (
+              {(hovered === idx || isActive) && (
                 <motion.div
                   layoutId="hovered"
-                  className="absolute inset-0 h-full w-full rounded-full bg-gray-100 dark:bg-neutral-800"
+                  className="absolute inset-0 h-full w-full rounded-full bg-gray-200 dark:bg-neutral-800"
                 />
               )}
               <span className="relative z-20">{item.name}</span>
@@ -268,6 +299,7 @@ export const MobileNavMenu = ({
   children,
   className,
   isOpen,
+  isOnIdeasPage = false,
 }: MobileNavMenuProps) => {
   return (
     <AnimatePresence>
@@ -277,7 +309,8 @@ export const MobileNavMenu = ({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className={cn(
-            "absolute inset-x-0 top-20 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-800",
+            "absolute inset-x-0 top-20 z-50 flex w-full flex-col items-start justify-start gap-4 rounded-lg bg-white px-4 py-8 shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset] dark:bg-neutral-950",
+            !isOnIdeasPage && "dark:border border-gray-200/50",
             className,
           )}
         >

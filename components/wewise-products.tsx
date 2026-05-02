@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from "framer-motion"
 import { ArrowRight, Palette, Code, Shield, BookOpen, type LucideIcon } from "lucide-react"
 import { useTheme } from "next-themes"
@@ -67,6 +67,8 @@ const products: Product[] = [
 export function WeWiseProducts() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [animatedOptions, setAnimatedOptions] = useState<number[]>([])
+  const [isHovered, setIsHovered] = useState(false)
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const { theme } = useTheme()
   const [blobs, setBlobs] = useState([
     { x: 50, y: 50 },
@@ -100,6 +102,29 @@ export function WeWiseProducts() {
     })
     return () => timers.forEach(clearTimeout)
   }, [])
+
+  const startAutoScroll = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(() => {
+      setActiveIndex(prev => (prev + 1) % products.length)
+    }, 3000)
+  }
+
+  useEffect(() => {
+    if (isHovered) {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+      return
+    }
+    startAutoScroll()
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current)
+    }
+  }, [isHovered])
+
+  const handleCardClick = (index: number) => {
+    setActiveIndex(index)
+    startAutoScroll()
+  }
 
   return (
     <section id="wewise-products" className="py-24 px-4 md:px-8 relative overflow-hidden">
@@ -174,7 +199,11 @@ export function WeWiseProducts() {
         </motion.div>
 
         {/* Desktop: Interactive Accordion */}
-        <div className="hidden md:flex max-w-4xl mx-auto h-[480px] overflow-hidden relative z-10">
+        <div
+          className="hidden md:flex max-w-4xl mx-auto h-[480px] overflow-hidden relative z-10"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+        >
           {products.map((product, index) => {
             const isActive = activeIndex === index
             const isAnimated = animatedOptions.includes(index)
@@ -183,7 +212,7 @@ export function WeWiseProducts() {
             return (
               <div
                 key={product.title}
-                onClick={() => setActiveIndex(index)}
+                onClick={() => handleCardClick(index)}
                 style={{
                   flex: isActive ? "7 1 0%" : "1 1 0%",
                   transition: isAnimated

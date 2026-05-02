@@ -100,10 +100,10 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
 
       {/* Content */}
       <div className="flex flex-col flex-1 p-6 md:p-7 gap-3">
-        <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground leading-tight">
+        <h3 className="font-heading font-bold text-xl md:text-2xl text-foreground dark:text-white leading-tight">
           {project.title}
         </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3 flex-1">
+        <p className="text-sm text-muted-foreground dark:text-white/60 leading-relaxed line-clamp-3 flex-1">
           {project.description}
         </p>
 
@@ -112,7 +112,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           {project.tags.map((tag, i) => (
             <span
               key={i}
-              className="px-2.5 py-0.5 rounded-full text-[11px] bg-secondary text-foreground/70 border border-border/50"
+              className="px-2.5 py-0.5 rounded-full text-[11px] bg-secondary dark:bg-white/10 text-foreground/70 dark:text-white/70 border border-border/50 dark:border-white/10"
             >
               {tag}
             </span>
@@ -124,7 +124,7 @@ function ProjectCard({ project, index }: { project: ProjectItem; index: number }
           href={project.projectLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-2 flex items-center gap-1.5 w-fit text-sm font-semibold text-foreground group/link"
+          className="mt-2 flex items-center gap-1.5 w-fit text-sm font-semibold text-foreground dark:text-white group/link"
         >
           View Project
           <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" />

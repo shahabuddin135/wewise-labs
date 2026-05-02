@@ -45,11 +45,11 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto max-w-xl px-8 py-10 font-sans antialiased md:max-w-6xl md:px-8">
-      <div className="flex flex-col md:flex-row gap-20 md:gap-32">
+    <div className="mx-auto max-w-xl px-6 py-10 font-sans antialiased md:max-w-6xl md:px-8">
+      <div className="flex flex-col lg:flex-row gap-20 lg:gap-32">
         {/* Image Section */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square h-64 sm:h-80 md:h-96 lg:h-[24rem]">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl aspect-square h-72 md:h-[26rem] lg:h-[28rem]">
             <AnimatePresence>
               {reasons.map((reason, index) => (
                 <motion.div
@@ -104,7 +104,7 @@ export const AnimatedTestimonials = ({
           </div>
         </div>
         {/* Text Section */}
-        <div className="flex-1 flex flex-col gap-28 items-center text-center md:items-start md:text-left">
+        <div className="flex-1 flex flex-col gap-28 mt-6 items-center text-center lg:items-start lg:text-left">
           <motion.div
             key={active}
             initial={{

@@ -33,10 +33,10 @@ export default function Home() {
       content: "#smooth-content",
       smooth: 1.5,
       effects: true,
-    })
+    });
 
     // Store smoother globally for access in other components
-    ;(window as unknown as { ScrollSmoother: typeof ScrollSmoother }).ScrollSmoother = ScrollSmoother
+    (window as unknown as { ScrollSmoother: typeof ScrollSmoother }).ScrollSmoother = ScrollSmoother
 
     // Handle hash navigation after smoother is created
     const hash = window.location.hash
@@ -78,12 +78,12 @@ export default function Home() {
         <WhyChooseUs />
 
         {isMobileOrTablet ? (
-          <section>
+          <section id="horizontal-section">
           <HorizontalScrollFramer/>
           </section>
   
         ) : (
-          <section>
+          <section id="horizontal-section">
           <AnimatedHorizontalScroll />
           </section>
         )}

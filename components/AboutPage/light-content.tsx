@@ -33,21 +33,21 @@ export default function LightContent() {
               What Do We Do?
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl max-w-xl text-white">
-              WeWise Labs is a SaaS & Web development expert.
+            WeWise Labs is a AI powered SaaS & Web development expert.
             </p>
           </div>
         </div>
       </section>
 
       {/* <Mission/> */}
-      <section className="w-full">
+      <section id="our-good-mission" className="w-full">
         <div className="flex flex-col lg:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-4 sm:mt-6 md:mt-9 mx-4 sm:mx-6 md:mx-8 lg:mx-auto bg-gray-100 rounded-xl lg:rounded-2xl gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8 lg:justify-between">
           <div className="flex flex-col gap-8 sm:gap-10 md:gap-12 lg:gap-14 items-center lg:items-start p-4 sm:p-6 md:p-8 lg:w-1/2 order-2 lg:order-1 text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-black">
               Our Good Mission
             </h1>
             <p className="font-semibold text-lg sm:text-xl md:text-2xl lg:text-3xl max-w-xl text-black">
-              WeWise Lab&apos;s mission is to build products that work & are
+              WeWise Lab&apos;s mission is to build products that work with AI & are
               affordable.
             </p>
           </div>
@@ -64,7 +64,7 @@ export default function LightContent() {
       </section>
 
       {/* <FoundingMembers/> */}
-      <section id="team" className="w-full">
+      <section id="founding-members" className="w-full">
         <div className="flex flex-col lg:flex-row h-auto max-w-2xl md:max-w-4xl lg:max-w-7xl mt-4 sm:mt-6 md:mt-9 mx-4 sm:mx-6 md:mx-8 lg:mx-auto bg-gray-950 rounded-xl lg:rounded-2xl gap-6 sm:gap-8 lg:gap-12 p-4 sm:p-6 md:p-8 lg:justify-between">
           <div className="flex justify-center items-center p-4 sm:p-6 md:p-8 w-full lg:w-1/2 order-2 lg:order-1">
             <Image
@@ -153,8 +153,8 @@ export default function LightContent() {
       </section>
 
       {/* bento */}
-      <section className="sm:w-full mx-auto">
-        <h1 className="flex justify-center items-center mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-white">
+      <section className="w-full mx-auto">
+        <h1 className="flex justify-center items-center text-center leading-snug mt-12 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-libre font-bold text-white">
           Creativity, Art and Wewise
         </h1>
         <div className="flex justify-center items-center sm:w-full mx-auto my-12 md:my-20">
