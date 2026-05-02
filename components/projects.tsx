@@ -5,6 +5,7 @@ import { useTheme } from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
+import { SparksCarousel } from "@/components/ui/sparks-carousel"
 
 interface ProjectItem {
   title: string
@@ -256,8 +257,14 @@ export function Projects() {
           </p>
         </motion.div>
 
-        {/* Card grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+        {/* Mobile: Sparks horizontal carousel */}
+        <SparksCarousel
+          className="md:hidden"
+          items={projects.map((p, i) => ({ ...p, id: i }))}
+        />
+
+        {/* Desktop: two-column grid */}
+        <div className="hidden md:grid grid-cols-2 gap-6 md:gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={project.title} project={project} index={index} />
           ))}

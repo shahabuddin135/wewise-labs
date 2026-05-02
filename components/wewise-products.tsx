@@ -5,6 +5,7 @@ import { ArrowRight, Palette, Code, Shield, BookOpen, type LucideIcon } from "lu
 import { useTheme } from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
+import { ImageGallery } from "@/components/carousel-circular-image-gallery"
 
 type ProductImageUrl = { light: string; dark: string }
 
@@ -340,60 +341,9 @@ export function WeWiseProducts() {
           })}
         </div>
 
-        {/* Mobile: Cards */}
-        <div className="flex md:hidden flex-col gap-6 relative z-10">
-          {products.map((product, index) => {
-            const imageUrl = theme === "dark" ? product.imageUrl.dark : product.imageUrl.light
-            return (
-              <motion.div
-                key={product.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.15 }}
-                className="group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 shadow-lg"
-              >
-                <div className="aspect-[16/9] overflow-hidden relative w-full">
-                  {product.status && (
-                    <div className="absolute top-3 right-3 z-10">
-                      <span className="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
-                        {product.status}
-                      </span>
-                    </div>
-                  )}
-                  <Image
-                    src={imageUrl}
-                    alt={product.title}
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-5">
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-900 dark:bg-gray-700 flex-shrink-0">
-                      <product.Icon size={22} className="text-white" />
-                    </div>
-                    <div>
-                      <span className="font-subheading text-xs text-gray-500 dark:text-gray-400 block">
-                        {product.category}
-                      </span>
-                      <h3 className="font-heading text-lg font-bold dark:text-white leading-tight">
-                        {product.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <Link
-                    href={product.projectLink}
-                    target="_blank"
-                    className="flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-full bg-black dark:bg-white text-white dark:text-black text-sm font-semibold hover:bg-gray-800 dark:hover:bg-gray-200 transition-colors"
-                  >
-                    Try It Now <ArrowRight size={14} />
-                  </Link>
-                </div>
-              </motion.div>
-            )
-          })}
+        {/* Mobile: Circular image gallery */}
+        <div className="md:hidden relative z-10 py-4">
+          <ImageGallery items={products} />
         </div>
       </div>
     </section>
